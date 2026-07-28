@@ -105,12 +105,24 @@ function parsePdfText(text) {
   function tryParseCase(startIdx) {
     let idx = startIdx;
     const stemLines = [];
-    while (idx < lines.length && !/^câu\s*hỏi\s*:?\s*$/i.test(lines[idx])) {
-      stemLines.push(lines[idx]);
+    let foundMarker = false;
+    // "Câu hỏi:" thường đứng riêng 1 dòng, nhưng đôi khi dính liền cuối dòng
+    // cuối của đề bài (vd "...Nồng độ ADAMTS13 < 5%. Câu hỏi:") — tìm mốc này
+    // ở cuối dòng thay vì bắt buộc cả dòng chỉ có đúng mốc đó.
+    while (idx < lines.length) {
+      const line = lines[idx];
+      const cauHoiIdx = line.search(/câu\s*hỏi\s*:?\s*$/i);
+      if (cauHoiIdx !== -1) {
+        const before = line.slice(0, cauHoiIdx).trim();
+        if (before) stemLines.push(before);
+        idx++;
+        foundMarker = true;
+        break;
+      }
+      stemLines.push(line);
       idx++;
     }
-    if (idx >= lines.length) return null; // hết file, không còn case nào nữa
-    idx++; // bỏ qua dòng "Câu hỏi:"
+    if (!foundMarker) return null; // hết file, không còn case nào nữa
 
     const stem = stemLines.join(" ").replace(/\s+/g, " ").trim();
     if (!stem) return { fail: true, nextIdx: idx };
@@ -132,7 +144,13 @@ function parsePdfText(text) {
         continue;
       }
       if (sawAnswerLine) {
-        if (/^-?\s*giải\s*thích\s*:?\s*$/i.test(line)) {
+        // "Giải thích:" thường đứng riêng 1 dòng, nhưng đôi khi bị dính liền vào
+        // cuối dòng đáp án cuối cùng (vd "5. B - Giải thích:") — tìm mốc này ở
+        // bất kỳ đâu trong dòng thay vì bắt buộc cả dòng chỉ có đúng mốc đó.
+        const giaiThichIdx = line.search(/-?\s*giải\s*thích\s*:?\s*$/i);
+        if (giaiThichIdx !== -1) {
+          const before = line.slice(0, giaiThichIdx).trim();
+          if (before) answerBlobLines.push(before);
           idx++;
           break;
         }
@@ -226,7 +244,7 @@ function parsePdfText(text) {
       discardedCaseCount.n++;
       // Đồng bộ lại: tìm dòng "Câu hỏi:" tiếp theo để bỏ qua case lỗi và tiếp tục.
       let j = result.nextIdx;
-      while (j < lines.length && !/^câu\s*hỏi\s*:?\s*$/i.test(lines[j])) j++;
+      while (j < lines.length && lines[j].search(/câu\s*hỏi\s*:?\s*$/i) === -1) j++;
       if (j >= lines.length) break;
       // Lùi lại để tìm điểm bắt đầu đề bài của case kế tiếp: quét ngược tối đa
       // vài chục dòng không thực tế ở đây — đơn giản là bắt đầu case mới ngay

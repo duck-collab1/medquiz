@@ -9,19 +9,10 @@ import {
 } from "../services/questionsService";
 import { EntityGrid } from "../components/EntityGrid";
 import { LessonView } from "../components/LessonView";
+import { SubjectIcon } from "../components/SubjectIcon";
+import { GROUP_ICONS } from "../config/groupIcons";
 import { slugify } from "../utils/slug";
 import type { Question, SubjectId } from "../types";
-
-const GROUP_ICONS: Record<string, string> = {
-  "Nội tiết": "🦋",
-  "Hô hấp": "🫁",
-  "Tiêu hoá": "🍽️",
-  "Tim mạch": "❤️",
-  "Thận tiết niệu": "🫘",
-  "Cơ xương khớp": "🦴",
-  "Hồi sức cấp cứu": "🚑",
-  "Huyết học": "🩸",
-};
 
 export function SubjectPage() {
   const { subjectId } = useParams<{ subjectId: string }>();
@@ -65,7 +56,7 @@ export function SubjectPage() {
     const items = groups.map((g) => ({
       slug: slugify(g),
       title: g,
-      icon: GROUP_ICONS[g] || "📚",
+      icon: GROUP_ICONS[g],
     }));
 
     return (
@@ -75,7 +66,7 @@ export function SubjectPage() {
             ← Dashboard
           </Link>
           <h1>
-            {subject.icon} {subject.name}
+            <SubjectIcon name={subject.icon} className="heading-icon" size={30} /> {subject.name}
           </h1>
         </header>
         <EntityGrid items={items} basePath={`/subjects/${subject.id}`} />
@@ -85,7 +76,8 @@ export function SubjectPage() {
 
   return (
     <LessonView
-      title={`${subject.icon} ${subject.name}`}
+      title={subject.name}
+      icon={subject.icon}
       backTo="/"
       backLabel="← Dashboard"
       notes={notes}

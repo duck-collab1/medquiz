@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { NoteViewer } from "./NoteViewer";
 import { QuizRunner } from "./QuizRunner";
+import { SubjectIcon } from "./SubjectIcon";
+import type { IconName } from "../config/icons";
 import type { NoteFile } from "../services/notesService";
 import type { SubjectId } from "../types";
 
@@ -9,6 +11,7 @@ type Tab = "notes" | "quiz" | "case";
 
 interface LessonViewProps {
   title: string;
+  icon?: IconName;
   backTo: string;
   backLabel: string;
   notes: NoteFile[];
@@ -19,6 +22,7 @@ interface LessonViewProps {
 
 export function LessonView({
   title,
+  icon,
   backTo,
   backLabel,
   notes,
@@ -34,7 +38,9 @@ export function LessonView({
         <Link to={backTo} className="back-link">
           {backLabel}
         </Link>
-        <h1>{title}</h1>
+        <h1>
+          {icon && <SubjectIcon name={icon} className="heading-icon" size={30} />} {title}
+        </h1>
       </header>
 
       <div className="tab-bar">

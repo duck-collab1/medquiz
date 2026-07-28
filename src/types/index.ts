@@ -1,10 +1,12 @@
+import type { IconName } from "../config/icons";
+
 export type SubjectId = "noi" | "ngoai" | "san" | "nhi";
 
 export interface Subject {
   id: SubjectId;
   name: string;
   description: string;
-  icon: string;
+  icon: IconName;
 }
 
 export type AnswerKey = "a" | "b" | "c" | "d" | "e";

@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import { SubjectIcon } from "./SubjectIcon";
+import type { IconName } from "../config/icons";
 
 export interface EntityGridItem {
   slug: string;
   title: string;
   subtitle?: string;
-  icon?: string;
+  icon?: IconName;
 }
 
 interface EntityGridProps {
@@ -17,7 +19,9 @@ export function EntityGrid({ items, basePath }: EntityGridProps) {
     <div className="subject-grid">
       {items.map((item) => (
         <Link key={item.slug} to={`${basePath}/${item.slug}`} className="subject-card">
-          <span className="subject-card-icon">{item.icon || "📚"}</span>
+          <span className="subject-card-icon">
+            <SubjectIcon name={item.icon ?? "book"} />
+          </span>
           <span className="subject-card-name">{item.title}</span>
           {item.subtitle && <span className="subject-card-desc">{item.subtitle}</span>}
         </Link>

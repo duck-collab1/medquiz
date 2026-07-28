@@ -7,19 +7,10 @@ import {
   getGroups,
 } from "../services/questionsService";
 import { EntityGrid } from "../components/EntityGrid";
+import { SubjectIcon } from "../components/SubjectIcon";
+import { GROUP_ICONS } from "../config/groupIcons";
 import { slugify } from "../utils/slug";
 import type { Question, SubjectId } from "../types";
-
-const GROUP_ICONS: Record<string, string> = {
-  "Nội tiết": "🦋",
-  "Hô hấp": "🫁",
-  "Tiêu hoá": "🍽️",
-  "Tim mạch": "❤️",
-  "Thận tiết niệu": "🫘",
-  "Cơ xương khớp": "🦴",
-  "Hồi sức cấp cứu": "🚑",
-  "Huyết học": "🩸",
-};
 
 export function GroupPage() {
   const { subjectId, groupSlug } = useParams<{
@@ -67,9 +58,9 @@ export function GroupPage() {
       slug: "tat-ca",
       title: "Trắc nghiệm toàn chương",
       subtitle: `Tất cả ${chapters.length} bài`,
-      icon: "🎯",
+      icon: "target" as const,
     },
-    ...chapters.map((c) => ({ slug: slugify(c), title: c, icon: "📖" })),
+    ...chapters.map((c) => ({ slug: slugify(c), title: c, icon: "book-open" as const })),
   ];
 
   return (
@@ -79,7 +70,8 @@ export function GroupPage() {
           ← {subject.name}
         </Link>
         <h1>
-          {GROUP_ICONS[group] || "📚"} {group}
+          <SubjectIcon name={GROUP_ICONS[group] ?? "book"} className="heading-icon" size={30} />{" "}
+          {group}
         </h1>
       </header>
       <EntityGrid items={items} basePath={`/subjects/${subject.id}/${groupSlug}`} />

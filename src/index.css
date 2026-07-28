@@ -86,6 +86,13 @@ h1 {
   font-size: 30px;
 }
 
+.heading-icon {
+  display: inline-block;
+  vertical-align: -6px;
+  color: var(--accent);
+  margin-right: 4px;
+}
+
 h2 {
   font-size: 22px;
 }
@@ -343,7 +350,6 @@ a {
 }
 
 .subject-card-icon {
-  font-size: 30px;
   width: 52px;
   height: 52px;
   display: flex;
@@ -351,10 +357,12 @@ a {
   justify-content: center;
   border-radius: 50%;
   background: var(--accent-bg);
+  color: var(--accent);
   margin-bottom: 4px;
   animation: icon-float 3.6s ease-in-out infinite;
   transition:
     background 0.2s ease,
+    color 0.2s ease,
     transform 0.2s ease;
 }
 
@@ -371,6 +379,7 @@ a {
 
 .subject-card:hover .subject-card-icon {
   background: var(--accent);
+  color: #fff8f1;
   animation-play-state: paused;
   transform: scale(1.15) rotate(-6deg);
 }

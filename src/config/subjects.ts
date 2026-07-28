@@ -5,25 +5,25 @@ export const subjects: Subject[] = [
     id: "noi",
     name: "Nội",
     description: "Nội khoa",
-    icon: "🩺",
+    icon: "stethoscope",
   },
   {
     id: "ngoai",
     name: "Ngoại",
     description: "Ngoại khoa",
-    icon: "🔪",
+    icon: "scissors",
   },
   {
     id: "san",
     name: "Sản",
     description: "Sản phụ khoa",
-    icon: "🤰",
+    icon: "venus",
   },
   {
     id: "nhi",
     name: "Nhi",
     description: "Nhi khoa",
-    icon: "🧒",
+    icon: "baby",
   },
 ];
 
