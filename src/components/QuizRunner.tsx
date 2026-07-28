@@ -13,11 +13,13 @@ interface QuizRunnerProps {
   group?: string;
   /** Lọc theo bài (chapter). Bỏ trống = lấy tất cả bài trong group đã chọn (hoặc cả môn). */
   chapter?: string;
+  /** true = chỉ lấy câu hỏi ca lâm sàng (có case_stem); false/bỏ trống = chỉ lấy câu hỏi thường. */
+  onlyCase?: boolean;
 }
 
 const ANSWER_KEYS: AnswerKey[] = ["a", "b", "c", "d", "e"];
 
-export function QuizRunner({ subject, group, chapter }: QuizRunnerProps) {
+export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProps) {
   const { askAboutQuestion } = useChatContext();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -39,7 +41,8 @@ export function QuizRunner({ subject, group, chapter }: QuizRunnerProps) {
         const scoped = questions.filter(
           (q) =>
             (!group || (q.group || "Khác") === group) &&
-            (!chapter || q.chapter === chapter),
+            (!chapter || q.chapter === chapter) &&
+            (onlyCase ? Boolean(q.caseStem) : !q.caseStem),
         );
         const { ready, needsReview } = splitByReviewStatus(scoped);
         setReady(ready);
@@ -57,7 +60,7 @@ export function QuizRunner({ subject, group, chapter }: QuizRunnerProps) {
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [subject, group, chapter]);
+  }, [subject, group, chapter, onlyCase]);
 
   function resetSession() {
     setCurrentIndex(0);

@@ -476,6 +476,101 @@ a {
   margin-top: 0;
 }
 
+.note-content h1,
+.note-content h2,
+.note-content h3,
+.note-content h4 {
+  margin: 28px 0 12px;
+}
+
+.note-content h4 {
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+.note-content p {
+  margin: 0 0 14px;
+}
+
+.note-content ul,
+.note-content ol {
+  margin: 0 0 14px;
+  padding-left: 24px;
+}
+
+.note-content li {
+  margin-bottom: 6px;
+}
+
+.note-content li > ul,
+.note-content li > ol {
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
+.note-content strong {
+  color: var(--text-h);
+}
+
+.note-content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 24px 0;
+}
+
+.note-content blockquote {
+  margin: 0 0 14px;
+  padding: 4px 16px;
+  border-left: 3px solid var(--gold);
+  background: var(--bg-alt);
+  color: var(--text-muted);
+}
+
+.note-content code {
+  font-size: 0.9em;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--bg-alt);
+}
+
+.note-content pre {
+  overflow-x: auto;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-alt);
+  margin: 0 0 14px;
+}
+
+.note-content pre code {
+  padding: 0;
+  background: none;
+}
+
+.note-content table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 18px;
+  font-size: 14px;
+}
+
+.note-content th,
+.note-content td {
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.note-content th {
+  background: var(--bg-alt);
+  color: var(--text-h);
+  font-weight: 600;
+}
+
 @media (max-width: 640px) {
   .note-viewer {
     grid-template-columns: 1fr;

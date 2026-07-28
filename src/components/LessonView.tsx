@@ -5,7 +5,7 @@ import { QuizRunner } from "./QuizRunner";
 import type { NoteFile } from "../services/notesService";
 import type { SubjectId } from "../types";
 
-type Tab = "notes" | "quiz";
+type Tab = "notes" | "quiz" | "case";
 
 interface LessonViewProps {
   title: string;
@@ -50,13 +50,21 @@ export function LessonView({
         >
           Trắc nghiệm
         </button>
+        <button
+          className={tab === "case" ? "tab active" : "tab"}
+          onClick={() => setTab("case")}
+        >
+          Case lâm sàng
+        </button>
       </div>
 
       <div className="tab-content">
-        {tab === "notes" ? (
-          <NoteViewer notes={notes} />
-        ) : (
+        {tab === "notes" && <NoteViewer notes={notes} />}
+        {tab === "quiz" && (
           <QuizRunner subject={subject} group={group} chapter={chapter} />
+        )}
+        {tab === "case" && (
+          <QuizRunner subject={subject} group={group} chapter={chapter} onlyCase />
         )}
       </div>
     </div>

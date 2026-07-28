@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import type { NoteFile } from "../services/notesService";
 
 export function NoteViewer({ notes }: { notes: NoteFile[] }) {
@@ -25,7 +26,7 @@ export function NoteViewer({ notes }: { notes: NoteFile[] }) {
         ))}
       </nav>
       <article className="note-content">
-        <ReactMarkdown>{active.content}</ReactMarkdown>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{active.content}</ReactMarkdown>
       </article>
     </div>
   );
