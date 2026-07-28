@@ -57,13 +57,14 @@ Script sẽ upsert từng câu theo `id` — chạy lại nhiều lần không t
 ### Định dạng file CSV
 
 ```
-id,subject,chapter,group,question,option_a,option_b,option_c,option_d,option_e,correct_answer,explanation
+id,subject,chapter,group,case_stem,question,option_a,option_b,option_c,option_d,option_e,correct_answer,explanation
 ```
 
 - `id`: mã duy nhất, tự đặt (vd `noi-copd-006`). Dùng để cập nhật câu hỏi khi sửa lại và import lại.
 - `subject`: `noi` / `ngoai` / `san` / `nhi`.
 - `group`: tên **chương** (vd "Nội tiết", "Hô hấp"). Nếu môn có ít nhất 1 câu được gán `group`, app tự hiện màn chọn chương → chọn bài thay vì vào thẳng 1 quiz gộp. Để trống nếu môn/bộ câu hỏi chưa cần phân chương (app sẽ dùng giao diện phẳng như cũ).
 - `chapter`: tên **bài** trong chương đó (vd "Basedow", "Đái tháo đường") — hiển thị dạng badge trong lúc làm bài, đồng thời là tên thẻ để chọn bài khi đã có `group`.
+- `case_stem`: tuỳ chọn — đề bài lâm sàng (bệnh án) dùng chung cho một cụm câu hỏi ca bệnh. Nhiều dòng có thể dùng chung 1 `case_stem` giống hệt nhau; app hiển thị nó tách riêng phía trên câu hỏi, hỗ trợ Markdown (in đậm, bảng). Để trống với câu hỏi thường.
 - `option_e`: tuỳ chọn, để trống nếu câu chỉ có 4 đáp án A-D.
 - `correct_answer`: một trong `a/b/c/d/e`. **Để trống nếu chưa biết đáp án** — câu đó sẽ được đánh dấu "cần bổ sung đáp án" và tự động bị loại khỏi phần luyện tập trắc nghiệm cho đến khi được điền.
 - Nếu nội dung có dấu phẩy, bọc trong dấu ngoặc kép `"..."`.
@@ -77,9 +78,19 @@ id,subject,chapter,group,question,option_a,option_b,option_c,option_d,option_e,c
 
 Nếu có câu để trống `correct_answer`, gửi kèm sách/tài liệu tham khảo cho Claude — Claude sẽ tra cứu và điền trực tiếp vào cột `correct_answer` (và `explanation` nếu cần) trong file CSV, sau đó chạy lại script import.
 
+### Nhập hàng loạt từ file JSON (note/mcqSingle/mcqCase theo bài)
+
+Nếu có file JSON theo định dạng `{chapterId, chapterName, chapterOrder, lessons: [{id, title, order, note?, mcqSingle?, mcqCase?}]}` (ví dụ do AI ngoài soạn sẵn theo từng bài), dùng:
+
+```bash
+node scripts/convert-lessons.mjs <file1.json> <file2.json> ...
+```
+
+Script tự gộp các file cùng chương/bài, ghi ra CSV trong `data/questions/` và `.md` trong `data/notes/`, đồng thời **tự phát hiện bài đã có sẵn dữ liệu** để không ghi đè (tạo file/id đánh số `-2` thay vì trùng). Kiểm tra lại output rồi chạy `npm run import:questions` như bình thường.
+
 ## 4. Ghi chú (Notes)
 
-Ghi chú lưu dạng Markdown trong `data/notes/<mon>/*.md` (vd `data/notes/noi/tim-mach.md`). Chỉ cần thêm file `.md` mới trong đúng thư mục môn — ghi chú sẽ tự xuất hiện trong app, không cần chạy script import. Dòng đầu tiên nên là `# Tiêu đề` để hiển thị đẹp trong danh sách.
+Ghi chú cấp môn (môn chưa phân chương) lưu trong `data/notes/<mon>/*.md` (vd `data/notes/noi/tim-mach.md`). Ghi chú theo bài (môn đã phân chương) lưu trong `data/notes/<mon>/<chương-slug>/<bài-slug>.md` (vd `data/notes/noi/tieu-hoa/ap-xe-gan.md`) — slug phải khớp với `slugify()` của tên chương/bài trong CSV câu hỏi để app ghép đúng ghi chú vào đúng bài. Chỉ cần thêm file `.md` đúng vị trí — ghi chú tự xuất hiện trong app, không cần chạy script import. Dòng đầu tiên nên là `# Tiêu đề` để hiển thị đẹp trong danh sách.
 
 ## 5. Chạy app
 

@@ -521,6 +521,41 @@ a {
   line-height: 1.4;
 }
 
+/* Đề bài lâm sàng (case stem) dùng chung cho một cụm câu hỏi */
+.quiz-case-stem {
+  padding: 16px 20px;
+  margin-bottom: 18px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: 15px;
+  line-height: 165%;
+  color: var(--text);
+}
+
+.quiz-case-stem :first-child {
+  margin-top: 0;
+}
+
+.quiz-case-stem :last-child {
+  margin-bottom: 0;
+}
+
+.quiz-case-stem p {
+  margin: 0 0 10px;
+}
+
+.quiz-case-stem strong {
+  color: var(--text-h);
+}
+
+.quiz-case-stem-compact {
+  font-size: 14px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+}
+
 .quiz-options {
   display: flex;
   flex-direction: column;

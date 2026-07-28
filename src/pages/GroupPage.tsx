@@ -13,6 +13,7 @@ import type { Question, SubjectId } from "../types";
 const GROUP_ICONS: Record<string, string> = {
   "Nội tiết": "🦋",
   "Hô hấp": "🫁",
+  "Tiêu hoá": "🍽️",
 };
 
 export function GroupPage() {

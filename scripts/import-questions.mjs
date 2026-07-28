@@ -34,6 +34,7 @@ function toQuestionDoc(row) {
     subject: row.subject,
     chapter: row.chapter || "",
     group: row.group || "",
+    ...(row.case_stem ? { caseStem: row.case_stem } : {}),
     question: row.question,
     options: {
       a: row.option_a || "",

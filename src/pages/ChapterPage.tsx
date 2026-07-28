@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { getSubject } from "../config/subjects";
 import { fetchQuestions, getGroups, getChaptersInGroup } from "../services/questionsService";
-import { getNotesForSubject } from "../services/notesService";
+import { getNotesForChapter } from "../services/notesService";
 import { LessonView } from "../components/LessonView";
 import { slugify } from "../utils/slug";
 import type { Question, SubjectId } from "../types";
@@ -54,7 +54,7 @@ export function ChapterPage() {
 
   if (!isAll && !chapter) return <Navigate to={groupPath} replace />;
 
-  const notes = getNotesForSubject(subject.id as SubjectId);
+  const notes = getNotesForChapter(subject.id as SubjectId, group, chapter);
 
   return (
     <LessonView

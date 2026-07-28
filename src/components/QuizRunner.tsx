@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { fetchQuestions, splitByReviewStatus } from "../services/questionsService";
 import type { AnswerKey, Question, SubjectId } from "../types";
 import { QuizResult } from "./QuizResult";
@@ -115,6 +117,11 @@ export function QuizRunner({ subject, group, chapter }: QuizRunnerProps) {
           ` · ${needsReviewCount} câu chưa có đáp án (đã ẩn)`}
       </p>
       {current.chapter && <p className="quiz-chapter">{current.chapter}</p>}
+      {current.caseStem && (
+        <div className="quiz-case-stem">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{current.caseStem}</ReactMarkdown>
+        </div>
+      )}
       <p className="quiz-question">{current.question}</p>
 
       <div className="quiz-options">

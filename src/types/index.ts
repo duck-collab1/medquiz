@@ -14,6 +14,8 @@ export interface Question {
   subject: SubjectId;
   chapter: string;
   group: string;
+  /** Đề bài lâm sàng dùng chung cho một cụm câu hỏi ca bệnh (nếu có). */
+  caseStem?: string;
   question: string;
   options: Record<AnswerKey, string>;
   correctAnswer: AnswerKey | "";

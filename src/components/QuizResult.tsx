@@ -1,3 +1,5 @@
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import type { AnswerKey, Question } from "../types";
 import { useChatContext } from "../contexts/ChatContext";
 import { buildExplainPrompt } from "../utils/quizPrompt";
@@ -30,6 +32,11 @@ export function QuizResult({ questions, answers, onRestart }: QuizResultProps) {
           <h3>Xem lại các câu sai</h3>
           {wrong.map((q) => (
             <div key={q.id} className="quiz-review-item">
+              {q.caseStem && (
+                <div className="quiz-case-stem quiz-case-stem-compact">
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{q.caseStem}</ReactMarkdown>
+                </div>
+              )}
               <p className="quiz-review-question">{q.question}</p>
               <p className="quiz-review-answer wrong">
                 Bạn chọn: {answers[q.id].toUpperCase()} —{" "}
