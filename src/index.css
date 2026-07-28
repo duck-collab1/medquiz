@@ -476,18 +476,40 @@ a {
   margin-top: 0;
 }
 
-.note-content h1,
-.note-content h2,
-.note-content h3,
-.note-content h4 {
-  margin: 28px 0 12px;
+.note-content h1 {
+  font-size: 25px;
+  color: var(--text-h);
+  margin: 0 0 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--border);
+}
+
+.note-content h2 {
+  font-size: 19px;
+  color: var(--accent);
+  margin: 36px 0 14px;
+  padding-left: 12px;
+  border-left: 4px solid var(--accent);
+}
+
+.note-content h2:first-child {
+  margin-top: 0;
+}
+
+.note-content h3 {
+  font-size: 16px;
+  color: var(--gold);
+  margin: 26px 0 10px;
 }
 
 .note-content h4 {
   font-family: var(--sans);
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--text-h);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 20px 0 8px;
 }
 
 .note-content p {
@@ -510,8 +532,16 @@ a {
   margin-bottom: 0;
 }
 
+/* Chữ in đậm = điểm cần nhớ — tô màu đất nung để nổi bật giữa phần thân bài,
+   kể cả khi được dùng như tiêu đề phụ trong 1 dòng list (vd "**1. Dịch tễ:**"). */
 .note-content strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.note-content em {
   color: var(--text-h);
+  font-style: italic;
 }
 
 .note-content hr {
