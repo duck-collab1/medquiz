@@ -58,19 +58,27 @@ function jsonResponse(body: unknown, status: number, headers: HeadersInit): Resp
   });
 }
 
-function isValidMessages(value: unknown): value is ChatMessageInput[] {
-  if (!Array.isArray(value) || value.length === 0 || value.length > MAX_MESSAGES) {
-    return false;
-  }
-  return value.every(
-    (m) =>
-      m &&
-      typeof m === "object" &&
-      (m.role === "user" || m.role === "assistant") &&
-      typeof m.content === "string" &&
-      m.content.trim().length > 0 &&
-      m.content.length <= MAX_MESSAGE_LENGTH,
-  );
+// Lọc bỏ các phần tử hỏng/rỗng thay vì từ chối cả mảng — 1 tin nhắn cũ lỗi định dạng
+// (ví dụ sót lại từ dữ liệu lịch sử) không nên làm hỏng cả request hiện tại.
+function sanitizeMessages(value: unknown): ChatMessageInput[] | null {
+  if (!Array.isArray(value)) return null;
+
+  const cleaned = value
+    .filter(
+      (m): m is ChatMessageInput =>
+        m &&
+        typeof m === "object" &&
+        (m.role === "user" || m.role === "assistant") &&
+        typeof m.content === "string" &&
+        m.content.trim().length > 0,
+    )
+    .map((m) => ({
+      role: m.role,
+      content: m.content.length > MAX_MESSAGE_LENGTH ? m.content.slice(0, MAX_MESSAGE_LENGTH) : m.content,
+    }))
+    .slice(-MAX_MESSAGES);
+
+  return cleaned.length > 0 ? cleaned : null;
 }
 
 export default {
@@ -107,8 +115,9 @@ export default {
       return jsonResponse({ error: "Body request không phải JSON hợp lệ." }, 400, headers);
     }
 
-    const messages = (requestBody as { messages?: unknown } | null)?.messages;
-    if (!isValidMessages(messages)) {
+    const rawMessages = (requestBody as { messages?: unknown } | null)?.messages;
+    const messages = sanitizeMessages(rawMessages);
+    if (!messages) {
       return jsonResponse(
         { error: "Trường 'messages' không hợp lệ (rỗng, quá dài, hoặc sai định dạng)." },
         400,

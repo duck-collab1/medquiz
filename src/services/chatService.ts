@@ -12,6 +12,7 @@ import { auth, db } from "../firebase";
 import type { ChatMessage, ChatRole } from "../types";
 
 const HISTORY_LIMIT = 10;
+const MAX_MESSAGE_LENGTH = 4000;
 
 export async function getChatHistory(uid: string): Promise<ChatMessage[]> {
   const q = query(
@@ -58,7 +59,23 @@ export async function askAi(
   }
 
   const idToken = await user.getIdToken();
-  const recent = messages.slice(-HISTORY_LIMIT);
+  // Lọc bỏ tin nhắn rỗng/sai định dạng (có thể sót lại từ dữ liệu lịch sử cũ) và cắt bớt
+  // nội dung quá dài — tránh để 1 bản ghi hỏng làm cả request bị worker từ chối.
+  const recent = messages
+    .filter(
+      (m) =>
+        (m.role === "user" || m.role === "assistant") &&
+        typeof m.content === "string" &&
+        m.content.trim().length > 0,
+    )
+    .slice(-HISTORY_LIMIT)
+    .map((m) => ({
+      role: m.role,
+      content:
+        m.content.length > MAX_MESSAGE_LENGTH
+          ? m.content.slice(0, MAX_MESSAGE_LENGTH)
+          : m.content,
+    }));
 
   const res = await fetch(workerUrl, {
     method: "POST",
