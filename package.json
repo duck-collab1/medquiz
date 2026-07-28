@@ -28,6 +28,7 @@
     "dotenv": "^17.4.2",
     "firebase-admin": "^14.2.0",
     "oxlint": "^1.71.0",
+    "pdf-parse": "^2.4.5",
     "typescript": "~6.0.2",
     "vite": "^8.1.1"
   }

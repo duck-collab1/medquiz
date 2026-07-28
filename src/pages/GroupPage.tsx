@@ -14,6 +14,11 @@ const GROUP_ICONS: Record<string, string> = {
   "Nội tiết": "🦋",
   "Hô hấp": "🫁",
   "Tiêu hoá": "🍽️",
+  "Tim mạch": "❤️",
+  "Thận tiết niệu": "🫘",
+  "Cơ xương khớp": "🦴",
+  "Hồi sức cấp cứu": "🚑",
+  "Huyết học": "🩸",
 };
 
 export function GroupPage() {

@@ -88,6 +88,28 @@ node scripts/convert-lessons.mjs <file1.json> <file2.json> ...
 
 Script tự gộp các file cùng chương/bài, ghi ra CSV trong `data/questions/` và `.md` trong `data/notes/`, đồng thời **tự phát hiện bài đã có sẵn dữ liệu** để không ghi đè (tạo file/id đánh số `-2` thay vì trùng). Kiểm tra lại output rồi chạy `npm run import:questions` như bình thường.
 
+### Nhập hàng loạt từ file PDF trắc nghiệm (định dạng "Câu hỏi | Đáp án & Giải thích")
+
+Nếu có PDF trắc nghiệm theo mẫu 2 cột (dòng đầu file là nhãn bài kiểu `1a. Suy tim.`, mỗi câu có `1. <câu hỏi>`, `A./B./C./D.`, `Đáp án: X`, rồi giải thích), dùng:
+
+```bash
+node scripts/convert-pdf-mcq.mjs <chapterId> "<Tên chương>" "<thư mục chứa PDF>"
+```
+
+Ví dụ: `node scripts/convert-pdf-mcq.mjs tim-mach "Tim mạch" "E:/tài liệu học tập/mcq/tim mạch"`.
+
+Script đọc từng PDF (giữ nguyên dấu tiếng Việt), tách câu hỏi theo tên bài lấy trực tiếp từ dòng đầu file, và cũng tự phát hiện bài đã tồn tại để không ghi đè như script JSON ở trên. Một số PDF xuất từ OneNote bị lỗi thứ tự dòng ngay tại chỗ ngắt trang (cột "Đáp án & Giải thích" bị chèn trước/giữa cột "Câu hỏi" của trang sau) — script phát hiện và **tự bỏ qua** những câu này (in ra số câu bị bỏ) thay vì đoán sai nội dung; các câu này cần được bổ sung thủ công từ file PDF gốc nếu muốn đầy đủ 100%.
+
+### Nhập hàng loạt từ file PDF "Case lâm sàng" (định dạng "Tình huống & Câu hỏi | Đáp án & Giải thích")
+
+Nếu PDF theo mẫu 1 đề bài (bệnh án) dùng chung cho nhiều câu hỏi con — dòng đầu file là nhãn bài, sau đó là đề bài, `Câu hỏi:`, các câu `1. ... A./B./C./D.`, rồi 1 dòng `Đáp án: 1. A; 2. B; ...` gộp chung và `Giải thích:` cho từng câu — dùng:
+
+```bash
+node scripts/convert-pdf-case.mjs <chapterId> "<Tên chương>" "<thư mục chứa PDF case>"
+```
+
+Mỗi câu hỏi con được lưu thành 1 dòng CSV riêng, dùng chung giá trị cột `case_stem` (đề bài) — khớp với cách app hiển thị case lâm sàng ở tab riêng. Cũng tự phát hiện bài đã tồn tại và tự bỏ qua các case/câu bị lỗi thứ tự do ngắt trang PDF (bao gồm cả trường hợp đề bài lẫn lộn với phần giải thích) thay vì lưu nội dung sai.
+
 ## 4. Ghi chú (Notes)
 
 Ghi chú cấp môn (môn chưa phân chương) lưu trong `data/notes/<mon>/*.md` (vd `data/notes/noi/tim-mach.md`). Ghi chú theo bài (môn đã phân chương) lưu trong `data/notes/<mon>/<chương-slug>/<bài-slug>.md` (vd `data/notes/noi/tieu-hoa/ap-xe-gan.md`) — slug phải khớp với `slugify()` của tên chương/bài trong CSV câu hỏi để app ghép đúng ghi chú vào đúng bài. Chỉ cần thêm file `.md` đúng vị trí — ghi chú tự xuất hiện trong app, không cần chạy script import. Dòng đầu tiên nên là `# Tiêu đề` để hiển thị đẹp trong danh sách.
