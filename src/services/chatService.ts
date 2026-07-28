@@ -45,6 +45,7 @@ export async function saveChatMessage(
 
 export async function askAi(
   messages: { role: ChatRole; content: string }[],
+  onDelta?: (chunk: string, fullTextSoFar: string) => void,
 ): Promise<string> {
   const user = auth!.currentUser;
   if (!user) throw new Error("Chưa đăng nhập.");
@@ -73,6 +74,28 @@ export async function askAi(
     throw new Error(errorBody?.error || "Không nhận được phản hồi từ AI.");
   }
 
-  const data = (await res.json()) as { reply: string };
-  return data.reply;
+  if (!res.body) {
+    const data = (await res.json()) as { reply: string };
+    onDelta?.(data.reply, data.reply);
+    return data.reply;
+  }
+
+  const reader = res.body.getReader();
+  const decoder = new TextDecoder();
+  let full = "";
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    const chunk = decoder.decode(value, { stream: true });
+    if (chunk) {
+      full += chunk;
+      onDelta?.(chunk, full);
+    }
+  }
+
+  if (!full.trim()) {
+    throw new Error("Không nhận được phản hồi từ AI.");
+  }
+
+  return full;
 }

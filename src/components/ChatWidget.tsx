@@ -1,4 +1,6 @@
 import { useEffect, useRef } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { useAuth } from "../contexts/AuthContext";
 import { useChatContext } from "../contexts/ChatContext";
 
@@ -24,6 +26,9 @@ export function ChatWidget() {
 
   if (!user) return null;
 
+  const lastMessage = messages[messages.length - 1];
+  const showTypingPlaceholder = sending && lastMessage?.role !== "assistant";
+
   return (
     <div className="chat-widget">
       {open && (
@@ -42,21 +47,24 @@ export function ChatWidget() {
                 Hỏi mình bất cứ điều gì về Nội, Ngoại, Sản, Nhi để ôn thi nhé.
               </p>
             )}
-            {messages.map((m) => (
-              <div
-                key={m.id}
-                className={
-                  m.role === "user"
-                    ? "chat-bubble chat-bubble-user"
-                    : "chat-bubble chat-bubble-ai"
-                }
-              >
-                {m.content}
-              </div>
-            ))}
-            {sending && (
+            {messages.map((m) =>
+              m.role === "user" ? (
+                <div key={m.id} className="chat-bubble chat-bubble-user">
+                  {m.content}
+                </div>
+              ) : (
+                <div key={m.id} className="chat-bubble chat-bubble-ai chat-markdown">
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {m.content}
+                  </ReactMarkdown>
+                </div>
+              ),
+            )}
+            {showTypingPlaceholder && (
               <div className="chat-bubble chat-bubble-ai chat-typing">
-                Đang trả lời...
+                <span className="chat-typing-dot" />
+                <span className="chat-typing-dot" />
+                <span className="chat-typing-dot" />
               </div>
             )}
           </div>

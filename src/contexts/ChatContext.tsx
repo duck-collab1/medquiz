@@ -67,21 +67,48 @@ export function ChatProvider({ children }: { children: ReactNode }) {
       setMessages(nextMessages);
       setSending(true);
 
+      const aiMessageId = `local-${Date.now()}-ai`;
+
       (async () => {
         try {
           await saveChatMessage(user.uid, "user", trimmed);
+
+          let started = false;
           const reply = await askAi(
             nextMessages.map((m) => ({ role: m.role, content: m.content })),
-          );
-          setMessages((prev) => [
-            ...prev,
-            {
-              id: `local-${Date.now()}-ai`,
-              role: "assistant",
-              content: reply,
-              createdAt: Date.now(),
+            (_chunk, fullTextSoFar) => {
+              if (!started) {
+                started = true;
+                setMessages((prev) => [
+                  ...prev,
+                  {
+                    id: aiMessageId,
+                    role: "assistant",
+                    content: fullTextSoFar,
+                    createdAt: Date.now(),
+                  },
+                ]);
+              } else {
+                setMessages((prev) =>
+                  prev.map((m) =>
+                    m.id === aiMessageId ? { ...m, content: fullTextSoFar } : m,
+                  ),
+                );
+              }
             },
-          ]);
+          );
+
+          if (!started) {
+            setMessages((prev) => [
+              ...prev,
+              {
+                id: aiMessageId,
+                role: "assistant",
+                content: reply,
+                createdAt: Date.now(),
+              },
+            ]);
+          }
           await saveChatMessage(user.uid, "assistant", reply);
         } catch (err) {
           console.error(err);

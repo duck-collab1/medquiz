@@ -8,7 +8,9 @@ export interface Env extends EmulatorEnv {
 }
 
 const SYSTEM_PROMPT = `Bạn là trợ lý AI hỗ trợ ôn thi bác sĩ nội trú tại Việt Nam, tập trung vào các môn Nội, Ngoại, Sản, Nhi.
-Trả lời bằng tiếng Việt, ngắn gọn, chính xác, có cấu trúc rõ ràng (dùng gạch đầu dòng khi phù hợp).
+Trả lời bằng tiếng Việt, ngắn gọn, chính xác, có cấu trúc rõ ràng bằng Markdown chuẩn:
+tiêu đề dùng "#"/"##", liệt kê dùng "-", chữ quan trọng dùng **in đậm**.
+Khi cần so sánh nhiều mục (ví dụ phân biệt các bệnh, thuốc, tiêu chuẩn chẩn đoán), hãy trình bày bằng bảng Markdown (dùng | để phân cột), không liệt kê rời rạc bằng dấu gạch ngang.
 Khi không chắc chắn về một thông tin y khoa, hãy nói rõ điều đó và khuyên người dùng đối chiếu sách giáo khoa/phác đồ chính thống thay vì suy đoán.
 Đây là công cụ hỗ trợ học tập, không thay thế tư vấn hoặc quyết định y khoa chuyên môn.`;
 
@@ -98,14 +100,14 @@ export default {
       return jsonResponse({ error: "Token xác thực không hợp lệ." }, 401, headers);
     }
 
-    let body: unknown;
+    let requestBody: unknown;
     try {
-      body = await request.json();
+      requestBody = await request.json();
     } catch {
       return jsonResponse({ error: "Body request không phải JSON hợp lệ." }, 400, headers);
     }
 
-    const messages = (body as { messages?: unknown } | null)?.messages;
+    const messages = (requestBody as { messages?: unknown } | null)?.messages;
     if (!isValidMessages(messages)) {
       return jsonResponse(
         { error: "Trường 'messages' không hợp lệ (rỗng, quá dài, hoặc sai định dạng)." },
@@ -114,24 +116,40 @@ export default {
       );
     }
 
+    const anthropic = new Anthropic({ apiKey: env.ANTHROPIC_API_KEY });
+    let stream: ReturnType<typeof anthropic.messages.stream>;
     try {
-      const anthropic = new Anthropic({ apiKey: env.ANTHROPIC_API_KEY });
-      const response = await anthropic.messages.create({
+      stream = anthropic.messages.stream({
         model: "claude-sonnet-5",
         max_tokens: 2048,
         system: SYSTEM_PROMPT,
         messages: messages.map((m) => ({ role: m.role, content: m.content })),
       });
-
-      const reply = response.content
-        .filter((block): block is Anthropic.TextBlock => block.type === "text")
-        .map((block) => block.text)
-        .join("\n");
-
-      return jsonResponse({ reply }, 200, headers);
     } catch (err) {
       console.error("Anthropic API error:", err);
       return jsonResponse({ error: "Không gọi được AI, thử lại sau." }, 502, headers);
     }
+
+    const encoder = new TextEncoder();
+    const responseBody = new ReadableStream({
+      async start(controller) {
+        try {
+          for await (const event of stream) {
+            if (event.type === "content_block_delta" && event.delta.type === "text_delta") {
+              controller.enqueue(encoder.encode(event.delta.text));
+            }
+          }
+        } catch (err) {
+          console.error("Anthropic stream error:", err);
+        } finally {
+          controller.close();
+        }
+      },
+    });
+
+    return new Response(responseBody, {
+      status: 200,
+      headers: { ...headers, "Content-Type": "text/plain; charset=utf-8" },
+    });
   },
 };
