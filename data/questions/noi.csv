@@ -1,0 +1,6 @@
+id,subject,chapter,question,option_a,option_b,option_c,option_d,correct_answer,explanation
+noi-001,noi,Tim mạch,"Triệu chứng điển hình của suy tim trái là gì?","Phù chi dưới","Khó thở khi gắng sức","Gan to","Tĩnh mạch cổ nổi",b,"Suy tim trái gây ứ máu ở phổi nên biểu hiện chủ yếu là khó thở, đặc biệt khi gắng sức hoặc khi nằm."
+noi-002,noi,Tim mạch,"Thuốc nào sau đây thuộc nhóm ức chế men chuyển (ACEI)?","Amlodipin","Losartan","Enalapril","Bisoprolol",c,"Enalapril là thuốc ức chế men chuyển angiotensin (ACEI); Losartan là ức chế thụ thể (ARB)."
+noi-003,noi,Hô hấp,"Đặc điểm của hen phế quản là gì?","Tắc nghẽn đường thở cố định","Tắc nghẽn đường thở hồi phục được","Giảm khuếch tán khí","Xơ hoá nhu mô phổi",b,"Hen phế quản đặc trưng bởi tắc nghẽn đường thở có thể hồi phục, khác với COPD (tắc nghẽn cố định hơn)."
+noi-004,noi,Nội tiết,"Chỉ số HbA1c dùng để đánh giá điều gì?","Đường huyết tức thời","Đường huyết trung bình 2-3 tháng gần đây","Chức năng thận","Chức năng gan",b,"HbA1c phản ánh mức đường huyết trung bình trong khoảng 2-3 tháng trước đó."
+noi-005,noi,Thận - Tiết niệu,"Xét nghiệm nào đánh giá chức năng lọc cầu thận chính xác nhất?","Ure máu","Creatinin máu","Mức lọc cầu thận ước tính (eGFR)","Tổng phân tích nước tiểu",,

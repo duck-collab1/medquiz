@@ -1,0 +1,6 @@
+id,subject,chapter,question,option_a,option_b,option_c,option_d,correct_answer,explanation
+ngoai-001,ngoai,Ngoại tiêu hoá,"Vị trí đau điển hình trong viêm ruột thừa cấp là?","Hạ sườn phải","Hố chậu phải","Hạ sườn trái","Hố chậu trái",b,"Viêm ruột thừa cấp thường đau khởi phát quanh rốn rồi khu trú ở hố chậu phải (điểm Mac Burney)."
+ngoai-002,ngoai,Ngoại tiêu hoá,"Dấu hiệu Murphy dương tính gợi ý bệnh lý nào?","Viêm ruột thừa","Viêm túi mật cấp","Viêm tuỵ cấp","Thủng dạ dày",b,"Dấu Murphy (đau tăng khi hít sâu và ấn hạ sườn phải) là dấu hiệu kinh điển của viêm túi mật cấp."
+ngoai-003,ngoai,Chấn thương,"Gãy xương kín được định nghĩa là gì?","Gãy xương có tổn thương mạch máu","Gãy xương không thông với môi trường ngoài qua vết thương da","Gãy xương nhiều mảnh","Gãy xương ở trẻ em",b,"Gãy kín là gãy xương mà ổ gãy không thông với bên ngoài qua vết thương da."
+ngoai-004,ngoai,Ngoại tiết niệu,"Triệu chứng điển hình của sỏi niệu quản là gì?","Đau âm ỉ vùng hạ vị","Cơn đau quặn thận lan xuống bẹn bìu","Tiểu buốt kéo dài","Phù toàn thân",b,"Sỏi niệu quản gây cơn đau quặn thận điển hình, khởi phát đột ngột, lan từ hông lưng xuống bẹn - bìu."
+ngoai-005,ngoai,Ngoại tổng quát,"Phân loại ASA dùng để đánh giá điều gì trước phẫu thuật?","Nguy cơ chảy máu","Tình trạng sức khoẻ toàn thân của bệnh nhân","Mức độ đau sau mổ","Thời gian hồi phục vết mổ",,

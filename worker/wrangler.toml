@@ -1,0 +1,13 @@
+name = "medquiz-ai-worker"
+main = "src/index.ts"
+compatibility_date = "2026-07-18"
+
+[vars]
+# ID project Firebase của bạn (Project settings > General > Project ID trên Firebase Console)
+FIREBASE_PROJECT_ID = "onthinoitru-d1a99"
+# Origin của app khi chạy dev và khi deploy thật, cách nhau bằng dấu phẩy.
+# Ví dụ: "http://localhost:5173,onthinoitru-d1a99.firebaseapp.com"
+ALLOWED_ORIGINS = "http://localhost:5173,https://medquiz-bice.vercel.app"
+
+# ANTHROPIC_API_KEY không khai báo ở đây — set bằng lệnh:
+#   npx wrangler secret put ANTHROPIC_API_KEY

@@ -1,0 +1,62 @@
+id,subject,chapter,group,question,option_a,option_b,option_c,option_d,option_e,correct_answer,explanation
+noi-stt-001,noi,Suy tuyến thượng thận,Nội tiết,Suy thượng thận là tình trạng:,Giảm Glucocorticoid.,Giảm Mineralcorticoid. C .Cả A và B,,A hoặc B hoặc cả A và B.,,d,
+noi-stt-002,noi,Suy tuyến thượng thận,Nội tiết,"Bệnh suy thượng thận mạn tính có đặc điểm sau, trừ:",Có thể gặp trong hội chứng suy giảm miễn dịch mắc phải.,Hay gặp do nguyên nhân tự miễn.,Hay gặp ở nam giới tuổi trung niên,Do giảm bài tiết glucocorticoid hoặc mineralcorticoid,,c,(hay gặp nhất là do sd GC; hay gặp ở nữ)
+noi-stt-003,noi,Suy tuyến thượng thận,Nội tiết,Đặc điểm của suy thượng thận mạn,Không bao giờ có đợt cấp,Khi nhiễm khuẩn không phải tăng liều,"90% diễn biến từ từ, nặng dần theo năm",Cả 3,,c,
+noi-stt-004,noi,Suy tuyến thượng thận,Nội tiết,Suy thượng thận mạn:,Hơn 90% là diễn biến từ từ,Tụt cortisol nhanh sớm,Cả 3 đều sai,,,a,
+noi-stt-005,noi,Suy tuyến thượng thận,Nội tiết,Hormone Aldosteron có tác dụng điều hòa nồng độ của .... trong cơ thể,"K, Na","P, Sulfat","Canci, P","Canci, sulfat",,a,
+noi-stt-006,noi,Suy tuyến thượng thận,Nội tiết,Triệu chứng STT mạn trừ,Hạ huyết áp,Hạ đường huyết,Bàn chân bàn tay to,,,c,
+noi-stt-007,noi,Suy tuyến thượng thận,Nội tiết,Suy thượng thận mạn thường? Chọn đúng,Gặp ở nam giới,Hay gặp ở 50-60 tuổi,Có thể kèm theo suy tuyến nội tiết khác,Cả 3 đúng,,c,
+noi-stt-008,noi,Suy tuyến thượng thận,Nội tiết,Suy thượng thận mạn tính thứ phát không có:,Sạm da,Nôn,Mệt mỏi,Hạ đường huyết,,a,Giảm ACTH
+noi-stt-009,noi,Suy tuyến thượng thận,Nội tiết,Suy thượng thận thứ phát không có triệu chứng,Xạm da,Hạ huyết áp,Mạch nhanh,Mệt mỏi (1 rv khác: nôn buồn nôn),,a,
+noi-stt-010,noi,Suy tuyến thượng thận,Nội tiết,Biểu hiện lâm sàng của suy thượng thận mạn:,Tăng huyết áp,Sợ ăn muối,Mệt mỏi chán ăn,Phù,,c,
+noi-stt-011,noi,Suy tuyến thượng thận,Nội tiết,Suy thượng thận triệu chứng quan trọng thường gặp nhất:,"Mệt mỏi, chán ăn",Hạ huyết áp,Thèm ăn mặn,Hạ đường máu,,a,
+noi-stt-012,noi,Suy tuyến thượng thận,Nội tiết,Các xét nghiệm thường gặp trong suy thượng thận mạn,ACTH tăng,ACTH giảm,Aldosteron giảm,Cả 3 đáp án,,d,(ko nói rõ STT gì) (Đ/á test QP)
+noi-stt-013,noi,Suy tuyến thượng thận,Nội tiết,Biểu hiện cận lâm sàng của suy thượng thận mạn:,Hạ Natri máu,Tụt đường máu,ACTH tăng,Cả 3 đáp án trên,,d,
+noi-stt-014,noi,Suy tuyến thượng thận,Nội tiết,Tăng kali máu không gặp trong TH nào,Tăng aldosterol,Toan chuyển hóa,Tan máu,Suy thận giai đoạn cuối,,a,
+noi-stt-015,noi,Suy tuyến thượng thận,Nội tiết,Triệu chứng suy thượng thận mạn:,Tăng cortisol,Hạ đường huyết,Hạ kali,,,b,
+noi-stt-016,noi,Suy tuyến thượng thận,Nội tiết,"Trong suy thượng thận tiên phát, trừ:",Cortisol máu giảm,ACTH giảm,ACTH tăng,Aldosterol giảm,,b,
+noi-stt-017,noi,Suy tuyến thượng thận,Nội tiết,Triệu chứng giảm tiết aldosterol:,Hạ K máu,THÁ,Kiềm chuyển hóa,"Giảm thể tích huyết tương, hạ huyết áp",,d,
+noi-stt-018,noi,Suy tuyến thượng thận,Nội tiết,Nguyên nhân nào sau đây hay gặp trong suy thượng thận mạn nguyên phát:,Lao,Tự miễn,Cắt bỏ tuyến thượng thận,Cả 3 đáp án trên.,,b,"(chiếm hơn 50%), hiện nay hiếm gặp do lao"
+noi-stt-019,noi,Suy tuyến thượng thận,Nội tiết,Nguyên nhân suy thượng thận mạn thứ phát:,Dùng corticoid ngoại sinh,U thuỳ sau tuyến yên,Lao thượng thận,A+B,,d,
+noi-stt-020,noi,Suy tuyến thượng thận,Nội tiết,Nguyên nhân thứ phát của suy thượng thận mạn:,Dùng corticoid ngoại sinh,Tăng tiết ACTH,Suy thùy sau tuyến yên,Chảy máu tuyến thượng thận,,a,
+noi-stt-021,noi,Suy tuyến thượng thận,Nội tiết,Yếu tố nào không khởi phát đợt cấp suy thượng thận mạn?,Nhiễm trùng,Ngừng thuốc,Ăn nhạt,Ăn nhiều glucid,,d,
+noi-stt-022,noi,Suy tuyến thượng thận,Nội tiết,Test chẩn đoán nguyên nhân Addison trừ,Synathen nhanh,Synathen chậm,MRI yên,ACTH,,a,
+noi-stt-023,noi,Suy tuyến thượng thận,Nội tiết,Chẩn đoán nguyên nhân suy thượng thận mạn tiên phát,ACTH tăng cortisol giảm,ACTH giảm cortisol giảm,Test Synacthene,Cả ba,,c,Test synathene chậm
+noi-stt-024,noi,Suy tuyến thượng thận,Nội tiết,Hc suy thượng thận: tiêu chuẩn cđ,Cortisol 8h giảm và test Synacthene nhanh ko đáp ứng,Cortisol 8h giảm,Test Synacthene chậm ko đáp ứng,ACTH giảm,,a,
+noi-stt-025,noi,Suy tuyến thượng thận,Nội tiết,"Sử dụng chế phẩm corticoid trong suy thượng thận mạn, thường là:",Hydrocortisol,Prednisolon,Dexamethason,"Cả A, B",Không ý nào đúng,a,
+noi-stt-026,noi,Suy tuyến thượng thận,Nội tiết,Liều hydrocortisol thường dùng bổ sung trong suy thượng thận mạn,40-60mg Medrol,10-30mg Hydrocortisol,40-60mg Hydrocortisol,A và C,,b,
+noi-stt-027,noi,Suy tuyến thượng thận,Nội tiết,Liều điều trị hydrocortisol trong suy thượng thận gđ ổn định,10-30,30-60,dưới 10 ????????,A và C đúng,,a,
+noi-stt-028,noi,Suy tuyến thượng thận,Nội tiết,Điều trị STT cấp,Bồi phụ đường và điện giải,Uống cortisol,Tiêm cortisol,A và C,,d,
+noi-stt-029,noi,Suy tuyến thượng thận,Nội tiết,Cđ điều trị Aldosteron,STT do thuốc,STT TW,STT nguyên phát,Cả 3,,c,
+noi-stt-030,noi,Suy tuyến thượng thận,Nội tiết,Điều trị thuốc tối ưu trong suy thượng thận cấp,Hydrocortison,Prednison,Hydrocortisol hoặc Prednison,Dexamethason,,a,
+noi-stt-031,noi,Suy tuyến thượng thận,Nội tiết,Điều trị suy thượng thận mạn:,Bắt buộc dùng corticoid,Phần lớn chỉ cần dùng mineralcorticoid,Ăn đủ đường và muối,"Ăn tăng thêm đường muối, bổ sung nước tích cực",,c,Điều trị hormone thay thế trong STT thể TB
+noi-stt-032,noi,Suy tuyến thượng thận,Nội tiết,"BN suy thượng thận cần làm gì, trừ?","Tăng hoạt động thể lực, ăn nhạt",Luôn có thuốc tiêm dự phòng,Ăn đủ muối và đường,Tăng liều cao hơn khi bị nhiễm khuẩn,,a,
+noi-stt-033,noi,Suy tuyến thượng thận,Nội tiết,Chế độ sinh hoạt của bệnh nhân suy thượng thận mạn trừ,Chế độ ăn nhiều muối,Hạn chế đồ ngọt,Hạn chế cholesterol,Tăng thể dục thể thao,,d,???
+noi-stt-034,noi,Suy tuyến thượng thận,Nội tiết,CĐ ăn ở BN suy thượng thận mạn,Hạn chế đồ ngọt,Hạn chế cholesterol,Tăng cường vận động,CĐ ăn nhiều muối,,d,
+noi-stt-035,noi,Suy tuyến thượng thận,Nội tiết,Biến chứng của suy thượng thận mạn trừ,Suy kiệt,Hạ huyết áp,Hạ đường huyết,Xuất huyết dưới da,,d,
+noi-stt-036,noi,Suy tuyến thượng thận,Nội tiết,"Chẩn đoán suy thượng thận có đáp ứng điều trị, trừ:",Hạ huyết áp,Thèm ăn,Huyết áp về bình thường,Mạch chậm lại,,a,
+noi-stt-037,noi,Suy tuyến thượng thận,Nội tiết,Cần phải khuyên bệnh nhân suy thượng thận mạn để tránh cơn suy thượng thận cấp như thế nào — Ăn nhiều muối 1-2gNaCl/ ngày — Nhận định này đúng hay sai?,Đúng,Sai,,,,b,
+noi-stt-038,noi,Suy tuyến thượng thận,Nội tiết,Cần phải khuyên bệnh nhân suy thượng thận mạn để tránh cơn suy thượng thận cấp như thế nào — Duy trì thuốc liên tục trong suốt tg điều trị — Nhận định này đúng hay sai?,Đúng,Sai,,,,a,
+noi-stt-039,noi,Suy tuyến thượng thận,Nội tiết,Cần phải khuyên bệnh nhân suy thượng thận mạn để tránh cơn suy thượng thận cấp như thế nào — Tăng liều hydrocortisol 2-3 lần nếu bị bệnh cấp tính — Nhận định này đúng hay sai?,Đúng,Sai,,,,a,
+noi-stt-040,noi,Suy tuyến thượng thận,Nội tiết,Phác đồ điều trị suy thượng thận bổ sung hormone mấy giờ 1 lần,6h,8h,12h,24h,,a,
+noi-stt-041,noi,Suy tuyến thượng thận,Nội tiết,Liều corticoid ở bn STT cấp,Hydrocortison 100mg tiêm TM 6h/lần/24h,Hydrocortison 100mg tiêm TM 8h/lần/24h,Hydrocortison 100mg tiêm TM 12h/lần/24h,Hydrocortison 100mg tiêm TM 6h/lần/24h kèm Fludrocorticoid,,a,
+noi-stt-042,noi,Suy tuyến thượng thận,Nội tiết,"Bà A, 56 tuổi, tiền sử đau khớp gối nhiều năm dùng thuốc nam, bắc, thuốc giảm đau không rõ loại. Đợt này bà mệt mỏi nhiều, ăn kém buồn nôn, nôn nhiều, phù nhẹ 2 chân. Khám lúc vào viện: tỉnh, mệt, HA 90/60 mmHg, tóc mọc thấp, da mỏng, dễ bầm tím, béo trung tâm, đau khớp gối VAS 7/10. XN sinh hóa máu Na/K: 125/3.2 mmol/l; cortisol: 56 mmol/l, ACTH: 1 pg/ml Chẩn đoán phù hợp với bệnh nhân này",Hội chứng Cushing,Bệnh Cushing,Suy thượng thận do thuốc,HC giả Cushing,,c,
+noi-stt-043,noi,Suy tuyến thượng thận,Nội tiết,"Bà A, 56 tuổi, tiền sử đau khớp gối nhiều năm dùng thuốc nam, bắc, thuốc giảm đau không rõ loại. Đợt này bà mệt mỏi nhiều, ăn kém buồn nôn, nôn nhiều, phù nhẹ 2 chân. Khám lúc vào viện: tỉnh, mệt, HA 90/60 mmHg, tóc mọc thấp, da mỏng, dễ bầm tím, béo trung tâm, đau khớp gối VAS 7/10. XN sinh hóa máu Na/K: 125/3.2 mmol/l; cortisol: 56 mmol/l, ACTH: 1 pg/ml Phương pháp điều trị đúng cho bệnh nhân này là",Truyền dịch muối ưu trương 3% + Solumedrol đường TM,Truyền dịch muối ưu trương 3%,Truyền dịch muối đẳng trương 0.9% + hydrocortisone đường TM,Truyền muối đẳng trương 0.9%,,c,
+noi-stt-044,noi,Suy tuyến thượng thận,Nội tiết,"Suy thượng thận cấp XH trên nền STT mạn trong TH sau đây, trừ",Nhiễm khuẩn,Ăn ít muối,Vận động quá sức,Ăn nhiều đồ ngọt,,d,
+noi-stt-045,noi,Suy tuyến thượng thận,Nội tiết,Sạm da của suy thượng thận:,Sạm da vùng da hở,Gặp trong suy thượng thận tiên phát,Sam niêm mạc miệng,Tất cả các đáp án trên đều đúng,,d,(có tăng ACTH)
+noi-stt-046,noi,Suy tuyến thượng thận,Nội tiết,Suy thượng thận mạn tính hay gặp ở:,Nữ sau mãn kinh,Nam 30-45 tuổi,Nữ 30-40 tuổi,Nam > 45 tuổi,,c,
+noi-stt-047,noi,Suy tuyến thượng thận,Nội tiết,"BN suy tuyến yên, suy giáp, suy thượng thận. Điều trị thế nào:","Điều trị suy thượng thận trước, suy giáp sau.","Điều trị suy giáp trước, suy thượng thận sau.",Điều trị cùng lúc suy giáp và suy thượng thận.,Điều trị không liên đến nhau.,,a,(STT có thể chết ngay)
+noi-stt-048,noi,Suy tuyến thượng thận,Nội tiết,Triệu chứng tim mạch của suy tuyến thượng thận mạn:,Mạch nảy mạnh.,Hạ huyết áp tư thế,Tim to hơn bình thường.,Giảm nhịp tim,,b,
+noi-stt-049,noi,Suy tuyến thượng thận,Nội tiết,Nguyên nhân khởi phát đợt suy thượng thận cấp,Nhiễm khuẩn,Có thai,Tiêu chảy,Tất cả các đáp án trên,,d,All
+noi-stt-050,noi,Suy tuyến thượng thận,Nội tiết,Nguyên nhân thứ phát: Sử dụng glucocorticod kéo dài — Nhận định này đúng hay sai?,Đúng,Sai,,,,a,
+noi-stt-051,noi,Suy tuyến thượng thận,Nội tiết,Nguyên nhân thứ phát: U tuyến yên hoặc vùng dưới đồi — Nhận định này đúng hay sai?,Đúng,Sai,,,,a,
+noi-stt-052,noi,Suy tuyến thượng thận,Nội tiết,"Nguyên nhân thứ phát: Nhiễm khuẩn, thâm nhiễm — Nhận định này đúng hay sai?",Đúng,Sai,,,,a,
+noi-stt-053,noi,Suy tuyến thượng thận,Nội tiết,"Nguyên nhân thứ phát: Nhồi máu não, chảy máu não — Nhận định này đúng hay sai?",Đúng,Sai,,,,a,
+noi-stt-054,noi,Suy tuyến thượng thận,Nội tiết,Nguyên nhân thứ phát: Viêm tuyến yên lymphobafo — Nhận định này đúng hay sai?,Đúng,Sai,,,,a,
+noi-stt-055,noi,Suy tuyến thượng thận,Nội tiết,Nguyên nhân thứ phát: Bất thường tuyến yên do đột biến gen — Nhận định này đúng hay sai?,Đúng,Sai,,,,a,
+noi-stt-056,noi,Suy tuyến thượng thận,Nội tiết,Nguyên nhân thứ phát: Thiếu ACTH đơn độc — Nhận định này đúng hay sai?,Đúng,Sai,,,,a,
+noi-stt-057,noi,Suy tuyến thượng thận,Nội tiết,Nguyên nhân thứ phát: Thiếu globulin gắn cortisol — Nhận định này đúng hay sai?,Đúng,Sai,,,,a,
+noi-stt-058,noi,Suy tuyến thượng thận,Nội tiết,Biến chứng của suy thượng thận mạn tính: Hạ kali máu — Nhận định này đúng hay sai?,Đúng,Sai,,,,b,
+noi-stt-059,noi,Suy tuyến thượng thận,Nội tiết,Biến chứng của suy thượng thận mạn tính: Hạ glucose máu — Nhận định này đúng hay sai?,Đúng,Sai,,,,a,
+noi-stt-060,noi,Suy tuyến thượng thận,Nội tiết,"Biến chứng của suy thượng thận mạn tính: Mất nước, tụt huyết áp — Nhận định này đúng hay sai?",Đúng,Sai,,,,a,
+noi-stt-061,noi,Suy tuyến thượng thận,Nội tiết,Biến chứng của suy thượng thận mạn tính: Sốc giảm thể tích tuần hoàn — Nhận định này đúng hay sai?,Đúng,Sai,,,,a,

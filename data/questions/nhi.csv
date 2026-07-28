@@ -1,0 +1,6 @@
+id,subject,chapter,question,option_a,option_b,option_c,option_d,correct_answer,explanation
+nhi-001,nhi,Sơ sinh,"Chỉ số Apgar đánh giá trẻ sơ sinh tại các thời điểm nào?","5 phút và 10 phút sau sinh","1 phút và 5 phút sau sinh","Ngay khi sinh và 24 giờ sau","10 phút và 30 phút sau sinh",b,"Apgar được đánh giá tại phút thứ 1 và phút thứ 5 sau sinh, có thể lặp lại nếu điểm thấp."
+nhi-002,nhi,Hô hấp nhi,"Tác nhân thường gặp nhất gây viêm tiểu phế quản cấp ở trẻ nhỏ là gì?","Virus hợp bào hô hấp (RSV)","Phế cầu khuẩn","Vi khuẩn lao","Nấm Candida",a,"RSV (Respiratory Syncytial Virus) là nguyên nhân hàng đầu gây viêm tiểu phế quản cấp ở trẻ dưới 2 tuổi."
+nhi-003,nhi,Dinh dưỡng,"Thời điểm khuyến cáo bắt đầu ăn dặm cho trẻ bú mẹ hoàn toàn là khi nào?","Tròn 3 tháng tuổi","Tròn 4 tháng tuổi","Tròn 6 tháng tuổi","Tròn 9 tháng tuổi",c,"WHO khuyến cáo bú mẹ hoàn toàn trong 6 tháng đầu, sau đó bắt đầu ăn dặm kết hợp bú mẹ."
+nhi-004,nhi,Nhiễm trùng nhi,"Bệnh tay chân miệng thường do tác nhân nào gây ra?","Enterovirus (thường gặp Coxsackievirus, EV71)","Virus Dengue","Virus cúm A","Adenovirus",a,"Tay chân miệng chủ yếu do Enterovirus, đặc biệt Coxsackievirus A16 và EV71 (EV71 nguy cơ biến chứng nặng hơn)."
+nhi-005,nhi,Tim mạch nhi,"Dị tật tim bẩm sinh nào là phổ biến nhất?","Tứ chứng Fallot","Thông liên thất (VSD)","Còn ống động mạch (PDA)","Hẹp eo động mạch chủ",,

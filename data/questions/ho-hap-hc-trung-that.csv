@@ -1,0 +1,14 @@
+id,subject,chapter,group,question,option_a,option_b,option_c,option_d,option_e,correct_answer,explanation
+noi-hctt-001,noi,Hội chứng trung thất,Hô hấp,"Trung thất giữa có những thành phần sau, trừ:",Quai động mạch chủ,"Khí quản, phế quản gốc",Động mạch phổi,Thực quản,,d,
+noi-hctt-002,noi,Hội chứng trung thất,Hô hấp,HC pancoast - tobIas xảy ra khi có chèn ép:,Đám rối TK cánh tay,TK giao cảm cột sống,TK giao cảm cổ,TK giao cảm lưng,,a,
+noi-hctt-003,noi,Hội chứng trung thất,Hô hấp,HC pancoast - tobias có thể gặp trong TH:,U đỉnh phổi,U PQ gốc,U tuyến ức,U đáy phổi trái,,a,
+noi-hctt-004,noi,Hội chứng trung thất,Hô hấp,HC trung thất do chèn ép khí quản đơn thuần không có tr/ch,Khó thở,Khó nuốt,Ho ra máu,,,b,
+noi-hctt-005,noi,Hội chứng trung thất,Hô hấp,Triệu chứng không có trong Claude Bernard Horner:,Sụp mi,Tụt nhãn cầu ra sau,Đồng tử co nhỏ,Tăng tiết mồ hôi (1 rv khác: viêm màng bồ đào),,d,
+noi-hctt-006,noi,Hội chứng trung thất,Hô hấp,Thành phần nào không có trong trung thất sau,TM chủ trên,Hạch bạch huyết,Ống ngực,Thực quản,,a,
+noi-hctt-007,noi,Hội chứng trung thất,Hô hấp,HC chèn ép TM chủ trên không có TC nào?,"Cảm giác khó chịu ở mặt, đau đầu",Đau dọc cánh tay,Phù áo khoác,,,b,
+noi-hctt-008,noi,Hội chứng trung thất,Hô hấp,Phù áo khoác do chèn ép TM gì,TM chủ trên,TM đơn,TM cảnh chung,TM gian sườn,,a,
+noi-hctt-009,noi,Hội chứng trung thất,Hô hấp,Khối u trung thất có nhược cơ,U TB Schwann,U tuyến ức,U tuyến giáp,U TB phổi,,b,
+noi-hctt-010,noi,Hội chứng trung thất,Hô hấp,Vị trí của thực quản trong trong thất: Trung thất sau — Nhận định này đúng hay sai?,Đúng,Sai,,,,a,
+noi-hctt-011,noi,Hội chứng trung thất,Hô hấp,"HC trung thất có chèn ép TM có triệu chứng gì?
+A: Phù mặt, cổ, nửa trên người.. 
+B: tuần hoàn bàng hệ cửa chủ: A — Nhận định này đúng hay sai?",Đúng,Sai,,,,a,

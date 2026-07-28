@@ -1,0 +1,23 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Câu hỏi trắc nghiệm: mọi người dùng đã đăng nhập được đọc,
+    // nhưng chỉ ghi được qua Admin SDK (import script) — không cho client ghi.
+    match /questions/{questionId} {
+      allow read: if request.auth != null;
+      allow write: if false;
+    }
+
+    // Hồ sơ người dùng: chỉ chính chủ được đọc/ghi.
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Lịch sử chat với AI: chỉ chính chủ được đọc/ghi tin nhắn của mình.
+    match /chats/{userId}/messages/{messageId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}

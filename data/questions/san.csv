@@ -1,0 +1,6 @@
+id,subject,chapter,question,option_a,option_b,option_c,option_d,correct_answer,explanation
+san-001,san,Sản khoa,"Tuổi thai đủ tháng được tính từ tuần thứ mấy?","Từ 34 tuần","Từ 37 tuần","Từ 40 tuần","Từ 42 tuần",b,"Thai đủ tháng (term) được tính từ 37 tuần 0 ngày đến hết 41 tuần 6 ngày."
+san-002,san,Sản khoa,"Nguyên nhân hàng đầu gây băng huyết sau sinh là gì?","Đờ tử cung","Rách tầng sinh môn","Sót nhau","Rối loạn đông máu",a,"Đờ tử cung là nguyên nhân phổ biến nhất gây băng huyết sau sinh, chiếm khoảng 70-80% trường hợp."
+san-003,san,Phụ khoa,"Xét nghiệm nào dùng để tầm soát ung thư cổ tử cung?","Siêu âm đầu dò âm đạo","Xét nghiệm Pap smear","CA-125","Beta-hCG",b,"Pap smear (phết tế bào cổ tử cung) là xét nghiệm tầm soát ung thư cổ tử cung phổ biến nhất."
+san-004,san,Sản khoa,"Chỉ số Bishop dùng để đánh giá điều gì?","Sức khoẻ thai nhi","Độ thuận lợi của cổ tử cung để khởi phát chuyển dạ","Cân nặng thai nhi ước tính","Lượng nước ối",b,"Điểm Bishop đánh giá độ mở, độ xoá, mật độ, tư thế cổ tử cung và độ lọt của ngôi thai để tiên lượng khởi phát chuyển dạ."
+san-005,san,Phụ khoa,"Nguyên nhân thường gặp nhất gây vô sinh nữ liên quan đến ống dẫn trứng là gì?","Lạc nội mạc tử cung","Viêm vòi trứng do nhiễm khuẩn lây qua đường tình dục","U xơ tử cung","Hội chứng buồng trứng đa nang",,

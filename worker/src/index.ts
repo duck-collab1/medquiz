@@ -1,0 +1,137 @@
+import Anthropic from "@anthropic-ai/sdk";
+import { Auth, type EmulatorEnv, type KeyStorer } from "firebase-auth-cloudflare-workers";
+
+export interface Env extends EmulatorEnv {
+  FIREBASE_PROJECT_ID: string;
+  ALLOWED_ORIGINS: string;
+  ANTHROPIC_API_KEY: string;
+}
+
+const SYSTEM_PROMPT = `Bạn là trợ lý AI hỗ trợ ôn thi bác sĩ nội trú tại Việt Nam, tập trung vào các môn Nội, Ngoại, Sản, Nhi.
+Trả lời bằng tiếng Việt, ngắn gọn, chính xác, có cấu trúc rõ ràng (dùng gạch đầu dòng khi phù hợp).
+Khi không chắc chắn về một thông tin y khoa, hãy nói rõ điều đó và khuyên người dùng đối chiếu sách giáo khoa/phác đồ chính thống thay vì suy đoán.
+Đây là công cụ hỗ trợ học tập, không thay thế tư vấn hoặc quyết định y khoa chuyên môn.`;
+
+const MAX_MESSAGES = 20;
+const MAX_MESSAGE_LENGTH = 4000;
+
+interface ChatMessageInput {
+  role: "user" | "assistant";
+  content: string;
+}
+
+// In-memory cache for Google's public JWKs used to verify Firebase ID tokens.
+// Scoped to the Worker isolate — avoids requiring a Cloudflare KV namespace.
+class MemoryKeyStore implements KeyStorer {
+  private cached: unknown = null;
+  private expiresAt = 0;
+
+  async get<T = unknown>(): Promise<T | null> {
+    if (Date.now() > this.expiresAt) return null;
+    return this.cached as T | null;
+  }
+
+  async put(value: string, expirationTtl: number): Promise<void> {
+    this.cached = JSON.parse(value);
+    this.expiresAt = Date.now() + expirationTtl * 1000;
+  }
+}
+
+const keyStore = new MemoryKeyStore();
+
+function corsHeaders(origin: string | null, allowedOrigins: string[]): HeadersInit {
+  const allowOrigin = origin && allowedOrigins.includes(origin) ? origin : allowedOrigins[0];
+  return {
+    "Access-Control-Allow-Origin": allowOrigin,
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Authorization, Content-Type",
+    "Vary": "Origin",
+  };
+}
+
+function jsonResponse(body: unknown, status: number, headers: HeadersInit): Response {
+  return new Response(JSON.stringify(body), {
+    status,
+    headers: { ...headers, "Content-Type": "application/json" },
+  });
+}
+
+function isValidMessages(value: unknown): value is ChatMessageInput[] {
+  if (!Array.isArray(value) || value.length === 0 || value.length > MAX_MESSAGES) {
+    return false;
+  }
+  return value.every(
+    (m) =>
+      m &&
+      typeof m === "object" &&
+      (m.role === "user" || m.role === "assistant") &&
+      typeof m.content === "string" &&
+      m.content.trim().length > 0 &&
+      m.content.length <= MAX_MESSAGE_LENGTH,
+  );
+}
+
+export default {
+  async fetch(request: Request, env: Env): Promise<Response> {
+    const allowedOrigins = env.ALLOWED_ORIGINS.split(",").map((o) => o.trim());
+    const origin = request.headers.get("Origin");
+    const headers = corsHeaders(origin, allowedOrigins);
+
+    if (request.method === "OPTIONS") {
+      return new Response(null, { status: 204, headers });
+    }
+
+    if (request.method !== "POST") {
+      return jsonResponse({ error: "Chỉ hỗ trợ phương thức POST." }, 405, headers);
+    }
+
+    const authorization = request.headers.get("Authorization");
+    const idToken = authorization?.replace(/^Bearer\s+/i, "");
+    if (!idToken) {
+      return jsonResponse({ error: "Thiếu token xác thực." }, 401, headers);
+    }
+
+    try {
+      const auth = Auth.getOrInitialize(env.FIREBASE_PROJECT_ID, keyStore);
+      await auth.verifyIdToken(idToken);
+    } catch {
+      return jsonResponse({ error: "Token xác thực không hợp lệ." }, 401, headers);
+    }
+
+    let body: unknown;
+    try {
+      body = await request.json();
+    } catch {
+      return jsonResponse({ error: "Body request không phải JSON hợp lệ." }, 400, headers);
+    }
+
+    const messages = (body as { messages?: unknown } | null)?.messages;
+    if (!isValidMessages(messages)) {
+      return jsonResponse(
+        { error: "Trường 'messages' không hợp lệ (rỗng, quá dài, hoặc sai định dạng)." },
+        400,
+        headers,
+      );
+    }
+
+    try {
+      const anthropic = new Anthropic({ apiKey: env.ANTHROPIC_API_KEY });
+      const response = await anthropic.messages.create({
+        model: "claude-sonnet-5",
+        max_tokens: 2048,
+        system: SYSTEM_PROMPT,
+        messages: messages.map((m) => ({ role: m.role, content: m.content })),
+      });
+
+      const reply = response.content
+        .filter((block): block is Anthropic.TextBlock => block.type === "text")
+        .map((block) => block.text)
+        .join("\n");
+
+      return jsonResponse({ reply }, 200, headers);
+    } catch (err) {
+      console.error("Anthropic API error:", err);
+      return jsonResponse({ error: "Không gọi được AI, thử lại sau." }, 502, headers);
+    }
+  },
+};
