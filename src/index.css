@@ -352,6 +352,46 @@ a {
   border-radius: 50%;
   background: var(--accent-bg);
   margin-bottom: 4px;
+  animation: icon-float 3.6s ease-in-out infinite;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Lệch nhịp bồng bềnh giữa các thẻ để trông tự nhiên hơn, không đồng loạt */
+.subject-grid .subject-card:nth-child(3n + 1) .subject-card-icon {
+  animation-delay: 0s;
+}
+.subject-grid .subject-card:nth-child(3n + 2) .subject-card-icon {
+  animation-delay: -1.2s;
+}
+.subject-grid .subject-card:nth-child(3n + 3) .subject-card-icon {
+  animation-delay: -2.4s;
+}
+
+.subject-card:hover .subject-card-icon {
+  background: var(--accent);
+  animation-play-state: paused;
+  transform: scale(1.15) rotate(-6deg);
+}
+
+@keyframes icon-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .subject-card-icon {
+    animation: none;
+  }
+  .subject-card:hover .subject-card-icon {
+    transform: none;
+  }
 }
 
 .subject-card-name {
