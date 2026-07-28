@@ -3,16 +3,16 @@ import { SubjectCard } from "../components/SubjectCard";
 import { useAuth } from "../contexts/AuthContext";
 
 export function DashboardPage() {
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
 
   return (
     <div className="dashboard-page">
       <header className="dashboard-header">
-        <div>
-          <h1>Ôn thi nội trú</h1>
-          <p>Xin chào, {user?.displayName || user?.email}</p>
-        </div>
-        <button onClick={() => logout()}>Đăng xuất</button>
+        <p className="dashboard-eyebrow">Chúc bạn ôn thi thật tốt</p>
+        <h1>
+          Xin chào, {user?.displayName || user?.email?.split("@")[0]}
+        </h1>
+        <p className="dashboard-sub">Chọn một môn để bắt đầu ôn tập.</p>
       </header>
 
       <div className="subject-grid">
