@@ -695,6 +695,16 @@ a {
   line-height: 1.4;
 }
 
+.quiz-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #fff;
+}
+
 /* Đề bài lâm sàng (case stem) dùng chung cho một cụm câu hỏi */
 .quiz-case-stem {
   padding: 16px 20px;

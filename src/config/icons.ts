@@ -1,4 +1,5 @@
 import {
+  Activity,
   Baby,
   Bone,
   Book,
@@ -22,6 +23,7 @@ export type IconName =
   | "scissors"
   | "venus"
   | "baby"
+  | "activity"
   | "heart-pulse"
   | "wind"
   | "utensils"
@@ -39,6 +41,7 @@ export const ICON_COMPONENTS: Record<IconName, LucideIcon> = {
   scissors: Scissors,
   venus: Venus,
   baby: Baby,
+  activity: Activity,
   "heart-pulse": HeartPulse,
   wind: Wind,
   utensils: Utensils,

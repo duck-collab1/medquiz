@@ -25,7 +25,7 @@ initializeApp({
 
 const db = getFirestore();
 
-const ANSWER_KEYS = ["a", "b", "c", "d", "e"];
+const ANSWER_KEYS = ["a", "b", "c", "d", "e", "f"];
 
 function toQuestionDoc(row) {
   const correctAnswer = (row.correct_answer || "").trim().toLowerCase();
@@ -35,6 +35,7 @@ function toQuestionDoc(row) {
     chapter: row.chapter || "",
     group: row.group || "",
     ...(row.case_stem ? { caseStem: row.case_stem } : {}),
+    ...(row.image ? { image: row.image } : {}),
     question: row.question,
     options: {
       a: row.option_a || "",
@@ -42,6 +43,7 @@ function toQuestionDoc(row) {
       c: row.option_c || "",
       d: row.option_d || "",
       e: row.option_e || "",
+      f: row.option_f || "",
     },
     correctAnswer: ANSWER_KEYS.includes(correctAnswer) ? correctAnswer : "",
     explanation: row.explanation || "",

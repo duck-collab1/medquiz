@@ -25,6 +25,12 @@ export const subjects: Subject[] = [
     description: "Nhi khoa",
     icon: "baby",
   },
+  {
+    id: "sinh-ly",
+    name: "Sinh lý",
+    description: "Sinh lý học",
+    icon: "activity",
+  },
 ];
 
 export function getSubject(id: string): Subject | undefined {

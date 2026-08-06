@@ -17,7 +17,7 @@ interface QuizRunnerProps {
   onlyCase?: boolean;
 }
 
-const ANSWER_KEYS: AnswerKey[] = ["a", "b", "c", "d", "e"];
+const ANSWER_KEYS: AnswerKey[] = ["a", "b", "c", "d", "e", "f"];
 
 export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProps) {
   const { askAboutQuestion } = useChatContext();
@@ -126,6 +126,9 @@ export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProp
         </div>
       )}
       <p className="quiz-question">{current.question}</p>
+      {current.image && (
+        <img className="quiz-image" src={current.image} alt="" />
+      )}
 
       <div className="quiz-options">
         {ANSWER_KEYS.filter((key) => current.options[key]).map((key) => {
