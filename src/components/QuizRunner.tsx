@@ -70,10 +70,11 @@ export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProp
     setFinished(false);
   }
 
-  function handleCheck() {
-    if (!selected) return;
+  function handleSelect(key: AnswerKey) {
+    if (showFeedback) return;
     const current = ready[currentIndex];
-    setAnswers((prev) => ({ ...prev, [current.id]: selected }));
+    setSelected(key);
+    setAnswers((prev) => ({ ...prev, [current.id]: key }));
     setShowFeedback(true);
   }
 
@@ -146,7 +147,7 @@ export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProp
               key={key}
               className={className}
               disabled={showFeedback}
-              onClick={() => setSelected(key)}
+              onClick={() => handleSelect(key)}
             >
               <strong>{key.toUpperCase()}.</strong> {current.options[key]}
             </button>
@@ -169,15 +170,7 @@ export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProp
         </button>
       )}
 
-      {!showFeedback ? (
-        <button
-          className="quiz-action"
-          disabled={!selected}
-          onClick={handleCheck}
-        >
-          Kiểm tra
-        </button>
-      ) : (
+      {showFeedback && (
         <button className="quiz-action" onClick={handleNext}>
           {currentIndex + 1 >= ready.length ? "Xem kết quả" : "Câu tiếp theo"}
         </button>
