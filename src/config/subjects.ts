@@ -31,6 +31,12 @@ export const subjects: Subject[] = [
     description: "Sinh lý học",
     icon: "activity",
   },
+  {
+    id: "test-moi",
+    name: "Test mới",
+    description: "Nội - Ngoại - Sản - Nhi, theo đề án ôn thi nội trú 2026 ĐHYHN",
+    icon: "graduation-cap",
+  },
 ];
 
 export function getSubject(id: string): Subject | undefined {

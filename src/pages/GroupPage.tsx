@@ -5,6 +5,7 @@ import {
   fetchQuestions,
   getChaptersInGroup,
   getGroups,
+  KNOWN_GROUPS,
 } from "../services/questionsService";
 import { EntityGrid } from "../components/EntityGrid";
 import { SubjectIcon } from "../components/SubjectIcon";
@@ -21,12 +22,17 @@ export function GroupPage() {
   const [questions, setQuestions] = useState<Question[]>([]);
 
   const subject = subjectId ? getSubject(subjectId) : undefined;
+  const knownGroups = subject ? KNOWN_GROUPS[subject.id as SubjectId] : undefined;
+  const knownGroup = knownGroups?.find((g) => slugify(g) === groupSlug);
 
   useEffect(() => {
     if (!subject) return;
+    // Môn có danh sách chương tĩnh: chỉ tải đúng chương đang xem (tránh tải
+    // toàn bộ hàng chục nghìn câu của cả môn).
+    if (knownGroups && !knownGroup) return;
     let cancelled = false;
     setLoading(true);
-    fetchQuestions(subject.id as SubjectId)
+    fetchQuestions(subject.id as SubjectId, knownGroup)
       .then((qs) => {
         if (!cancelled) setQuestions(qs);
       })
@@ -36,9 +42,12 @@ export function GroupPage() {
     return () => {
       cancelled = true;
     };
-  }, [subject]);
+  }, [subject, knownGroups, knownGroup]);
 
   if (!subject) return <Navigate to="/" replace />;
+  if (knownGroups && !knownGroup) {
+    return <Navigate to={`/subjects/${subject.id}`} replace />;
+  }
   if (loading) {
     return (
       <div className="subject-page">
@@ -47,8 +56,7 @@ export function GroupPage() {
     );
   }
 
-  const groups = getGroups(questions);
-  const group = groups.find((g) => slugify(g) === groupSlug);
+  const group = knownGroup ?? getGroups(questions).find((g) => slugify(g) === groupSlug);
 
   if (!group) return <Navigate to={`/subjects/${subject.id}`} replace />;
 

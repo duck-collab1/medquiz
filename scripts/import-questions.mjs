@@ -72,9 +72,13 @@ async function importFile(filePath) {
     batch.set(ref, docData, { merge: true });
     count++;
 
-    if (count % 400 === 0) {
+    if (count % 300 === 0) {
       await batch.commit();
       batch = db.batch();
+      // Tránh "hot shard" khi ghi hàng loạt với id gần như tuần tự (vd
+      // test-moi-noi-00001, 00002,...) - Firestore quota bị RESOURCE_EXHAUSTED
+      // nếu ghi liên tục quá nhanh vào cùng 1 khoảng key.
+      await new Promise((resolve) => setTimeout(resolve, 400));
     }
   }
 
@@ -83,7 +87,9 @@ async function importFile(filePath) {
 }
 
 async function main() {
-  const files = readdirSync(dataDir).filter((f) => f.endsWith(".csv"));
+  const filter = process.argv[2];
+  let files = readdirSync(dataDir).filter((f) => f.endsWith(".csv"));
+  if (filter) files = files.filter((f) => f.includes(filter));
   if (files.length === 0) {
     console.log("Không tìm thấy file CSV nào trong data/questions.");
     return;

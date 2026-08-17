@@ -6,6 +6,7 @@ import {
   fetchQuestions,
   getGroups,
   hasHierarchy,
+  KNOWN_GROUPS,
 } from "../services/questionsService";
 import { EntityGrid } from "../components/EntityGrid";
 import { LessonView } from "../components/LessonView";
@@ -21,8 +22,10 @@ export function SubjectPage() {
 
   const subject = subjectId ? getSubject(subjectId) : undefined;
 
+  const knownGroups = subject ? KNOWN_GROUPS[subject.id as SubjectId] : undefined;
+
   useEffect(() => {
-    if (!subject) return;
+    if (!subject || knownGroups) return;
     let cancelled = false;
     setLoading(true);
     fetchQuestions(subject.id as SubjectId)
@@ -35,13 +38,13 @@ export function SubjectPage() {
     return () => {
       cancelled = true;
     };
-  }, [subject]);
+  }, [subject, knownGroups]);
 
   if (!subject) {
     return <Navigate to="/" replace />;
   }
 
-  if (loading) {
+  if (loading && !knownGroups) {
     return (
       <div className="subject-page">
         <p>Đang tải...</p>
@@ -51,8 +54,8 @@ export function SubjectPage() {
 
   const notes = getNotesForSubject(subject.id as SubjectId);
 
-  if (hasHierarchy(questions)) {
-    const groups = getGroups(questions);
+  if (knownGroups || hasHierarchy(questions)) {
+    const groups = knownGroups ?? getGroups(questions);
     const items = groups.map((g) => ({
       slug: slugify(g),
       title: g,

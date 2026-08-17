@@ -1,6 +1,6 @@
 import type { IconName } from "../config/icons";
 
-export type SubjectId = "noi" | "ngoai" | "san" | "nhi" | "sinh-ly";
+export type SubjectId = "noi" | "ngoai" | "san" | "nhi" | "sinh-ly" | "test-moi";
 
 export interface Subject {
   id: SubjectId;

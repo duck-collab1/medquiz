@@ -35,12 +35,11 @@ export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProp
     let cancelled = false;
     setLoading(true);
     setError("");
-    fetchQuestions(subject)
+    fetchQuestions(subject, group)
       .then((questions) => {
         if (cancelled) return;
         const scoped = questions.filter(
           (q) =>
-            (!group || (q.group || "Khác") === group) &&
             (!chapter || q.chapter === chapter) &&
             (onlyCase ? Boolean(q.caseStem) : !q.caseStem),
         );

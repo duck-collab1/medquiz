@@ -4,14 +4,23 @@ import type { Question, SubjectId } from "../types";
 
 export async function fetchQuestions(
   subject: SubjectId,
+  group?: string,
 ): Promise<Question[]> {
-  const q = query(
-    collection(db!, "questions"),
-    where("subject", "==", subject),
-  );
+  const constraints = [where("subject", "==", subject)];
+  if (group) constraints.push(where("group", "==", group));
+  const q = query(collection(db!, "questions"), ...constraints);
   const snapshot = await getDocs(q);
   return snapshot.docs.map((d) => d.data() as Question);
 }
+
+/**
+ * Danh sách chương (group) đã biết trước cho các môn có quá nhiều câu hỏi
+ * (hàng chục nghìn) - tránh phải tải toàn bộ câu hỏi của môn chỉ để liệt kê
+ * chương trên SubjectPage/GroupPage.
+ */
+export const KNOWN_GROUPS: Partial<Record<SubjectId, string[]>> = {
+  "test-moi": ["Nội", "Ngoại", "Sản", "Nhi"],
+};
 
 export function splitByReviewStatus(questions: Question[]) {
   const ready = questions.filter((q) => !q.needsReview);

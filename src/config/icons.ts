@@ -7,6 +7,7 @@ import {
   Droplet,
   Droplets,
   Flame,
+  GraduationCap,
   HeartPulse,
   Scissors,
   Siren,
@@ -34,7 +35,8 @@ export type IconName =
   | "droplet"
   | "target"
   | "book-open"
-  | "book";
+  | "book"
+  | "graduation-cap";
 
 export const ICON_COMPONENTS: Record<IconName, LucideIcon> = {
   stethoscope: Stethoscope,
@@ -53,4 +55,5 @@ export const ICON_COMPONENTS: Record<IconName, LucideIcon> = {
   target: Target,
   "book-open": BookOpen,
   book: Book,
+  "graduation-cap": GraduationCap,
 };
