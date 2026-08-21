@@ -270,9 +270,6 @@ export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProp
           </button>
         )}
       </div>
-      <p className="quiz-shortcut-hint">
-        Phím tắt: số 1-{ANSWER_KEYS.filter((k) => current.options[k]).length} chọn đáp án · ← → chuyển câu · Enter câu tiếp theo
-      </p>
     </div>
   );
 }
