@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { useAuth } from "../contexts/AuthContext";
@@ -20,9 +20,14 @@ export function ChatWidget() {
   } = useChatContext();
   const listRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  // Khung chat bị unmount/mount lại mỗi lần đóng/mở (render có điều kiện theo
+  // `open`), nên phải cuộn lại mỗi lần mở (thêm `open` vào dependency) chứ
+  // không chỉ khi có tin nhắn mới - nếu không, lần mở lại sẽ luôn ở đầu trang
+  // vì phần tử DOM là mới, dù `messages`/`sending` không đổi.
+  useLayoutEffect(() => {
+    if (!open) return;
     listRef.current?.scrollTo({ top: listRef.current.scrollHeight });
-  }, [messages, sending]);
+  }, [open, historyLoaded, messages, sending]);
 
   if (!user) return null;
 

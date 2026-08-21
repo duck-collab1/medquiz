@@ -138,24 +138,35 @@ export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProp
     );
   }
 
-  // Phím tắt: A-F chọn đáp án tương ứng, Enter sang câu tiếp theo.
+  // Phím tắt: 1-6 chọn đáp án theo thứ tự hiển thị, Enter/→ sang câu tiếp
+  // theo, ← quay lại câu trước.
   useEffect(() => {
     if (loading || error || finished || ready.length === 0) return;
     function handleKeyDown(e: KeyboardEvent) {
       if (e.altKey || e.ctrlKey || e.metaKey) return;
-      const key = e.key.toLowerCase();
-      if (key === "enter") {
+      if (e.key === "Enter" || e.key === "ArrowRight") {
         if (showFeedback) {
           e.preventDefault();
           handleNext();
         }
         return;
       }
-      if (ANSWER_KEYS.includes(key as AnswerKey)) {
+      if (e.key === "ArrowLeft") {
+        if (currentIndex > 0) {
+          e.preventDefault();
+          handlePrev();
+        }
+        return;
+      }
+      const digit = Number(e.key);
+      if (Number.isInteger(digit) && digit >= 1 && digit <= ANSWER_KEYS.length) {
         const current = ready[currentIndex];
-        if (!current?.options[key as AnswerKey] || showFeedback) return;
+        if (!current) return;
+        const visibleKeys = ANSWER_KEYS.filter((k) => current.options[k]);
+        const target = visibleKeys[digit - 1];
+        if (!target || showFeedback) return;
         e.preventDefault();
-        handleSelect(key as AnswerKey);
+        handleSelect(target);
       }
     }
     window.addEventListener("keydown", handleKeyDown);
@@ -207,7 +218,7 @@ export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProp
       )}
 
       <div className="quiz-options">
-        {ANSWER_KEYS.filter((key) => current.options[key]).map((key) => {
+        {ANSWER_KEYS.filter((key) => current.options[key]).map((key, i) => {
           const isSelected = selected === key;
           const isCorrect = key === current.correctAnswer;
           let className = "quiz-option";
@@ -224,7 +235,7 @@ export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProp
               disabled={showFeedback}
               onClick={() => handleSelect(key)}
             >
-              <strong>{key.toUpperCase()}.</strong> {current.options[key]}
+              <strong>{i + 1}.</strong> {current.options[key]}
             </button>
           );
         })}
@@ -259,6 +270,9 @@ export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProp
           </button>
         )}
       </div>
+      <p className="quiz-shortcut-hint">
+        Phím tắt: số 1-{ANSWER_KEYS.filter((k) => current.options[k]).length} chọn đáp án · ← → chuyển câu · Enter câu tiếp theo
+      </p>
     </div>
   );
 }
