@@ -2,6 +2,12 @@ import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { fetchQuestions, splitByReviewStatus } from "../services/questionsService";
+import {
+  clearSession,
+  loadSession,
+  recordAnswer,
+  saveSession,
+} from "../services/progressService";
 import type { AnswerKey, Question, SubjectId } from "../types";
 import { QuizResult } from "./QuizResult";
 import { useChatContext } from "../contexts/ChatContext";
@@ -46,7 +52,16 @@ export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProp
         const { ready, needsReview } = splitByReviewStatus(scoped);
         setReady(ready);
         setNeedsReviewCount(needsReview.length);
-        resetSession();
+
+        const saved = loadSession(subject, ready.map((q) => q.id), group, chapter, onlyCase);
+        if (saved) {
+          setAnswers(saved.answers);
+          goTo(saved.currentIndex, ready, saved.answers);
+        } else {
+          setAnswers({});
+          goTo(0, ready, {});
+        }
+        setFinished(false);
       })
       .catch((err) => {
         console.error(err);
@@ -61,31 +76,92 @@ export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProp
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [subject, group, chapter, onlyCase]);
 
+  function goTo(index: number, list: Question[], answerMap: Record<string, AnswerKey>) {
+    const target = list[index];
+    const savedAnswer = target ? answerMap[target.id] : undefined;
+    setCurrentIndex(index);
+    setSelected(savedAnswer ?? null);
+    setShowFeedback(Boolean(savedAnswer));
+  }
+
   function resetSession() {
-    setCurrentIndex(0);
+    clearSession(subject, group, chapter, onlyCase);
     setAnswers({});
-    setSelected(null);
-    setShowFeedback(false);
+    goTo(0, ready, {});
     setFinished(false);
   }
 
   function handleSelect(key: AnswerKey) {
     if (showFeedback) return;
     const current = ready[currentIndex];
+    const nextAnswers = { ...answers, [current.id]: key };
     setSelected(key);
-    setAnswers((prev) => ({ ...prev, [current.id]: key }));
+    setAnswers(nextAnswers);
     setShowFeedback(true);
+    recordAnswer(subject, key === current.correctAnswer);
+    saveSession(
+      subject,
+      { currentIndex, answers: nextAnswers, questionIds: ready.map((q) => q.id) },
+      group,
+      chapter,
+      onlyCase,
+    );
   }
 
   function handleNext() {
-    setSelected(null);
-    setShowFeedback(false);
     if (currentIndex + 1 >= ready.length) {
+      clearSession(subject, group, chapter, onlyCase);
       setFinished(true);
-    } else {
-      setCurrentIndex((i) => i + 1);
+      return;
     }
+    const nextIndex = currentIndex + 1;
+    goTo(nextIndex, ready, answers);
+    saveSession(
+      subject,
+      { currentIndex: nextIndex, answers, questionIds: ready.map((q) => q.id) },
+      group,
+      chapter,
+      onlyCase,
+    );
   }
+
+  function handlePrev() {
+    if (currentIndex === 0) return;
+    const prevIndex = currentIndex - 1;
+    goTo(prevIndex, ready, answers);
+    saveSession(
+      subject,
+      { currentIndex: prevIndex, answers, questionIds: ready.map((q) => q.id) },
+      group,
+      chapter,
+      onlyCase,
+    );
+  }
+
+  // Phím tắt: A-F chọn đáp án tương ứng, Enter sang câu tiếp theo.
+  useEffect(() => {
+    if (loading || error || finished || ready.length === 0) return;
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.altKey || e.ctrlKey || e.metaKey) return;
+      const key = e.key.toLowerCase();
+      if (key === "enter") {
+        if (showFeedback) {
+          e.preventDefault();
+          handleNext();
+        }
+        return;
+      }
+      if (ANSWER_KEYS.includes(key as AnswerKey)) {
+        const current = ready[currentIndex];
+        if (!current?.options[key as AnswerKey] || showFeedback) return;
+        e.preventDefault();
+        handleSelect(key as AnswerKey);
+      }
+    }
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loading, error, finished, ready, currentIndex, showFeedback, answers]);
 
   if (loading) return <p>Đang tải câu hỏi...</p>;
   if (error) return <p className="form-error">{error}</p>;
@@ -169,11 +245,20 @@ export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProp
         </button>
       )}
 
-      {showFeedback && (
-        <button className="quiz-action" onClick={handleNext}>
-          {currentIndex + 1 >= ready.length ? "Xem kết quả" : "Câu tiếp theo"}
+      <div className="quiz-nav">
+        <button
+          className="quiz-action quiz-action-secondary"
+          onClick={handlePrev}
+          disabled={currentIndex === 0}
+        >
+          ← Câu trước
         </button>
-      )}
+        {showFeedback && (
+          <button className="quiz-action" onClick={handleNext}>
+            {currentIndex + 1 >= ready.length ? "Xem kết quả" : "Câu tiếp theo"}
+          </button>
+        )}
+      </div>
     </div>
   );
 }

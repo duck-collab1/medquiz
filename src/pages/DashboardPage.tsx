@@ -1,5 +1,6 @@
 import { subjects } from "../config/subjects";
 import { SubjectCard } from "../components/SubjectCard";
+import { ProgressOverview } from "../components/ProgressOverview";
 import { useAuth } from "../contexts/AuthContext";
 
 export function DashboardPage() {
@@ -14,6 +15,8 @@ export function DashboardPage() {
         </h1>
         <p className="dashboard-sub">Chọn một môn để bắt đầu ôn tập.</p>
       </header>
+
+      <ProgressOverview />
 
       <div className="subject-grid">
         {subjects.map((subject) => (

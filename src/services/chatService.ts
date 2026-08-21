@@ -77,14 +77,22 @@ export async function askAi(
           : m.content,
     }));
 
-  const res = await fetch(workerUrl, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${idToken}`,
-    },
-    body: JSON.stringify({ messages: recent }),
-  });
+  // fetch() ném lỗi mạng cấp trình duyệt với thông báo rất khó hiểu với người
+  // dùng ("Load failed" trên Safari/iOS, "Failed to fetch" trên Chrome...) -
+  // đổi thành thông báo tiếng Việt rõ ràng thay vì hiện nguyên văn lỗi đó.
+  let res: Response;
+  try {
+    res = await fetch(workerUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${idToken}`,
+      },
+      body: JSON.stringify({ messages: recent }),
+    });
+  } catch {
+    throw new Error("Mất kết nối mạng, vui lòng kiểm tra internet và thử lại.");
+  }
 
   if (!res.ok) {
     const errorBody = (await res.json().catch(() => null)) as { error?: string } | null;
@@ -100,13 +108,21 @@ export async function askAi(
   const reader = res.body.getReader();
   const decoder = new TextDecoder();
   let full = "";
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    const chunk = decoder.decode(value, { stream: true });
-    if (chunk) {
-      full += chunk;
-      onDelta?.(chunk, full);
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      const chunk = decoder.decode(value, { stream: true });
+      if (chunk) {
+        full += chunk;
+        onDelta?.(chunk, full);
+      }
+    }
+  } catch {
+    // Kết nối bị ngắt giữa chừng (mất mạng, chuyển tab nền trên iOS...).
+    // Nếu đã nhận được 1 phần trả lời thì vẫn giữ lại, không báo lỗi mất hết.
+    if (!full.trim()) {
+      throw new Error("Mất kết nối trong lúc chờ AI trả lời, vui lòng thử lại.");
     }
   }
 
