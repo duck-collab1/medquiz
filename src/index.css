@@ -320,6 +320,64 @@ a {
   margin: 0;
 }
 
+.study-schedule {
+  margin: 0 0 24px;
+  padding: 16px 20px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.study-schedule h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
+  color: var(--text-h);
+}
+
+.study-schedule-today {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.study-schedule-today a {
+  color: var(--accent);
+}
+
+.study-schedule-noaudit {
+  color: var(--text-muted);
+  border-bottom: 1px dashed var(--text-muted);
+  cursor: help;
+}
+
+.study-schedule-upcoming {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0 0;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.study-schedule-upcoming li {
+  display: flex;
+  gap: 10px;
+}
+
+.study-schedule-date {
+  flex-shrink: 0;
+  width: 44px;
+  font-weight: 600;
+}
+
+.study-schedule-upcoming a {
+  color: inherit;
+}
+
 .notification-prompt {
   margin: 0 0 24px;
 }
