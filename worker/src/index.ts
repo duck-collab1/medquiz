@@ -1,10 +1,29 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { Auth, type EmulatorEnv, type KeyStorer } from "firebase-auth-cloudflare-workers";
+import { sendDailyReminder } from "./push";
 
 export interface Env extends EmulatorEnv {
   FIREBASE_PROJECT_ID: string;
   ALLOWED_ORIGINS: string;
   ANTHROPIC_API_KEY: string;
+  // JSON service account (Project settings > Service accounts > Generate new private key),
+  // set bằng: npx wrangler secret put FIREBASE_SERVICE_ACCOUNT_JSON
+  FIREBASE_SERVICE_ACCOUNT_JSON?: string;
+}
+
+const REMINDER_BODIES = [
+  "Hôm nay đừng bỏ lỡ buổi ôn tập nhé. Mở app để xem còn bài nào cần ôn lại.",
+  "Một chút mỗi ngày, cộng dồn thành kết quả lớn. Vào ôn vài câu nào!",
+  "Kiến thức không tự nhớ được nếu không lặp lại - hôm nay ôn lại 1 chương nhé.",
+  "Đến giờ ôn bài rồi! Kiểm tra xem có bài nào đang chờ ôn lại không.",
+  "Dành 15 phút hôm nay cho việc ôn tập, tương lai bạn sẽ cảm ơn hiện tại.",
+];
+
+function todayReminderBody(): string {
+  const now = new Date();
+  const start = new Date(now.getFullYear(), 0, 0);
+  const dayOfYear = Math.floor((now.getTime() - start.getTime()) / 86400000);
+  return REMINDER_BODIES[dayOfYear % REMINDER_BODIES.length];
 }
 
 const SYSTEM_PROMPT = `Bạn là trợ lý AI hỗ trợ ôn thi bác sĩ nội trú tại Việt Nam, tập trung vào các môn Nội, Ngoại, Sản, Nhi.
@@ -160,5 +179,15 @@ export default {
       status: 200,
       headers: { ...headers, "Content-Type": "text/plain; charset=utf-8" },
     });
+  },
+
+  async scheduled(_event: ScheduledController, env: Env, ctx: ExecutionContext): Promise<void> {
+    if (!env.FIREBASE_SERVICE_ACCOUNT_JSON) return;
+    ctx.waitUntil(
+      sendDailyReminder(env.FIREBASE_SERVICE_ACCOUNT_JSON, "🔔 Đến giờ ôn thi rồi!", todayReminderBody()).then(
+        (result) => console.log("Daily reminder sent:", result),
+        (err) => console.error("Daily reminder failed:", err),
+      ),
+    );
   },
 };

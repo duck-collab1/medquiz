@@ -2,6 +2,7 @@ import { subjects } from "../config/subjects";
 import { SubjectCard } from "../components/SubjectCard";
 import { ProgressOverview } from "../components/ProgressOverview";
 import { ReviewReminder } from "../components/ReviewReminder";
+import { NotificationPrompt } from "../components/NotificationPrompt";
 import { useAuth } from "../contexts/AuthContext";
 import { getTodayQuote } from "../data/quotes";
 
@@ -20,6 +21,7 @@ export function DashboardPage() {
       </header>
 
       <ProgressOverview />
+      <NotificationPrompt />
       <ReviewReminder />
 
       <div className="subject-grid">

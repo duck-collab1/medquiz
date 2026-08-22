@@ -320,6 +320,29 @@ a {
   margin: 0;
 }
 
+.notification-prompt {
+  margin: 0 0 24px;
+}
+
+.notification-prompt button {
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+.notification-prompt button:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.notification-prompt-msg {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
 .review-reminder {
   margin: 0 0 32px;
   padding: 16px 20px;

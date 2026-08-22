@@ -2,6 +2,10 @@ name = "medquiz-ai-worker"
 main = "src/index.ts"
 compatibility_date = "2026-07-18"
 
+# Gửi thông báo nhắc học hàng ngày lúc 8:00 sáng giờ VN (1:00 UTC).
+[triggers]
+crons = ["0 1 * * *"]
+
 [vars]
 # ID project Firebase của bạn (Project settings > General > Project ID trên Firebase Console)
 FIREBASE_PROJECT_ID = "onthinoitru-d1a99"
@@ -9,5 +13,7 @@ FIREBASE_PROJECT_ID = "onthinoitru-d1a99"
 # Ví dụ: "http://localhost:5173,onthinoitru-d1a99.firebaseapp.com"
 ALLOWED_ORIGINS = "http://localhost:5173,https://medquiz-bice.vercel.app"
 
-# ANTHROPIC_API_KEY không khai báo ở đây — set bằng lệnh:
+# ANTHROPIC_API_KEY và FIREBASE_SERVICE_ACCOUNT_JSON không khai báo ở đây —
+# set bằng lệnh (dán nội dung, không phải đường dẫn file):
 #   npx wrangler secret put ANTHROPIC_API_KEY
+#   npx wrangler secret put FIREBASE_SERVICE_ACCOUNT_JSON
