@@ -7,6 +7,7 @@ import { GroupPage } from "./pages/GroupPage";
 import { ChapterPage } from "./pages/ChapterPage";
 import { ProtectedRoute } from "./routes/ProtectedRoute";
 import { ChatWidget } from "./components/ChatWidget";
+import { LabReferenceWidget } from "./components/LabReferenceWidget";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
         />
       </Routes>
       <ChatWidget />
+      <LabReferenceWidget />
     </>
   );
 }
