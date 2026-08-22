@@ -334,11 +334,21 @@ a {
   color: var(--text-h);
 }
 
+.study-schedule-topic {
+  margin: 0 0 4px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
 .study-schedule-today {
   margin: 0 0 10px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--text-h);
+  line-height: 150%;
 }
 
 .study-schedule-today a {
@@ -630,6 +640,24 @@ a {
 .subject-card-desc {
   font-size: 14px;
   color: var(--text-muted);
+}
+
+.subject-card-exam {
+  position: relative;
+  border-color: var(--gold);
+  background: linear-gradient(180deg, var(--accent-bg) 0%, var(--surface) 60%);
+}
+
+.subject-card-exam .subject-card-icon {
+  background: var(--gold);
+  color: #fff8f1;
+}
+
+.subject-card-exam-badge {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 15px;
 }
 
 /* Subject / Group / Chapter pages */

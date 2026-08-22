@@ -7,6 +7,7 @@ export interface EntityGridItem {
   title: string;
   subtitle?: string;
   icon?: IconName;
+  isExamTopic?: boolean;
 }
 
 interface EntityGridProps {
@@ -18,7 +19,16 @@ export function EntityGrid({ items, basePath }: EntityGridProps) {
   return (
     <div className="subject-grid">
       {items.map((item) => (
-        <Link key={item.slug} to={`${basePath}/${item.slug}`} className="subject-card">
+        <Link
+          key={item.slug}
+          to={`${basePath}/${item.slug}`}
+          className={item.isExamTopic ? "subject-card subject-card-exam" : "subject-card"}
+        >
+          {item.isExamTopic && (
+            <span className="subject-card-exam-badge" title="Có trong danh mục thi nội trú">
+              📌
+            </span>
+          )}
           <span className="subject-card-icon">
             <SubjectIcon name={item.icon ?? "book"} />
           </span>

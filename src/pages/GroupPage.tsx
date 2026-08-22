@@ -10,6 +10,7 @@ import {
 import { EntityGrid } from "../components/EntityGrid";
 import { SubjectIcon } from "../components/SubjectIcon";
 import { GROUP_ICONS } from "../config/groupIcons";
+import { isExamTopic } from "../data/examSyllabus";
 import { slugify } from "../utils/slug";
 import type { Question, SubjectId } from "../types";
 
@@ -68,7 +69,12 @@ export function GroupPage() {
       subtitle: `Tất cả ${chapters.length} bài`,
       icon: "target" as const,
     },
-    ...chapters.map((c) => ({ slug: slugify(c), title: c, icon: "book-open" as const })),
+    ...chapters.map((c) => ({
+      slug: slugify(c),
+      title: c,
+      icon: "book-open" as const,
+      isExamTopic: isExamTopic(subject.id, c),
+    })),
   ];
 
   return (
