@@ -710,6 +710,16 @@ a {
   background: none;
 }
 
+.note-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 8px 0 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #fff;
+}
+
 .note-content table {
   display: block;
   overflow-x: auto;
