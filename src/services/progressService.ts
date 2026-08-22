@@ -45,6 +45,74 @@ export function getOverallStats(): SubjectStats {
   );
 }
 
+const REVIEW_KEY = "medquiz:review";
+const REVIEW_INTERVALS_DAYS = [1, 3, 7, 14, 30];
+
+export interface ReviewEntry {
+  subject: SubjectId;
+  group?: string;
+  chapter?: string;
+  lastCompleted: string;
+  stage: number;
+}
+
+type ReviewMap = Record<string, ReviewEntry>;
+
+function reviewEntryKey(subject: SubjectId, group?: string, chapter?: string): string {
+  return `${subject}:${group ?? ""}:${chapter ?? ""}`;
+}
+
+function readReviewMap(): ReviewMap {
+  try {
+    const raw = localStorage.getItem(REVIEW_KEY);
+    return raw ? (JSON.parse(raw) as ReviewMap) : {};
+  } catch {
+    return {};
+  }
+}
+
+/** Ghi nhận vừa hoàn thành 1 bài/chương, dùng để tính lịch ôn lại kiểu spaced repetition. */
+export function recordChapterCompletion(
+  subject: SubjectId,
+  group?: string,
+  chapter?: string,
+): void {
+  const map = readReviewMap();
+  const key = reviewEntryKey(subject, group, chapter);
+  const prevStage = map[key]?.stage ?? -1;
+  map[key] = {
+    subject,
+    group,
+    chapter,
+    lastCompleted: new Date().toISOString(),
+    stage: Math.min(prevStage + 1, REVIEW_INTERVALS_DAYS.length - 1),
+  };
+  try {
+    localStorage.setItem(REVIEW_KEY, JSON.stringify(map));
+  } catch {
+    // bỏ qua nếu localStorage không dùng được
+  }
+}
+
+export interface DueReview extends ReviewEntry {
+  daysOverdue: number;
+}
+
+/** Danh sách các bài/chương đã đến hạn ôn lại (theo lịch spaced repetition), sắp xếp quá hạn nhiều nhất trước. */
+export function getDueReviews(): DueReview[] {
+  const map = readReviewMap();
+  const now = Date.now();
+  const due: DueReview[] = [];
+  for (const entry of Object.values(map)) {
+    const intervalDays = REVIEW_INTERVALS_DAYS[entry.stage] ?? REVIEW_INTERVALS_DAYS[0];
+    const dueAt = new Date(entry.lastCompleted).getTime() + intervalDays * 86400000;
+    if (now >= dueAt) {
+      due.push({ ...entry, daysOverdue: Math.floor((now - dueAt) / 86400000) });
+    }
+  }
+  return due.sort((a, b) => b.daysOverdue - a.daysOverdue);
+}
+
 export interface QuizSession {
   currentIndex: number;
   answers: Record<string, AnswerKey>;

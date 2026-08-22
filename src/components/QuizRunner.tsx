@@ -6,6 +6,7 @@ import {
   clearSession,
   loadSession,
   recordAnswer,
+  recordChapterCompletion,
   saveSession,
 } from "../services/progressService";
 import type { AnswerKey, Question, SubjectId } from "../types";
@@ -111,6 +112,7 @@ export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProp
   function handleNext() {
     if (currentIndex + 1 >= ready.length) {
       clearSession(subject, group, chapter, onlyCase);
+      recordChapterCompletion(subject, group, chapter);
       setFinished(true);
       return;
     }
