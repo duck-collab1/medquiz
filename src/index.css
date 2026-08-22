@@ -321,71 +321,158 @@ a {
 }
 
 .study-schedule {
+  position: relative;
   margin: 0 0 24px;
-  padding: 16px 20px;
-  background: var(--bg-alt);
+  padding: 22px 24px 20px;
+  background: var(--surface);
   border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.study-schedule::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--accent));
+}
+
+.study-schedule-countdown {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 6px 0 18px;
+}
+
+.study-countdown-number {
+  font-family: var(--serif);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.study-countdown-label {
+  font-size: 12.5px;
+  line-height: 140%;
+  color: var(--text-muted);
+}
+
+.study-schedule-today {
+  padding: 16px 18px;
+  margin: 0 0 18px;
+  background: var(--accent-bg);
   border-radius: var(--radius-md);
 }
 
-.study-schedule h3 {
-  margin: 0 0 10px;
-  font-size: 15px;
-  color: var(--text-h);
-}
-
-.study-schedule-topic {
-  margin: 0 0 4px;
+.study-schedule-eyebrow {
+  display: block;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--gold);
-}
-
-.study-schedule-today {
-  margin: 0 0 10px;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text-h);
-  line-height: 150%;
-}
-
-.study-schedule-today a {
   color: var(--accent);
+  margin-bottom: 4px;
 }
 
-.study-schedule-noaudit {
+.study-schedule-today h3 {
+  margin: 0 0 8px;
+  font-family: var(--serif);
+  font-size: 19px;
+  color: var(--text-h);
+}
+
+.study-schedule-desc {
+  margin: 0;
+  font-size: 14px;
   color: var(--text-muted);
-  border-bottom: 1px dashed var(--text-muted);
-  cursor: help;
 }
 
-.study-schedule-upcoming {
+.study-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.study-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 11px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.study-chip-link {
+  color: var(--text-h);
+  font-weight: 600;
+  text-decoration: none;
+  border-color: transparent;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.study-chip-link:hover {
+  background: var(--accent);
+  color: #fff8f1;
+}
+
+.study-schedule-timeline {
   list-style: none;
   margin: 0;
-  padding: 10px 0 0;
+  padding: 14px 0 0;
   border-top: 1px solid var(--border);
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  font-size: 13px;
-  color: var(--text-muted);
+  gap: 12px;
 }
 
-.study-schedule-upcoming li {
+.study-schedule-timeline li {
   display: flex;
-  gap: 10px;
+  gap: 14px;
 }
 
-.study-schedule-date {
+.study-timeline-date {
   flex-shrink: 0;
-  width: 44px;
+  width: 62px;
+  padding-top: 1px;
+  font-size: 12.5px;
   font-weight: 600;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
 }
 
-.study-schedule-upcoming a {
-  color: inherit;
+.study-timeline-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.study-timeline-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.study-timeline-body .study-schedule-desc {
+  font-size: 12.5px;
+}
+
+.study-timeline-body .study-chip {
+  font-size: 11.5px;
+  padding: 2px 9px;
 }
 
 .notification-prompt {

@@ -316,7 +316,14 @@ export const COMPLETED_TOPICS = ["Tiêu hóa (Nội)", "Hô hấp (Nội)"];
 
 // Thứ 2 gần nhất kể từ ngày sửa lịch - tuần đầu tiên của lộ trình chi tiết mới.
 const START_MONDAY = new Date(2026, 7, 24);
-const END_DATE = new Date(2027, 7, 31);
+export const EXAM_DATE = new Date(2027, 7, 11);
+const END_DATE = EXAM_DATE;
+
+/** Số ngày còn lại đến kỳ thi (âm nếu đã qua ngày thi). */
+export function getDaysUntilExam(from = new Date()): number {
+  const today = new Date(from.getFullYear(), from.getMonth(), from.getDate());
+  return Math.round((EXAM_DATE.getTime() - today.getTime()) / 86400000);
+}
 
 function splitRoundRobin(items: string[], buckets: number): string[][] {
   const result: string[][] = Array.from({ length: buckets }, () => []);
