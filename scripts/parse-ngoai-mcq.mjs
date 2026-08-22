@@ -13,6 +13,15 @@ const GROUP_LABELS = {
   nhi: "Nhi",
 };
 
+// Vài file bị xếp nhầm thư mục nguồn (là bài Ngoại nhi nhưng nằm trong thư mục
+// "thần kinh") - ghi đè nhóm đúng theo tên file thay vì theo thư mục cha.
+const GROUP_OVERRIDES_BY_FILE = {
+  "Dị tật hậu môn trực tràng.pdf": "Nhi",
+  "Giãn đại tràng bẩm sinh.pdf": "Nhi",
+  "Lồng ruột cấp tính ở trẻ còn bú.pdf": "Nhi",
+  "Tắc ruột sơ sinh.pdf": "Nhi",
+};
+
 function cleanChapterName(fileName) {
   return fileName
     .replace(/\.pdf$/i, "")
@@ -128,8 +137,9 @@ async function main() {
     } catch {
       continue;
     }
-    const group = GROUP_LABELS[folder];
+    const folderGroup = GROUP_LABELS[folder];
     for (const file of files) {
+      const group = GROUP_OVERRIDES_BY_FILE[file] || folderGroup;
       const chapter = cleanChapterName(file);
       const filePath = join(dir, file);
       try {
