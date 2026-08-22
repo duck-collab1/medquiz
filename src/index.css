@@ -320,6 +320,17 @@ a {
   margin: 0;
 }
 
+.dashboard-quote {
+  margin: 14px 0 0;
+  padding: 10px 14px;
+  border-left: 3px solid var(--gold);
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--text-h);
+  background: var(--bg-alt);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
 .progress-overview {
   display: flex;
   align-items: center;

@@ -2,6 +2,7 @@ import { subjects } from "../config/subjects";
 import { SubjectCard } from "../components/SubjectCard";
 import { ProgressOverview } from "../components/ProgressOverview";
 import { useAuth } from "../contexts/AuthContext";
+import { getTodayQuote } from "../data/quotes";
 
 export function DashboardPage() {
   const { user } = useAuth();
@@ -14,6 +15,7 @@ export function DashboardPage() {
           Xin chào, {user?.displayName || user?.email?.split("@")[0]}
         </h1>
         <p className="dashboard-sub">Chọn một môn để bắt đầu ôn tập.</p>
+        <p className="dashboard-quote">"{getTodayQuote()}"</p>
       </header>
 
       <ProgressOverview />
