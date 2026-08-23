@@ -844,6 +844,54 @@ a {
   font-weight: 600;
 }
 
+.note-toc {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+.note-toc-title {
+  margin: 0 0 4px;
+  padding: 0 14px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.note-toc-item {
+  text-align: left;
+  padding: 5px 14px;
+  border: none;
+  border-left: 2px solid transparent;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 12.5px;
+  line-height: 140%;
+  border-radius: 0;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.note-toc-item[data-level="3"] {
+  padding-left: 24px;
+  font-size: 12px;
+}
+
+.note-toc-item:hover {
+  color: var(--accent);
+  border-left-color: var(--accent);
+}
+
 .note-content {
   min-width: 0;
   line-height: 175%;
@@ -999,6 +1047,11 @@ a {
   .note-list {
     flex-direction: row;
     flex-wrap: wrap;
+  }
+  .note-toc {
+    flex-basis: 100%;
+    position: static;
+    max-height: none;
   }
   .note-content {
     padding: 20px;
