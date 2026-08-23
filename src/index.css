@@ -1231,9 +1231,14 @@ a {
     color 0.15s ease;
 }
 
-.quiz-ask-ai:hover {
+.quiz-ask-ai:hover:not(:disabled) {
   background: var(--accent);
   color: #fff8f1;
+}
+
+.quiz-ask-ai:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .quiz-action {

@@ -123,10 +123,17 @@ export function ChatProvider({ children }: { children: ReactNode }) {
     [user, sending, historyLoaded, messages],
   );
 
-  const askAboutQuestion = useCallback((prompt: string) => {
-    setOpen(true);
-    setPendingPrompt(prompt);
-  }, []);
+  // Nếu đang có 1 câu hỏi trong lúc gửi (vd. người dùng bấm nút "Hỏi AI"
+  // nhiều lần liên tiếp trên mạng chậm), bỏ qua các lần bấm thêm thay vì xếp
+  // hàng gửi lại - tránh gửi trùng nhiều bản y hệt nhau (đã gặp trên mobile).
+  const askAboutQuestion = useCallback(
+    (prompt: string) => {
+      setOpen(true);
+      if (sending) return;
+      setPendingPrompt(prompt);
+    },
+    [sending],
+  );
 
   // Chờ lịch sử tải xong (nếu khung chat vừa được mở) rồi mới gửi câu hỏi soạn sẵn.
   useEffect(() => {

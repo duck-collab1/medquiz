@@ -235,14 +235,25 @@ export default {
     const encoder = new TextEncoder();
     const responseBody = new ReadableStream({
       async start(controller) {
+        let sentAny = false;
         try {
           for await (const event of stream) {
             if (event.type === "content_block_delta" && event.delta.type === "text_delta") {
+              sentAny = true;
               controller.enqueue(encoder.encode(event.delta.text));
             }
           }
         } catch (err) {
           console.error("Anthropic stream error:", err);
+          // Lỗi giữa chừng (vd. rate limit) trước đó bị nuốt im lặng, phía
+          // client chỉ thấy stream rỗng và báo "Không nhận được phản hồi từ
+          // AI" - không rõ lý do. Gửi kèm 1 dòng lỗi để người dùng biết cần
+          // thử lại, thay vì im lặng đóng kết nối.
+          if (!sentAny) {
+            controller.enqueue(
+              encoder.encode("⚠️ AI đang quá tải hoặc gặp lỗi tạm thời, vui lòng thử lại sau vài giây."),
+            );
+          }
         } finally {
           controller.close();
         }

@@ -27,7 +27,7 @@ interface QuizRunnerProps {
 const ANSWER_KEYS: AnswerKey[] = ["a", "b", "c", "d", "e", "f"];
 
 export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProps) {
-  const { askAboutQuestion } = useChatContext();
+  const { askAboutQuestion, sending: aiSending } = useChatContext();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [ready, setReady] = useState<Question[]>([]);
@@ -250,11 +250,12 @@ export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProp
       {showFeedback && (
         <button
           className="quiz-ask-ai"
+          disabled={aiSending}
           onClick={() =>
             askAboutQuestion(buildExplainPrompt(current, selected ?? undefined))
           }
         >
-          🤖 Hỏi AI giải thích câu này
+          {aiSending ? "Đang hỏi AI..." : "🤖 Hỏi AI giải thích câu này"}
         </button>
       )}
 
