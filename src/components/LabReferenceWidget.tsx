@@ -45,7 +45,6 @@ export function LabReferenceWidget() {
             placeholder="Tìm xét nghiệm..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            autoFocus
           />
 
           <div className="labref-list">
