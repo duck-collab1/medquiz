@@ -34,34 +34,36 @@ export function LessonView({
 
   return (
     <div className="subject-page">
-      <header className="subject-header">
-        <Link to={backTo} className="back-link">
-          {backLabel}
-        </Link>
-        <h1>
-          {icon && <SubjectIcon name={icon} className="heading-icon" size={30} />} {title}
-        </h1>
-      </header>
+      <div className="lesson-sticky-header">
+        <header className="subject-header">
+          <Link to={backTo} className="back-link">
+            {backLabel}
+          </Link>
+          <h1>
+            {icon && <SubjectIcon name={icon} className="heading-icon" size={30} />} {title}
+          </h1>
+        </header>
 
-      <div className="tab-bar">
-        <button
-          className={tab === "notes" ? "tab active" : "tab"}
-          onClick={() => setTab("notes")}
-        >
-          Ghi chú
-        </button>
-        <button
-          className={tab === "quiz" ? "tab active" : "tab"}
-          onClick={() => setTab("quiz")}
-        >
-          Trắc nghiệm
-        </button>
-        <button
-          className={tab === "case" ? "tab active" : "tab"}
-          onClick={() => setTab("case")}
-        >
-          Case lâm sàng
-        </button>
+        <div className="tab-bar">
+          <button
+            className={tab === "notes" ? "tab active" : "tab"}
+            onClick={() => setTab("notes")}
+          >
+            Ghi chú
+          </button>
+          <button
+            className={tab === "quiz" ? "tab active" : "tab"}
+            onClick={() => setTab("quiz")}
+          >
+            Trắc nghiệm
+          </button>
+          <button
+            className={tab === "case" ? "tab active" : "tab"}
+            onClick={() => setTab("case")}
+          >
+            Case lâm sàng
+          </button>
+        </div>
       </div>
 
       <div className="tab-content">

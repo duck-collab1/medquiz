@@ -756,6 +756,14 @@ a {
   padding: 40px 28px 64px;
 }
 
+.lesson-sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--bg);
+  padding-bottom: 4px;
+}
+
 .subject-header {
   margin-bottom: 28px;
 }
