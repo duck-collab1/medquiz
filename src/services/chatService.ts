@@ -1,6 +1,7 @@
 import {
   addDoc,
   collection,
+  deleteDoc,
   getDocs,
   limit,
   orderBy,
@@ -30,6 +31,16 @@ export async function getChatHistory(uid: string): Promise<ChatMessage[]> {
       createdAt: (data.createdAt as Timestamp | null)?.toMillis() ?? Date.now(),
     };
   });
+}
+
+/**
+ * Xóa toàn bộ lịch sử chat của người dùng - dùng khi hội thoại bị hỏng (vd.
+ * nhiều tin nhắn "user" liên tiếp do 1 bug gửi trùng trước đây khiến
+ * Anthropic API từ chối mọi câu hỏi sau đó) và người dùng muốn bắt đầu lại.
+ */
+export async function clearChatHistory(uid: string): Promise<void> {
+  const snapshot = await getDocs(collection(db!, "chats", uid, "messages"));
+  await Promise.all(snapshot.docs.map((d) => deleteDoc(d.ref)));
 }
 
 export async function saveChatMessage(

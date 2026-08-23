@@ -7,7 +7,7 @@ import {
   type ReactNode,
 } from "react";
 import { useAuth } from "./AuthContext";
-import { askAi, getChatHistory, saveChatMessage } from "../services/chatService";
+import { askAi, clearChatHistory, getChatHistory, saveChatMessage } from "../services/chatService";
 import type { ChatMessage } from "../types";
 
 interface ChatContextValue {
@@ -23,6 +23,8 @@ interface ChatContextValue {
   send: (text: string) => void;
   /** Mở khung chat (nếu đang đóng) và gửi ngay 1 câu hỏi soạn sẵn — dùng cho các nút "Hỏi AI" theo ngữ cảnh. */
   askAboutQuestion: (prompt: string) => void;
+  /** Xóa lịch sử chat (dùng khi hội thoại bị hỏng, AI cứ báo lỗi liên tục). */
+  clearHistory: () => void;
 }
 
 const ChatContext = createContext<ChatContextValue | undefined>(undefined);
@@ -144,6 +146,13 @@ export function ChatProvider({ children }: { children: ReactNode }) {
     }
   }, [pendingPrompt, historyLoaded, sending, send]);
 
+  const clearHistory = useCallback(() => {
+    if (!user) return;
+    setMessages([]);
+    setError("");
+    clearChatHistory(user.uid).catch((err) => console.error(err));
+  }, [user]);
+
   const value: ChatContextValue = {
     open,
     historyLoaded,
@@ -156,6 +165,7 @@ export function ChatProvider({ children }: { children: ReactNode }) {
     closeChat: () => setOpen(false),
     send,
     askAboutQuestion,
+    clearHistory,
   };
 
   return <ChatContext.Provider value={value}>{children}</ChatContext.Provider>;

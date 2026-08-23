@@ -758,10 +758,10 @@ a {
 
 .lesson-sticky-header {
   position: sticky;
-  top: 16px;
+  top: 12px;
   z-index: 20;
-  margin-bottom: 28px;
-  padding: 18px 24px;
+  margin-bottom: 20px;
+  padding: 10px 18px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -769,8 +769,18 @@ a {
   transition: box-shadow 0.2s ease;
 }
 
-.subject-header {
-  margin-bottom: 14px;
+.lesson-sticky-header .subject-header {
+  margin-bottom: 8px;
+}
+
+.lesson-sticky-header .back-link {
+  margin-bottom: 2px;
+  font-size: 12.5px;
+}
+
+.lesson-sticky-header .subject-header h1 {
+  margin: 0;
+  font-size: 20px;
 }
 
 .back-link {
@@ -796,7 +806,7 @@ a {
 .tab-bar {
   display: inline-flex;
   gap: 4px;
-  padding: 4px;
+  padding: 3px;
   border-radius: 999px;
   background: var(--bg-alt);
   border: 1px solid var(--border);
@@ -804,13 +814,13 @@ a {
 }
 
 .tab {
-  padding: 9px 20px;
+  padding: 6px 15px;
   border: none;
   border-radius: 999px;
   background: transparent;
   color: var(--text-muted);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
   transition:
     background 0.15s ease,
     color 0.15s ease;
@@ -1393,6 +1403,12 @@ a {
   font-family: var(--serif);
   font-weight: 600;
   color: var(--text-h);
+}
+
+.chat-panel-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .chat-panel-header button {

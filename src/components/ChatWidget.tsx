@@ -17,6 +17,7 @@ export function ChatWidget() {
     toggleOpen,
     closeChat,
     send,
+    clearHistory,
   } = useChatContext();
   const listRef = useRef<HTMLDivElement>(null);
 
@@ -40,9 +41,24 @@ export function ChatWidget() {
         <div className="chat-panel">
           <div className="chat-panel-header">
             <span>Trợ lý AI</span>
-            <button onClick={closeChat} aria-label="Đóng">
-              ✕
-            </button>
+            <div className="chat-panel-header-actions">
+              {messages.length > 0 && (
+                <button
+                  onClick={() => {
+                    if (confirm("Xóa toàn bộ lịch sử trò chuyện? Dùng khi AI cứ báo lỗi liên tục.")) {
+                      clearHistory();
+                    }
+                  }}
+                  aria-label="Xóa lịch sử trò chuyện"
+                  title="Xóa lịch sử trò chuyện"
+                >
+                  🗑️
+                </button>
+              )}
+              <button onClick={closeChat} aria-label="Đóng">
+                ✕
+              </button>
+            </div>
           </div>
 
           <div className="chat-messages" ref={listRef}>
