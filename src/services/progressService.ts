@@ -1,7 +1,13 @@
+import { auth } from "../firebase";
+import { deleteCloudSession, pullAllProgress, pushReview, pushSession, pushStats } from "./cloudSyncService";
 import type { AnswerKey, SubjectId } from "../types";
 
 const STATS_KEY = "medquiz:stats";
 const SESSION_PREFIX = "medquiz:session:";
+
+function currentUid(): string | undefined {
+  return auth?.currentUser?.uid;
+}
 
 interface SubjectStats {
   answered: number;
@@ -32,6 +38,8 @@ export function recordAnswer(subject: SubjectId, isCorrect: boolean): void {
   } catch {
     // localStorage đầy hoặc bị chặn (chế độ ẩn danh) - bỏ qua, không ảnh hưởng quiz.
   }
+  const uid = currentUid();
+  if (uid) pushStats(uid, stats);
 }
 
 export function getOverallStats(): SubjectStats {
@@ -92,6 +100,8 @@ export function recordChapterCompletion(
   } catch {
     // bỏ qua nếu localStorage không dùng được
   }
+  const uid = currentUid();
+  if (uid) pushReview(uid, key, map[key]);
 }
 
 export interface DueReview extends ReviewEntry {
@@ -119,13 +129,23 @@ export interface QuizSession {
   questionIds: string[];
 }
 
+/** Phần hậu tố định danh 1 phiên quiz - dùng làm id doc trên Firestore luôn. */
+function sessionKeySuffix(
+  subject: SubjectId,
+  group?: string,
+  chapter?: string,
+  onlyCase?: boolean,
+): string {
+  return `${subject}:${group ?? ""}:${chapter ?? ""}:${onlyCase ? "case" : "mcq"}`;
+}
+
 function sessionKey(
   subject: SubjectId,
   group?: string,
   chapter?: string,
   onlyCase?: boolean,
 ): string {
-  return `${SESSION_PREFIX}${subject}:${group ?? ""}:${chapter ?? ""}:${onlyCase ? "case" : "mcq"}`;
+  return `${SESSION_PREFIX}${sessionKeySuffix(subject, group, chapter, onlyCase)}`;
 }
 
 /** Đọc tiến độ đã lưu, chỉ trả về nếu bộ câu hỏi hiện tại khớp đúng với lúc lưu. */
@@ -168,6 +188,8 @@ export function saveSession(
   } catch {
     // bỏ qua nếu localStorage không dùng được
   }
+  const uid = currentUid();
+  if (uid) pushSession(uid, sessionKeySuffix(subject, group, chapter, onlyCase), session);
 }
 
 export function clearSession(
@@ -180,5 +202,27 @@ export function clearSession(
     localStorage.removeItem(sessionKey(subject, group, chapter, onlyCase));
   } catch {
     // bỏ qua
+  }
+  const uid = currentUid();
+  if (uid) deleteCloudSession(uid, sessionKeySuffix(subject, group, chapter, onlyCase));
+}
+
+/**
+ * Tải toàn bộ tiến trình từ server và ghi đè vào localStorage - gọi 1 lần
+ * ngay sau khi đăng nhập để thiết bị hiện tại thấy được tiến trình đã làm
+ * trên các thiết bị khác (trước đây mỗi máy chỉ biết tiến trình của chính nó).
+ */
+export async function syncFromCloud(uid: string): Promise<void> {
+  const cloud = await pullAllProgress(uid);
+  try {
+    if (cloud.stats) localStorage.setItem(STATS_KEY, JSON.stringify(cloud.stats));
+    if (Object.keys(cloud.reviews).length > 0) {
+      localStorage.setItem(REVIEW_KEY, JSON.stringify(cloud.reviews));
+    }
+    for (const [suffix, session] of Object.entries(cloud.sessions)) {
+      localStorage.setItem(`${SESSION_PREFIX}${suffix}`, JSON.stringify(session));
+    }
+  } catch {
+    // localStorage không dùng được - bỏ qua, vẫn tiếp tục dùng app bình thường
   }
 }

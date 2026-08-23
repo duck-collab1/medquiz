@@ -19,5 +19,14 @@ service cloud.firestore {
     match /chats/{userId}/messages/{messageId} {
       allow read, write: if request.auth != null && request.auth.uid == userId;
     }
+
+    // Tiến trình quiz đang dở + lịch ôn lại: đồng bộ giữa các thiết bị,
+    // chỉ chính chủ được đọc/ghi.
+    match /users/{userId}/sessions/{sessionId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    match /users/{userId}/reviews/{reviewId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
   }
 }

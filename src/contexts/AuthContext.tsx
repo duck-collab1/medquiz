@@ -15,6 +15,7 @@ import {
 } from "firebase/auth";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { auth, db } from "../firebase";
+import { syncFromCloud } from "../services/progressService";
 
 interface AuthContextValue {
   user: User | null;
@@ -37,7 +38,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth!, (firebaseUser) => {
       setUser(firebaseUser);
-      setLoading(false);
+      if (!firebaseUser) {
+        setLoading(false);
+        return;
+      }
+      // Kéo tiến trình quiz + lịch ôn từ server về máy này TRƯỚC khi cho
+      // phép các trang đọc localStorage - nếu không, trang có thể render
+      // với dữ liệu cũ của riêng máy này trước khi kịp đồng bộ xong.
+      syncFromCloud(firebaseUser.uid)
+        .catch((err) => console.error(err))
+        .finally(() => setLoading(false));
     });
     return unsubscribe;
   }, []);

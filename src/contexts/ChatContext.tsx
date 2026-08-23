@@ -41,14 +41,19 @@ export function ChatProvider({ children }: { children: ReactNode }) {
   const [error, setError] = useState("");
   const [pendingPrompt, setPendingPrompt] = useState<string | null>(null);
 
+  // Tải lại lịch sử mỗi lần MỞ khung chat (không chỉ 1 lần duy nhất khi tải
+  // trang) - trước đây `historyLoaded` không reset nên tin nhắn gửi từ thiết
+  // bị khác chỉ hiện ra sau khi tải lại cả trang, đóng/mở khung chat không
+  // đủ để thấy tin mới.
   useEffect(() => {
-    if (open && !historyLoaded && user) {
+    if (open && user) {
+      setHistoryLoaded(false);
       getChatHistory(user.uid)
         .then(setMessages)
         .catch((err) => console.error(err))
         .finally(() => setHistoryLoaded(true));
     }
-  }, [open, historyLoaded, user]);
+  }, [open, user]);
 
   const send = useCallback(
     (text: string) => {
