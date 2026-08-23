@@ -3,9 +3,11 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { useAuth } from "../contexts/AuthContext";
 import { useChatContext } from "../contexts/ChatContext";
+import { useFloatingWidget } from "../contexts/FloatingWidgetContext";
 
 export function ChatWidget() {
   const { user } = useAuth();
+  const { activeWidget } = useFloatingWidget();
   const {
     open,
     historyLoaded,
@@ -31,6 +33,8 @@ export function ChatWidget() {
   }, [open, historyLoaded, messages, sending]);
 
   if (!user) return null;
+  // Ẩn hẳn cả nút mở khi khung cận lâm sàng đang mở - tránh đè lên nhau.
+  if (activeWidget === "labref") return null;
 
   const lastMessage = messages[messages.length - 1];
   const showTypingPlaceholder = sending && lastMessage?.role !== "assistant";

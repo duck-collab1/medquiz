@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App.tsx";
 import { AuthProvider } from "./contexts/AuthContext";
 import { ChatProvider } from "./contexts/ChatContext";
+import { FloatingWidgetProvider } from "./contexts/FloatingWidgetContext";
 import { isFirebaseConfigured } from "./firebase";
 import { FirebaseSetupNotice } from "./components/FirebaseSetupNotice";
 
@@ -13,9 +14,11 @@ createRoot(document.getElementById("root")!).render(
     {isFirebaseConfigured ? (
       <BrowserRouter>
         <AuthProvider>
-          <ChatProvider>
-            <App />
-          </ChatProvider>
+          <FloatingWidgetProvider>
+            <ChatProvider>
+              <App />
+            </ChatProvider>
+          </FloatingWidgetProvider>
         </AuthProvider>
       </BrowserRouter>
     ) : (

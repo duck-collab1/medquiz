@@ -7,6 +7,7 @@ import {
   type ReactNode,
 } from "react";
 import { useAuth } from "./AuthContext";
+import { useFloatingWidget } from "./FloatingWidgetContext";
 import { askAi, clearChatHistory, getChatHistory, saveChatMessage } from "../services/chatService";
 import type { ChatMessage } from "../types";
 
@@ -31,7 +32,8 @@ const ChatContext = createContext<ChatContextValue | undefined>(undefined);
 
 export function ChatProvider({ children }: { children: ReactNode }) {
   const { user } = useAuth();
-  const [open, setOpen] = useState(false);
+  const { activeWidget, setActiveWidget } = useFloatingWidget();
+  const open = activeWidget === "chat";
   const [historyLoaded, setHistoryLoaded] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
@@ -130,11 +132,11 @@ export function ChatProvider({ children }: { children: ReactNode }) {
   // hàng gửi lại - tránh gửi trùng nhiều bản y hệt nhau (đã gặp trên mobile).
   const askAboutQuestion = useCallback(
     (prompt: string) => {
-      setOpen(true);
+      setActiveWidget("chat");
       if (sending) return;
       setPendingPrompt(prompt);
     },
-    [sending],
+    [sending, setActiveWidget],
   );
 
   // Chờ lịch sử tải xong (nếu khung chat vừa được mở) rồi mới gửi câu hỏi soạn sẵn.
@@ -161,8 +163,8 @@ export function ChatProvider({ children }: { children: ReactNode }) {
     sending,
     error,
     setInput,
-    toggleOpen: () => setOpen((o) => !o),
-    closeChat: () => setOpen(false),
+    toggleOpen: () => setActiveWidget(open ? null : "chat"),
+    closeChat: () => setActiveWidget(null),
     send,
     askAboutQuestion,
     clearHistory,

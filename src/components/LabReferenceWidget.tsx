@@ -1,10 +1,12 @@
 import { useMemo, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
+import { useFloatingWidget } from "../contexts/FloatingWidgetContext";
 import { LAB_REFERENCE } from "../data/labReference";
 
 export function LabReferenceWidget() {
   const { user } = useAuth();
-  const [open, setOpen] = useState(false);
+  const { activeWidget, setActiveWidget } = useFloatingWidget();
+  const open = activeWidget === "labref";
   const [query, setQuery] = useState("");
 
   const filtered = useMemo(() => {
@@ -22,6 +24,9 @@ export function LabReferenceWidget() {
   }, [query]);
 
   if (!user) return null;
+  // Ẩn hẳn cả nút mở khi khung chat AI đang mở - tránh bị đè lên nhau ở góc
+  // dưới phải (panel chat rất cao, che mất nút này nếu vẫn hiện).
+  if (activeWidget === "chat") return null;
 
   return (
     <div className="labref-widget">
@@ -29,7 +34,7 @@ export function LabReferenceWidget() {
         <div className="labref-panel">
           <div className="chat-panel-header">
             <span>Cận lâm sàng tham chiếu</span>
-            <button onClick={() => setOpen(false)} aria-label="Đóng">
+            <button onClick={() => setActiveWidget(null)} aria-label="Đóng">
               ✕
             </button>
           </div>
@@ -52,8 +57,8 @@ export function LabReferenceWidget() {
                 <h4>{cat.category}</h4>
                 <table className="labref-table">
                   <tbody>
-                    {cat.items.map((it) => (
-                      <tr key={it.name}>
+                    {cat.items.map((it, i) => (
+                      <tr key={`${it.name}-${i}`}>
                         <td className="labref-name">{it.name}</td>
                         <td>
                           <strong>{it.value}</strong>
@@ -71,7 +76,7 @@ export function LabReferenceWidget() {
 
       <button
         className="labref-toggle"
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => setActiveWidget(open ? null : "labref")}
         aria-label={open ? "Đóng cận lâm sàng tham chiếu" : "Mở cận lâm sàng tham chiếu"}
       >
         {open ? "✕" : "🧪"}
