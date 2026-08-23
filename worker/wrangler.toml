@@ -2,9 +2,9 @@ name = "medquiz-ai-worker"
 main = "src/index.ts"
 compatibility_date = "2026-07-18"
 
-# Gửi thông báo nhắc học hàng ngày lúc 8:00 sáng giờ VN (1:00 UTC).
+# Gửi thông báo nhắc học hàng ngày lúc 6:00 sáng giờ VN (23:00 UTC hôm trước).
 [triggers]
-crons = ["0 1 * * *"]
+crons = ["0 23 * * *"]
 
 [vars]
 # ID project Firebase của bạn (Project settings > General > Project ID trên Firebase Console)
