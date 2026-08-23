@@ -758,14 +758,19 @@ a {
 
 .lesson-sticky-header {
   position: sticky;
-  top: 0;
+  top: 16px;
   z-index: 20;
-  background: var(--bg);
-  padding-bottom: 4px;
+  margin-bottom: 28px;
+  padding: 18px 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease;
 }
 
 .subject-header {
-  margin-bottom: 28px;
+  margin-bottom: 14px;
 }
 
 .back-link {
@@ -795,7 +800,7 @@ a {
   border-radius: 999px;
   background: var(--bg-alt);
   border: 1px solid var(--border);
-  margin: 4px 0 28px;
+  margin: 4px 0 0;
 }
 
 .tab {
