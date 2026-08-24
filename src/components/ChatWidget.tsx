@@ -7,7 +7,7 @@ import { useFloatingWidget } from "../contexts/FloatingWidgetContext";
 
 export function ChatWidget() {
   const { user } = useAuth();
-  const { activeWidget } = useFloatingWidget();
+  const { activeWidget, dockVisible } = useFloatingWidget();
   const {
     open,
     historyLoaded,
@@ -120,7 +120,7 @@ export function ChatWidget() {
       )}
 
       <button
-        className="chat-toggle"
+        className={dockVisible || open ? "chat-toggle" : "chat-toggle dock-hidden"}
         onClick={toggleOpen}
         aria-label={open ? "Đóng chat" : "Mở chat hỏi đáp AI"}
       >

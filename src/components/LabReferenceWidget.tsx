@@ -5,7 +5,7 @@ import { LAB_REFERENCE } from "../data/labReference";
 
 export function LabReferenceWidget() {
   const { user } = useAuth();
-  const { activeWidget, setActiveWidget } = useFloatingWidget();
+  const { activeWidget, setActiveWidget, dockVisible } = useFloatingWidget();
   const open = activeWidget === "labref";
   const [query, setQuery] = useState("");
 
@@ -74,7 +74,7 @@ export function LabReferenceWidget() {
       )}
 
       <button
-        className="labref-toggle"
+        className={dockVisible || open ? "labref-toggle" : "labref-toggle dock-hidden"}
         onClick={() => setActiveWidget(open ? null : "labref")}
         aria-label={open ? "Đóng cận lâm sàng tham chiếu" : "Mở cận lâm sàng tham chiếu"}
       >

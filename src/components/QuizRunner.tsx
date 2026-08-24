@@ -140,13 +140,13 @@ export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProp
     );
   }
 
-  // Phím tắt: 1-6 chọn đáp án theo thứ tự hiển thị, Enter/→ sang câu tiếp
-  // theo, ← quay lại câu trước.
+  // Phím tắt: 1-6 chọn đáp án theo thứ tự hiển thị, Enter/Space/→ sang câu
+  // tiếp theo, ← quay lại câu trước.
   useEffect(() => {
     if (loading || error || finished || ready.length === 0) return;
     function handleKeyDown(e: KeyboardEvent) {
       if (e.altKey || e.ctrlKey || e.metaKey) return;
-      if (e.key === "Enter" || e.key === "ArrowRight") {
+      if (e.key === "Enter" || e.key === "ArrowRight" || e.key === " ") {
         if (showFeedback) {
           e.preventDefault();
           handleNext();
