@@ -28,5 +28,10 @@ service cloud.firestore {
     match /users/{userId}/reviews/{reviewId} {
       allow read, write: if request.auth != null && request.auth.uid == userId;
     }
+    // Danh sách câu đã từng trả lời sai (để gom vào tab "làm lại câu sai"),
+    // đồng bộ giữa các thiết bị - chỉ chính chủ được đọc/ghi.
+    match /users/{userId}/wrongAnswers/{questionId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
   }
 }

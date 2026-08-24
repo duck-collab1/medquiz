@@ -5,6 +5,7 @@ import { DashboardPage } from "./pages/DashboardPage";
 import { SubjectPage } from "./pages/SubjectPage";
 import { GroupPage } from "./pages/GroupPage";
 import { ChapterPage } from "./pages/ChapterPage";
+import { WrongAnswersPage } from "./pages/WrongAnswersPage";
 import { ProtectedRoute } from "./routes/ProtectedRoute";
 import { ChatWidget } from "./components/ChatWidget";
 import { LabReferenceWidget } from "./components/LabReferenceWidget";
@@ -45,6 +46,14 @@ function App() {
           element={
             <ProtectedRoute>
               <ChapterPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/lam-lai-cau-sai"
+          element={
+            <ProtectedRoute>
+              <WrongAnswersPage />
             </ProtectedRoute>
           }
         />

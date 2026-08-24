@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
-import { getOverallStats } from "../services/progressService";
+import { Link } from "react-router-dom";
+import { getOverallStats, getStreak, getWrongAnswerCount } from "../services/progressService";
 
 export function ProgressOverview() {
   const [stats, setStats] = useState<{ answered: number; correct: number } | null>(null);
+  const [wrongCount, setWrongCount] = useState(0);
+  const [streak, setStreak] = useState(0);
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
     setStats(getOverallStats());
+    setWrongCount(getWrongAnswerCount());
+    setStreak(getStreak().current);
     // Delay 1 khung hình để CSS transition chạy từ 0 lên giá trị thật (hiệu ứng "đổ đầy").
     const id = requestAnimationFrame(() => setAnimate(true));
     return () => cancelAnimationFrame(id);
@@ -40,6 +45,16 @@ export function ProgressOverview() {
           Đã trả lời <strong>{stats.answered}</strong> câu · đúng{" "}
           <strong>{stats.correct}</strong> câu ({accuracy}%)
         </p>
+        <div className="progress-overview-chips">
+          <span className="progress-chip">🔥 Streak {streak} ngày</span>
+          {wrongCount > 0 ? (
+            <Link to="/lam-lai-cau-sai" className="progress-chip progress-chip-link">
+              ❌ {wrongCount} câu sai cần làm lại
+            </Link>
+          ) : (
+            <span className="progress-chip">✅ Không còn câu sai nào</span>
+          )}
+        </div>
       </div>
     </div>
   );

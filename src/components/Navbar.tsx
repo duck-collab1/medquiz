@@ -1,8 +1,16 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import { getWrongAnswerCount } from "../services/progressService";
 
 export function Navbar() {
   const { user, logout } = useAuth();
+  const [wrongCount, setWrongCount] = useState(0);
+
+  useEffect(() => {
+    if (user) setWrongCount(getWrongAnswerCount());
+  }, [user]);
+
   if (!user) return null;
 
   return (
@@ -10,6 +18,10 @@ export function Navbar() {
       <Link to="/" className="navbar-brand">
         <span className="navbar-brand-mark">✦</span>
         <span className="navbar-brand-text">Ôn thi nội trú</span>
+      </Link>
+      <Link to="/lam-lai-cau-sai" className="navbar-tab">
+        🔁 Làm lại câu sai
+        {wrongCount > 0 && <span className="navbar-tab-badge">{wrongCount}</span>}
       </Link>
       <div className="navbar-user">
         <span className="navbar-greeting">

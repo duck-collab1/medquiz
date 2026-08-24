@@ -8,6 +8,7 @@ import {
   recordAnswer,
   recordChapterCompletion,
   saveSession,
+  trackWrongAnswer,
 } from "../services/progressService";
 import type { AnswerKey, Question, SubjectId } from "../types";
 import { QuizResult } from "./QuizResult";
@@ -15,18 +16,25 @@ import { useChatContext } from "../contexts/ChatContext";
 import { buildExplainPrompt } from "../utils/quizPrompt";
 
 interface QuizRunnerProps {
-  subject: SubjectId;
+  /** Bỏ trống khi dùng cùng `questions` (câu hỏi có thể thuộc nhiều môn khác nhau, vd. tab làm lại câu sai). */
+  subject?: SubjectId;
   /** Lọc theo chương (group). Bỏ trống = lấy tất cả chương của môn. */
   group?: string;
   /** Lọc theo bài (chapter). Bỏ trống = lấy tất cả bài trong group đã chọn (hoặc cả môn). */
   chapter?: string;
   /** true = chỉ lấy câu hỏi ca lâm sàng (có case_stem); false/bỏ trống = chỉ lấy câu hỏi thường. */
   onlyCase?: boolean;
+  /**
+   * Khi truyền vào: dùng đúng danh sách câu hỏi này thay vì tự tải theo
+   * subject/group/chapter (vd. tab "làm lại câu sai"). Ở chế độ này không
+   * lưu/khôi phục tiến trình dở dang và không tính hoàn thành chương.
+   */
+  questions?: Question[];
 }
 
 const ANSWER_KEYS: AnswerKey[] = ["a", "b", "c", "d", "e", "f"];
 
-export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProps) {
+export function QuizRunner({ subject, group, chapter, onlyCase, questions: externalQuestions }: QuizRunnerProps) {
   const { askAboutQuestion, sending: aiSending } = useChatContext();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -39,13 +47,24 @@ export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProp
   const [finished, setFinished] = useState(false);
 
   useEffect(() => {
+    if (externalQuestions) {
+      const { ready, needsReview } = splitByReviewStatus(externalQuestions);
+      setReady(ready);
+      setNeedsReviewCount(needsReview.length);
+      setAnswers({});
+      goTo(0, ready, {});
+      setFinished(false);
+      setError("");
+      setLoading(false);
+      return;
+    }
     let cancelled = false;
     setLoading(true);
     setError("");
-    fetchQuestions(subject, group)
-      .then((questions) => {
+    fetchQuestions(subject as SubjectId, group)
+      .then((fetched) => {
         if (cancelled) return;
-        const scoped = questions.filter(
+        const scoped = fetched.filter(
           (q) =>
             (!chapter || q.chapter === chapter) &&
             (onlyCase ? Boolean(q.caseStem) : !q.caseStem),
@@ -54,7 +73,7 @@ export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProp
         setReady(ready);
         setNeedsReviewCount(needsReview.length);
 
-        const saved = loadSession(subject, ready.map((q) => q.id), group, chapter, onlyCase);
+        const saved = loadSession(subject as SubjectId, ready.map((q) => q.id), group, chapter, onlyCase);
         if (saved) {
           setAnswers(saved.answers);
           goTo(saved.currentIndex, ready, saved.answers);
@@ -75,7 +94,7 @@ export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProp
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [subject, group, chapter, onlyCase]);
+  }, [subject, group, chapter, onlyCase, externalQuestions]);
 
   function goTo(index: number, list: Question[], answerMap: Record<string, AnswerKey>) {
     const target = list[index];
@@ -86,7 +105,7 @@ export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProp
   }
 
   function resetSession() {
-    clearSession(subject, group, chapter, onlyCase);
+    if (!externalQuestions) clearSession(subject as SubjectId, group, chapter, onlyCase);
     setAnswers({});
     goTo(0, ready, {});
     setFinished(false);
@@ -95,49 +114,59 @@ export function QuizRunner({ subject, group, chapter, onlyCase }: QuizRunnerProp
   function handleSelect(key: AnswerKey) {
     if (showFeedback) return;
     const current = ready[currentIndex];
+    const isCorrect = key === current.correctAnswer;
     const nextAnswers = { ...answers, [current.id]: key };
     setSelected(key);
     setAnswers(nextAnswers);
     setShowFeedback(true);
-    recordAnswer(subject, key === current.correctAnswer);
-    saveSession(
-      subject,
-      { currentIndex, answers: nextAnswers, questionIds: ready.map((q) => q.id) },
-      group,
-      chapter,
-      onlyCase,
-    );
+    recordAnswer(current.subject, isCorrect);
+    trackWrongAnswer(current.id, current.subject, current.group, current.chapter, isCorrect);
+    if (!externalQuestions) {
+      saveSession(
+        subject as SubjectId,
+        { currentIndex, answers: nextAnswers, questionIds: ready.map((q) => q.id) },
+        group,
+        chapter,
+        onlyCase,
+      );
+    }
   }
 
   function handleNext() {
     if (currentIndex + 1 >= ready.length) {
-      clearSession(subject, group, chapter, onlyCase);
-      recordChapterCompletion(subject, group, chapter);
+      if (!externalQuestions) {
+        clearSession(subject as SubjectId, group, chapter, onlyCase);
+        recordChapterCompletion(subject as SubjectId, group, chapter);
+      }
       setFinished(true);
       return;
     }
     const nextIndex = currentIndex + 1;
     goTo(nextIndex, ready, answers);
-    saveSession(
-      subject,
-      { currentIndex: nextIndex, answers, questionIds: ready.map((q) => q.id) },
-      group,
-      chapter,
-      onlyCase,
-    );
+    if (!externalQuestions) {
+      saveSession(
+        subject as SubjectId,
+        { currentIndex: nextIndex, answers, questionIds: ready.map((q) => q.id) },
+        group,
+        chapter,
+        onlyCase,
+      );
+    }
   }
 
   function handlePrev() {
     if (currentIndex === 0) return;
     const prevIndex = currentIndex - 1;
     goTo(prevIndex, ready, answers);
-    saveSession(
-      subject,
-      { currentIndex: prevIndex, answers, questionIds: ready.map((q) => q.id) },
-      group,
-      chapter,
-      onlyCase,
-    );
+    if (!externalQuestions) {
+      saveSession(
+        subject as SubjectId,
+        { currentIndex: prevIndex, answers, questionIds: ready.map((q) => q.id) },
+        group,
+        chapter,
+        onlyCase,
+      );
+    }
   }
 
   // Phím tắt: 1-6 chọn đáp án theo thứ tự hiển thị, Enter/Space/→ sang câu

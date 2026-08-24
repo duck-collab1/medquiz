@@ -30,18 +30,33 @@ export function pushReview(uid: string, reviewKey: string, entry: unknown): void
   setDoc(doc(db!, "users", uid, "reviews", docSafeId(reviewKey)), entry as object).catch(() => {});
 }
 
+export function pushWrongAnswer(uid: string, questionId: string, entry: unknown): void {
+  setDoc(doc(db!, "users", uid, "wrongAnswers", docSafeId(questionId)), entry as object).catch(() => {});
+}
+
+export function deleteCloudWrongAnswer(uid: string, questionId: string): void {
+  deleteDoc(doc(db!, "users", uid, "wrongAnswers", docSafeId(questionId))).catch(() => {});
+}
+
+export function pushStreak(uid: string, streak: unknown): void {
+  setDoc(doc(db!, "users", uid), { streak }, { merge: true }).catch(() => {});
+}
+
 export interface CloudProgress {
   stats: unknown;
+  streak: unknown;
   sessions: Record<string, unknown>;
   reviews: Record<string, unknown>;
+  wrongAnswers: Record<string, unknown>;
 }
 
 /** Tải toàn bộ tiến trình từ server - gọi 1 lần sau khi đăng nhập để đồng bộ về máy hiện tại. */
 export async function pullAllProgress(uid: string): Promise<CloudProgress> {
-  const [userSnap, sessionsSnap, reviewsSnap] = await Promise.all([
+  const [userSnap, sessionsSnap, reviewsSnap, wrongSnap] = await Promise.all([
     getDoc(doc(db!, "users", uid)),
     getDocs(collection(db!, "users", uid, "sessions")),
     getDocs(collection(db!, "users", uid, "reviews")),
+    getDocs(collection(db!, "users", uid, "wrongAnswers")),
   ]);
 
   const sessions: Record<string, unknown> = {};
@@ -50,9 +65,14 @@ export async function pullAllProgress(uid: string): Promise<CloudProgress> {
   const reviews: Record<string, unknown> = {};
   for (const d of reviewsSnap.docs) reviews[d.id] = d.data();
 
+  const wrongAnswers: Record<string, unknown> = {};
+  for (const d of wrongSnap.docs) wrongAnswers[d.id] = d.data();
+
   return {
     stats: userSnap.exists() ? userSnap.data().stats : undefined,
+    streak: userSnap.exists() ? userSnap.data().streak : undefined,
     sessions,
     reviews,
+    wrongAnswers,
   };
 }

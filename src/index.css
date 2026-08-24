@@ -167,6 +167,41 @@ a {
   letter-spacing: -0.01em;
 }
 
+.navbar-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.navbar-tab:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.navbar-tab-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff8f1;
+  font-size: 11px;
+  font-weight: 700;
+}
+
 .navbar-user {
   display: flex;
   align-items: center;
@@ -623,6 +658,42 @@ a {
   font-size: 14px;
   color: var(--text-muted);
   margin: 0;
+}
+
+.progress-overview-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.progress-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-muted);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.progress-chip-link {
+  color: var(--accent);
+  border-color: var(--accent-bg);
+  background: var(--accent-bg);
+  text-decoration: none;
+}
+
+.progress-chip-link:hover {
+  border-color: var(--accent);
+}
+
+.wrong-answers-page h1 {
+  font-family: var(--serif);
+  font-size: 24px;
+  margin-bottom: 18px;
 }
 
 @media (prefers-reduced-motion: reduce) {

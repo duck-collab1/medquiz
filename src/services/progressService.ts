@@ -1,9 +1,20 @@
 import { auth } from "../firebase";
-import { deleteCloudSession, pullAllProgress, pushReview, pushSession, pushStats } from "./cloudSyncService";
+import {
+  deleteCloudSession,
+  deleteCloudWrongAnswer,
+  pullAllProgress,
+  pushReview,
+  pushSession,
+  pushStats,
+  pushStreak,
+  pushWrongAnswer,
+} from "./cloudSyncService";
 import type { AnswerKey, SubjectId } from "../types";
 
 const STATS_KEY = "medquiz:stats";
 const SESSION_PREFIX = "medquiz:session:";
+const WRONG_KEY = "medquiz:wrong";
+const STREAK_KEY = "medquiz:streak";
 
 function currentUid(): string | undefined {
   return auth?.currentUser?.uid;
@@ -40,6 +51,7 @@ export function recordAnswer(subject: SubjectId, isCorrect: boolean): void {
   }
   const uid = currentUid();
   if (uid) pushStats(uid, stats);
+  touchStreak();
 }
 
 export function getOverallStats(): SubjectStats {
@@ -51,6 +63,114 @@ export function getOverallStats(): SubjectStats {
     }),
     { answered: 0, correct: 0 },
   );
+}
+
+export interface WrongEntry {
+  subject: SubjectId;
+  group: string;
+  chapter: string;
+  wrongAt: string;
+}
+
+type WrongMap = Record<string, WrongEntry>;
+
+function readWrongMap(): WrongMap {
+  try {
+    const raw = localStorage.getItem(WRONG_KEY);
+    return raw ? (JSON.parse(raw) as WrongMap) : {};
+  } catch {
+    return {};
+  }
+}
+
+function writeWrongMap(map: WrongMap): void {
+  try {
+    localStorage.setItem(WRONG_KEY, JSON.stringify(map));
+  } catch {
+    // bỏ qua nếu localStorage không dùng được
+  }
+}
+
+/**
+ * Ghi nhận câu vừa trả lời sai (gom vào tab "làm lại câu sai"). Nếu lần này
+ * trả lời đúng thì xoá khỏi danh sách - coi như đã "trả nợ" câu đó, không
+ * cần làm lại nữa.
+ */
+export function trackWrongAnswer(
+  questionId: string,
+  subject: SubjectId,
+  group: string,
+  chapter: string,
+  isCorrect: boolean,
+): void {
+  const map = readWrongMap();
+  const uid = currentUid();
+  if (isCorrect) {
+    if (!(questionId in map)) return;
+    delete map[questionId];
+    writeWrongMap(map);
+    if (uid) deleteCloudWrongAnswer(uid, questionId);
+    return;
+  }
+  map[questionId] = { subject, group, chapter, wrongAt: new Date().toISOString() };
+  writeWrongMap(map);
+  if (uid) pushWrongAnswer(uid, questionId, map[questionId]);
+}
+
+export function getWrongAnswers(): WrongMap {
+  return readWrongMap();
+}
+
+export function getWrongAnswerCount(): number {
+  return Object.keys(readWrongMap()).length;
+}
+
+const STREAK_INITIAL = { current: 0, longest: 0, lastActiveDate: "" };
+
+export interface Streak {
+  current: number;
+  longest: number;
+  lastActiveDate: string;
+}
+
+function readStreak(): Streak {
+  try {
+    const raw = localStorage.getItem(STREAK_KEY);
+    return raw ? (JSON.parse(raw) as Streak) : { ...STREAK_INITIAL };
+  } catch {
+    return { ...STREAK_INITIAL };
+  }
+}
+
+/** "YYYY-MM-DD" theo giờ địa phương của thiết bị (không dùng toISOString - luôn quy về UTC). */
+function localDateStr(d = new Date()): string {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+
+/** Cập nhật streak ngày ôn tập liên tiếp - gọi mỗi khi trả lời 1 câu. */
+function touchStreak(): void {
+  const today = localDateStr();
+  const streak = readStreak();
+  if (streak.lastActiveDate === today) return;
+
+  const yesterday = localDateStr(new Date(Date.now() - 86400000));
+  const current = streak.lastActiveDate === yesterday ? streak.current + 1 : 1;
+  const next: Streak = {
+    current,
+    longest: Math.max(streak.longest, current),
+    lastActiveDate: today,
+  };
+  try {
+    localStorage.setItem(STREAK_KEY, JSON.stringify(next));
+  } catch {
+    // bỏ qua nếu localStorage không dùng được
+  }
+  const uid = currentUid();
+  if (uid) pushStreak(uid, next);
+}
+
+export function getStreak(): Streak {
+  return readStreak();
 }
 
 const REVIEW_KEY = "medquiz:review";
@@ -216,8 +336,12 @@ export async function syncFromCloud(uid: string): Promise<void> {
   const cloud = await pullAllProgress(uid);
   try {
     if (cloud.stats) localStorage.setItem(STATS_KEY, JSON.stringify(cloud.stats));
+    if (cloud.streak) localStorage.setItem(STREAK_KEY, JSON.stringify(cloud.streak));
     if (Object.keys(cloud.reviews).length > 0) {
       localStorage.setItem(REVIEW_KEY, JSON.stringify(cloud.reviews));
+    }
+    if (Object.keys(cloud.wrongAnswers).length > 0) {
+      localStorage.setItem(WRONG_KEY, JSON.stringify(cloud.wrongAnswers));
     }
     for (const [suffix, session] of Object.entries(cloud.sessions)) {
       localStorage.setItem(`${SESSION_PREFIX}${suffix}`, JSON.stringify(session));
