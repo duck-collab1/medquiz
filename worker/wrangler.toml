@@ -2,13 +2,14 @@ name = "medquiz-ai-worker"
 main = "src/index.ts"
 compatibility_date = "2026-07-18"
 
-# 4 thông báo/ngày (giờ VN, UTC+7):
-#   6:00  (23:00 UTC hôm trước) - lịch học hôm nay
-#   12:00 (05:00 UTC)           - quote truyền động lực
-#   14:00 (07:00 UTC)           - nhắc giờ học buổi chiều
-#   19:00 (12:00 UTC)           - nhắc giờ học buổi tối
+# Thông báo/ngày (giờ VN, UTC+7):
+#   6:00        (23:00 UTC hôm trước) - lịch học hôm nay
+#   8:00-21:00  (01:00-14:00 UTC, mỗi giờ) - kiểm tra, chỉ gửi quote truyền
+#               động lực vào (các) giờ được chọn riêng cho ngày đó (1-2 lần)
+#   14:00       (07:00 UTC)           - nhắc giờ học buổi chiều
+#   19:00       (12:00 UTC)           - nhắc giờ học buổi tối
 [triggers]
-crons = ["0 23 * * *", "0 5 * * *", "0 7 * * *", "0 12 * * *"]
+crons = ["0 23 * * *", "0 1-14 * * *", "0 7 * * *", "0 12 * * *"]
 
 [vars]
 # ID project Firebase của bạn (Project settings > General > Project ID trên Firebase Console)

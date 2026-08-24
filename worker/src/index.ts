@@ -21,6 +21,30 @@ function vnNow(): Date {
   return new Date(Date.now() + 7 * 3600 * 1000);
 }
 
+// Giờ (VN) có thể gửi quote - né giờ ngủ (trước 8h, sau 21h).
+const QUOTE_WAKING_HOURS_VN = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
+
+function dayOfYear(date: Date): number {
+  const start = new Date(date.getFullYear(), 0, 0);
+  return Math.floor((date.getTime() - start.getTime()) / 86400000);
+}
+
+// Trước đây quote chỉ gửi cố định 12h trưa nên rất dễ bị lỡ (khoá điện thoại,
+// không mở app đúng lúc...). Đổi sang: mỗi giờ trong khung giờ thức đều kiểm
+// tra, nhưng chỉ thực sự gửi vào (các) giờ được chọn riêng cho ngày hôm đó -
+// giờ đổi mỗi ngày (tính theo ngày trong năm) để không cố định 1 mốc, và một
+// số ngày gửi 2 lần thay vì luôn đúng 1 lần.
+function quoteHoursToday(date: Date): number[] {
+  const d = dayOfYear(date);
+  const first = QUOTE_WAKING_HOURS_VN[d % QUOTE_WAKING_HOURS_VN.length];
+  const hours = [first];
+  if (d % 3 === 0) {
+    const second = QUOTE_WAKING_HOURS_VN[(d + 5) % QUOTE_WAKING_HOURS_VN.length];
+    if (second !== first) hours.push(second);
+  }
+  return hours;
+}
+
 function scheduleBody(): string {
   const plan = getDayPlan(vnNow());
   if (!plan) return "Đã hết lộ trình ôn tập, chúc bạn thi tốt!";
@@ -254,10 +278,13 @@ export default {
         title = "📖 Lịch học hôm nay";
         body = scheduleBody();
         break;
-      case "0 5 * * *": // 12:00 trưa giờ VN - quote truyền động lực
+      case "0 1-14 * * *": { // 8h-21h giờ VN, mỗi giờ - chỉ gửi vào (các) giờ được chọn cho hôm nay
+        const now = vnNow();
+        if (!quoteHoursToday(now).includes(now.getHours())) return;
         title = "💬 Câu quote hôm nay";
-        body = getTodayQuote(vnNow());
+        body = getTodayQuote(now);
         break;
+      }
       case "0 7 * * *": // 14:00 chiều giờ VN - nhắc giờ học buổi chiều
         title = "⏰ Đến giờ học buổi chiều";
         body = afternoonBody();
