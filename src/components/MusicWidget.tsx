@@ -17,11 +17,15 @@ interface YTPlayer {
   mute(): void;
   unMute(): void;
   destroy(): void;
+  loadVideoById(videoId: string): void;
 }
 
 interface YTPlayerEvent {
+  data: number;
   target: YTPlayer;
 }
+
+const YT_STATE_ENDED = 0;
 
 declare global {
   interface Window {
@@ -33,6 +37,7 @@ declare global {
           playerVars?: Record<string, number | string>;
           events?: {
             onReady?: (event: YTPlayerEvent) => void;
+            onStateChange?: (event: YTPlayerEvent) => void;
           };
         },
       ) => YTPlayer;
@@ -89,8 +94,32 @@ export function MusicWidget() {
   const [favorites, setFavorites] = useState<Favorite[]>(loadFavorites);
   const playerRef = useRef<YTPlayer | null>(null);
   const playerContainerRef = useRef<HTMLDivElement>(null);
+  const favoritesRef = useRef(favorites);
+  favoritesRef.current = favorites;
+  // Đánh dấu lần đổi videoId này đã tự phát bằng loadVideoById() trên player
+  // có sẵn rồi (xem playNextFavorite) - effect bên dưới không cần huỷ/tạo lại
+  // player, và cleanup cũng không được huỷ player lúc này (xem bên dưới).
+  const skipRecreateRef = useRef(false);
+
+  // YouTube không còn API nào để lấy "video đề xuất tiếp theo" (đã gỡ từ
+  // 2023), và logic gợi ý chạy trong iframe riêng của YouTube nên không đọc/
+  // can thiệp được từ trang cha - vì vậy khi hết bài, tự chuyển sang bài
+  // TIẾP THEO trong danh sách yêu thích (thứ duy nhất mình chủ động được).
+  function playNextFavorite(currentId: string) {
+    const list = favoritesRef.current;
+    if (list.length < 2) return;
+    const idx = list.findIndex((f) => f.id === currentId);
+    const next = list[(idx + 1) % list.length];
+    playerRef.current?.loadVideoById(next.id);
+    skipRecreateRef.current = true;
+    setVideoId(next.id);
+  }
 
   useEffect(() => {
+    if (skipRecreateRef.current) {
+      skipRecreateRef.current = false;
+      return;
+    }
     if (!videoId || !playerContainerRef.current) return;
     let cancelled = false;
     // Tạo 1 node thuần túy nằm ngoài tầm quản lý của React để YouTube API tự
@@ -102,18 +131,23 @@ export function MusicWidget() {
     container.appendChild(target);
     loadYouTubeApi().then(() => {
       if (cancelled || !window.YT) return;
-      // Không can thiệp khi video hết - để YouTube tự phát video gợi ý tiếp
-      // theo như bình thường (không ép chuyển sang bài đã lưu).
       playerRef.current = new window.YT.Player(target, {
         videoId,
         playerVars: { autoplay: 1 },
         events: {
           onReady: (e) => e.target.setVolume(volume),
+          onStateChange: (e) => {
+            if (e.data === YT_STATE_ENDED) playNextFavorite(videoId);
+          },
         },
       });
     });
     return () => {
       cancelled = true;
+      // Nếu videoId sắp đổi là do playNextFavorite() (đã loadVideoById() trên
+      // player hiện tại), giữ nguyên player - đừng huỷ nó, nếu không sẽ mất
+      // luôn iframe mà chẳng có gì tạo lại (effect tiếp theo bị skip).
+      if (skipRecreateRef.current) return;
       playerRef.current?.destroy();
       playerRef.current = null;
     };
