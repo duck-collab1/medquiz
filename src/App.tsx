@@ -8,6 +8,7 @@ import { ChapterPage } from "./pages/ChapterPage";
 import { ProtectedRoute } from "./routes/ProtectedRoute";
 import { ChatWidget } from "./components/ChatWidget";
 import { LabReferenceWidget } from "./components/LabReferenceWidget";
+import { MusicWidget } from "./components/MusicWidget";
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
       </Routes>
       <ChatWidget />
       <LabReferenceWidget />
+      <MusicWidget />
     </>
   );
 }
