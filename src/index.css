@@ -670,6 +670,7 @@ a {
 .progress-chip {
   display: inline-flex;
   align-items: center;
+  gap: 6px;
   padding: 5px 12px;
   border-radius: 999px;
   border: 1px solid var(--border);
@@ -691,6 +692,9 @@ a {
 }
 
 .wrong-answers-page h1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-family: var(--serif);
   font-size: 24px;
   margin-bottom: 18px;

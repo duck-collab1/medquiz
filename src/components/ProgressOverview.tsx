@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { CircleCheck, CircleX, Flame } from "lucide-react";
 import { getOverallStats, getStreak, getWrongAnswerCount } from "../services/progressService";
 
 export function ProgressOverview() {
@@ -46,13 +47,20 @@ export function ProgressOverview() {
           <strong>{stats.correct}</strong> câu ({accuracy}%)
         </p>
         <div className="progress-overview-chips">
-          <span className="progress-chip">🔥 Streak {streak} ngày</span>
+          <span className="progress-chip">
+            <Flame size={14} strokeWidth={2} aria-hidden />
+            Streak {streak} ngày
+          </span>
           {wrongCount > 0 ? (
             <Link to="/lam-lai-cau-sai" className="progress-chip progress-chip-link">
-              ❌ {wrongCount} câu sai cần làm lại
+              <CircleX size={14} strokeWidth={2} aria-hidden />
+              {wrongCount} câu sai cần làm lại
             </Link>
           ) : (
-            <span className="progress-chip">✅ Không còn câu sai nào</span>
+            <span className="progress-chip">
+              <CircleCheck size={14} strokeWidth={2} aria-hidden />
+              Không còn câu sai nào
+            </span>
           )}
         </div>
       </div>

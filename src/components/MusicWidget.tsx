@@ -20,11 +20,8 @@ interface YTPlayer {
 }
 
 interface YTPlayerEvent {
-  data: number;
   target: YTPlayer;
 }
-
-const YT_STATE_ENDED = 0;
 
 declare global {
   interface Window {
@@ -36,7 +33,6 @@ declare global {
           playerVars?: Record<string, number | string>;
           events?: {
             onReady?: (event: YTPlayerEvent) => void;
-            onStateChange?: (event: YTPlayerEvent) => void;
           };
         },
       ) => YTPlayer;
@@ -93,15 +89,6 @@ export function MusicWidget() {
   const [favorites, setFavorites] = useState<Favorite[]>(loadFavorites);
   const playerRef = useRef<YTPlayer | null>(null);
   const playerContainerRef = useRef<HTMLDivElement>(null);
-  const favoritesRef = useRef(favorites);
-  favoritesRef.current = favorites;
-
-  function playNextFavorite(currentId: string) {
-    const list = favoritesRef.current;
-    if (list.length === 0) return;
-    const idx = list.findIndex((f) => f.id === currentId);
-    setVideoId(list[(idx + 1) % list.length].id);
-  }
 
   useEffect(() => {
     if (!videoId || !playerContainerRef.current) return;
@@ -115,14 +102,13 @@ export function MusicWidget() {
     container.appendChild(target);
     loadYouTubeApi().then(() => {
       if (cancelled || !window.YT) return;
+      // Không can thiệp khi video hết - để YouTube tự phát video gợi ý tiếp
+      // theo như bình thường (không ép chuyển sang bài đã lưu).
       playerRef.current = new window.YT.Player(target, {
         videoId,
         playerVars: { autoplay: 1 },
         events: {
           onReady: (e) => e.target.setVolume(volume),
-          onStateChange: (e) => {
-            if (e.data === YT_STATE_ENDED) playNextFavorite(videoId);
-          },
         },
       });
     });

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { RotateCcw } from "lucide-react";
 import { QuizRunner } from "../components/QuizRunner";
 import { fetchQuestions } from "../services/questionsService";
 import { getWrongAnswers } from "../services/progressService";
@@ -38,7 +39,9 @@ export function WrongAnswersPage() {
 
   return (
     <div className="wrong-answers-page">
-      <h1>🔁 Làm lại câu sai</h1>
+      <h1>
+        <RotateCcw size={22} strokeWidth={2} aria-hidden /> Làm lại câu sai
+      </h1>
       {loading && <p>Đang tải...</p>}
       {error && <p className="form-error">{error}</p>}
       {!loading && !error && questions.length === 0 && (
