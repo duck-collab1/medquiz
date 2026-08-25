@@ -1141,6 +1141,10 @@ a {
   margin-bottom: 32px;
 }
 
+.video-library-page .tab-bar {
+  margin-bottom: 18px;
+}
+
 .video-section h2 {
   display: flex;
   align-items: center;

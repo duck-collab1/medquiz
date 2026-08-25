@@ -3,6 +3,7 @@ import { Film, Play } from "lucide-react";
 import { LECTURE_VIDEOS, type LectureVideo } from "../data/videos";
 import { subjects } from "../config/subjects";
 import { SubjectIcon } from "../components/SubjectIcon";
+import type { IconName } from "../config/icons";
 import { loadYouTubeApi, type YTPlayer } from "../utils/youtube";
 
 const PROGRESS_KEY = "medquiz:videoProgress";
@@ -117,6 +118,13 @@ function VideoCard({
   );
 }
 
+interface VideoTab {
+  key: string;
+  label: string;
+  icon?: IconName;
+  videos: LectureVideo[];
+}
+
 export function VideoLibraryPage() {
   const lastWatchedId = useMemo(() => findLastWatched(LECTURE_VIDEOS), []);
   const [openId, setOpenId] = useState<string | null>(lastWatchedId);
@@ -126,13 +134,20 @@ export function VideoLibraryPage() {
   }
 
   const lastWatchedVideo = LECTURE_VIDEOS.find((v) => v.id === lastWatchedId);
-  // Bỏ video đang xem dở ra khỏi danh sách nhóm bên dưới - tránh hiện (và mở
-  // player) trùng 2 lần cùng lúc (1 lần ở "Tiếp tục xem", 1 lần ở đúng nhóm môn).
+  // Bỏ video đang xem dở ra khỏi danh sách theo tab bên dưới - tránh hiện (và
+  // mở player) trùng 2 lần cùng lúc (1 lần ở "Tiếp tục xem", 1 lần ở tab môn).
   const rest = LECTURE_VIDEOS.filter((v) => v.id !== lastWatchedId);
-  const grouped = subjects
-    .map((s) => ({ subject: s, videos: rest.filter((v) => v.subject === s.id) }))
-    .filter((g) => g.videos.length > 0);
+  const tabs: VideoTab[] = subjects
+    .map((s) => ({ key: s.id, label: s.name, icon: s.icon, videos: rest.filter((v) => v.subject === s.id) }))
+    .filter((t) => t.videos.length > 0);
   const ungrouped = rest.filter((v) => !v.subject);
+  if (ungrouped.length > 0) tabs.push({ key: "khac", label: "Khác", videos: ungrouped });
+
+  const [activeTab, setActiveTab] = useState(() => {
+    const idx = tabs.findIndex((t) => t.key === lastWatchedVideo?.subject);
+    return idx >= 0 ? tabs[idx].key : (tabs[0]?.key ?? "");
+  });
+  const current = tabs.find((t) => t.key === activeTab) ?? tabs[0];
 
   return (
     <div className="video-library-page">
@@ -157,28 +172,25 @@ export function VideoLibraryPage() {
         </section>
       )}
 
-      {grouped.map(({ subject, videos }) => (
-        <section key={subject.id} className="video-section">
-          <h2>
-            <SubjectIcon name={subject.icon} size={20} /> {subject.name}
-          </h2>
-          <div className="video-grid">
-            {videos.map((v) => (
+      {tabs.length > 0 && (
+        <>
+          <div className="tab-bar">
+            {tabs.map((t) => (
+              <button
+                key={t.key}
+                className={t.key === activeTab ? "tab active" : "tab"}
+                onClick={() => setActiveTab(t.key)}
+              >
+                {t.icon && <SubjectIcon name={t.icon} size={15} />} {t.label}
+              </button>
+            ))}
+          </div>
+          <div className="video-grid video-grid-tab">
+            {current?.videos.map((v) => (
               <VideoCard key={v.id} video={v} open={openId === v.id} onToggle={() => toggle(v.id)} />
             ))}
           </div>
-        </section>
-      ))}
-
-      {ungrouped.length > 0 && (
-        <section className="video-section">
-          <h2>Khác</h2>
-          <div className="video-grid">
-            {ungrouped.map((v) => (
-              <VideoCard key={v.id} video={v} open={openId === v.id} onToggle={() => toggle(v.id)} />
-            ))}
-          </div>
-        </section>
+        </>
       )}
     </div>
   );
