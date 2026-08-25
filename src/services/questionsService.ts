@@ -29,6 +29,35 @@ export function splitByReviewStatus(questions: Question[]) {
   return { ready, needsReview };
 }
 
+/**
+ * Sắp xếp lại đúng thứ tự gốc của đề theo id (vd mcq-001, mcq-002...) - so
+ * sánh kiểu tự nhiên (numeric) để "bai-2" đứng trước "bai-10" thay vì so
+ * sánh chuỗi thường sẽ ra sai thứ tự. Firestore không đảm bảo thứ tự trả về
+ * nếu không có orderBy, nên phải tự sắp lại sau khi tải về.
+ */
+export function sortByOriginalOrder(questions: Question[]): Question[] {
+  return [...questions].sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
+}
+
+/**
+ * Gom các câu hỏi liên tiếp (sau khi đã sắp đúng thứ tự) cùng chung 1 case
+ * lâm sàng (case_stem giống hệt nhau) thành 1 nhóm - để hiển thị chung 1
+ * trang thay vì phân trang từng câu một. Câu không có case_stem (hoặc case
+ * khác câu trước) tự thành nhóm riêng 1 câu.
+ */
+export function groupByCaseStem(questions: Question[]): Question[][] {
+  const groups: Question[][] = [];
+  for (const q of questions) {
+    const last = groups[groups.length - 1];
+    if (q.caseStem && last?.[0].caseStem === q.caseStem) {
+      last.push(q);
+    } else {
+      groups.push([q]);
+    }
+  }
+  return groups;
+}
+
 /** Nhóm ảo cho câu hỏi chưa gán chương — không lưu trong Firestore. */
 export const FALLBACK_GROUP = "Khác";
 

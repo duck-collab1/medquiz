@@ -1300,6 +1300,19 @@ a {
   cursor: default;
 }
 
+/* Nhiều câu hỏi chung 1 case lâm sàng xếp chồng trên cùng 1 trang */
+.quiz-case-question {
+  padding-top: 22px;
+  margin-top: 6px;
+  border-top: 1px dashed var(--border);
+}
+
+.quiz-case-question:first-of-type {
+  padding-top: 0;
+  margin-top: 0;
+  border-top: none;
+}
+
 .quiz-explanation {
   padding: 14px 18px;
   background: var(--bg-alt);

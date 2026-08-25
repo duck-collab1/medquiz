@@ -31,6 +31,10 @@ export function LessonView({
   chapter,
 }: LessonViewProps) {
   const [tab, setTab] = useState<Tab>("notes");
+  // Các bộ đề dạng "bài test" (vd. Test anh Hải) không có ghi chú và câu hỏi
+  // trong đề gốc trộn lẫn thường/case lâm sàng theo 1 thứ tự cố định - không
+  // tách tab, hiển thị đúng thứ tự gốc trong 1 luồng duy nhất.
+  const isTestSet = subject === "test-anh-hai";
 
   return (
     <div className="subject-page">
@@ -44,35 +48,43 @@ export function LessonView({
           </h1>
         </header>
 
-        <div className="tab-bar">
-          <button
-            className={tab === "notes" ? "tab active" : "tab"}
-            onClick={() => setTab("notes")}
-          >
-            Ghi chú
-          </button>
-          <button
-            className={tab === "quiz" ? "tab active" : "tab"}
-            onClick={() => setTab("quiz")}
-          >
-            Trắc nghiệm
-          </button>
-          <button
-            className={tab === "case" ? "tab active" : "tab"}
-            onClick={() => setTab("case")}
-          >
-            Case lâm sàng
-          </button>
-        </div>
+        {!isTestSet && (
+          <div className="tab-bar">
+            <button
+              className={tab === "notes" ? "tab active" : "tab"}
+              onClick={() => setTab("notes")}
+            >
+              Ghi chú
+            </button>
+            <button
+              className={tab === "quiz" ? "tab active" : "tab"}
+              onClick={() => setTab("quiz")}
+            >
+              Trắc nghiệm
+            </button>
+            <button
+              className={tab === "case" ? "tab active" : "tab"}
+              onClick={() => setTab("case")}
+            >
+              Case lâm sàng
+            </button>
+          </div>
+        )}
       </div>
 
       <div className="tab-content">
-        {tab === "notes" && <NoteViewer notes={notes} />}
-        {tab === "quiz" && (
-          <QuizRunner subject={subject} group={group} chapter={chapter} />
-        )}
-        {tab === "case" && (
-          <QuizRunner subject={subject} group={group} chapter={chapter} onlyCase />
+        {isTestSet ? (
+          <QuizRunner subject={subject} group={group} chapter={chapter} showAll />
+        ) : (
+          <>
+            {tab === "notes" && <NoteViewer notes={notes} />}
+            {tab === "quiz" && (
+              <QuizRunner subject={subject} group={group} chapter={chapter} />
+            )}
+            {tab === "case" && (
+              <QuizRunner subject={subject} group={group} chapter={chapter} onlyCase />
+            )}
+          </>
         )}
       </div>
     </div>
