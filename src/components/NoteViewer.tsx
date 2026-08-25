@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { slugify } from "../utils/slug";
+import { useTextHighlighter } from "../hooks/useTextHighlighter";
 import type { NoteFile } from "../services/notesService";
 
 interface Heading {
@@ -47,6 +48,7 @@ export function NoteViewer({ notes }: { notes: NoteFile[] }) {
   const active = notes.find((n) => n.slug === activeSlug) ?? notes[0];
   const headings = useMemo(() => (active ? extractHeadings(active.content) : []), [active]);
   const idByLine = useMemo(() => new Map(headings.map((h) => [h.line, h.id])), [headings]);
+  const highlightRef = useTextHighlighter(active ? `note:${active.slug}` : null);
 
   if (notes.length === 0) {
     return <p>Chưa có ghi chú nào cho môn này.</p>;
@@ -85,7 +87,7 @@ export function NoteViewer({ notes }: { notes: NoteFile[] }) {
           </div>
         )}
       </nav>
-      <article className="note-content">
+      <article className="note-content" ref={highlightRef}>
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{

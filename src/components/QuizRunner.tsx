@@ -14,6 +14,7 @@ import type { AnswerKey, Question, SubjectId } from "../types";
 import { QuizResult } from "./QuizResult";
 import { useChatContext } from "../contexts/ChatContext";
 import { buildExplainPrompt } from "../utils/quizPrompt";
+import { useTextHighlighter } from "../hooks/useTextHighlighter";
 
 interface QuizRunnerProps {
   /** Bỏ trống khi dùng cùng `questions` (câu hỏi có thể thuộc nhiều môn khác nhau, vd. tab làm lại câu sai). */
@@ -205,6 +206,10 @@ export function QuizRunner({ subject, group, chapter, onlyCase, questions: exter
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading, error, finished, ready, currentIndex, showFeedback, answers]);
 
+  const highlightRef = useTextHighlighter(
+    !loading && !error && !finished && ready[currentIndex] ? `question:${ready[currentIndex].id}` : null,
+  );
+
   if (loading) return <p>Đang tải câu hỏi...</p>;
   if (error) return <p className="form-error">{error}</p>;
 
@@ -238,12 +243,14 @@ export function QuizRunner({ subject, group, chapter, onlyCase, questions: exter
           ` · ${needsReviewCount} câu chưa có đáp án (đã ẩn)`}
       </p>
       {current.chapter && <p className="quiz-chapter">{current.chapter}</p>}
-      {current.caseStem && (
-        <div className="quiz-case-stem">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{current.caseStem}</ReactMarkdown>
-        </div>
-      )}
-      <p className="quiz-question">{current.question}</p>
+      <div ref={highlightRef}>
+        {current.caseStem && (
+          <div className="quiz-case-stem">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{current.caseStem}</ReactMarkdown>
+          </div>
+        )}
+        <p className="quiz-question">{current.question}</p>
+      </div>
       {current.image && (
         <img className="quiz-image" src={current.image} alt="" />
       )}
