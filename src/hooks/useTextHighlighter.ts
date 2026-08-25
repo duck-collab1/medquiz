@@ -59,8 +59,8 @@ function findRange(container: Node, text: string, occurrence: number): Range | n
 }
 
 /**
- * Cho phép người dùng bôi chọn text trong container rồi bấm nút nổi để đánh
- * dấu đậm/bỏ đánh dấu - lưu lại theo `contentKey` (vd "note:slug",
+ * Bôi chọn text trong container là tự động đánh dấu đậm ngay (chọn lại đúng
+ * đoạn đã đậm thì bỏ đậm) - lưu theo `contentKey` (vd "note:slug",
  * "question:id") để lần sau quay lại vẫn thấy.
  */
 export function useTextHighlighter(contentKey: string | null) {
@@ -87,58 +87,25 @@ export function useTextHighlighter(contentKey: string | null) {
 
     applyHighlights();
 
-    let toolbarEl: HTMLButtonElement | null = null;
-    function hideToolbar() {
-      toolbarEl?.remove();
-      toolbarEl = null;
-    }
-    function showToolbar(rect: DOMRect, isHighlighted: boolean, onClick: () => void) {
-      hideToolbar();
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.textContent = isHighlighted ? "Bỏ bôi đậm" : "🖊 Bôi đậm";
-      btn.className = "highlight-toolbar-btn";
-      btn.style.top = `${rect.top + window.scrollY - 38}px`;
-      btn.style.left = `${rect.left + window.scrollX}px`;
-      btn.onmousedown = (e) => e.preventDefault(); // đừng xoá vùng chọn khi bấm nút
-      btn.onclick = (e) => {
-        e.stopPropagation();
-        onClick();
-      };
-      document.body.appendChild(btn);
-      toolbarEl = btn;
-    }
-
-    function handleMouseUp(e: MouseEvent) {
-      if (toolbarEl && e.target === toolbarEl) return;
+    function handleMouseUp() {
       const selection = window.getSelection();
       const text = selection?.toString().trim();
-      if (!selection || !text || selection.rangeCount === 0) {
-        hideToolbar();
-        return;
-      }
+      if (!selection || !text || selection.rangeCount === 0) return;
       const range = selection.getRangeAt(0);
-      if (!container!.contains(range.commonAncestorContainer)) {
-        hideToolbar();
-        return;
-      }
-      const rect = range.getBoundingClientRect();
-      const isHighlighted = (readHighlights()[contentKey!] ?? []).includes(text);
-      showToolbar(rect, isHighlighted, () => {
-        const map = readHighlights();
-        const list = map[contentKey!] ?? [];
-        map[contentKey!] = isHighlighted ? list.filter((t) => t !== text) : [...list, text];
-        writeHighlights(map);
-        selection.removeAllRanges();
-        hideToolbar();
-        applyHighlights();
-      });
+      if (!container!.contains(range.commonAncestorContainer)) return;
+
+      const map = readHighlights();
+      const list = map[contentKey!] ?? [];
+      const isHighlighted = list.includes(text);
+      map[contentKey!] = isHighlighted ? list.filter((t) => t !== text) : [...list, text];
+      writeHighlights(map);
+      selection.removeAllRanges();
+      applyHighlights();
     }
 
     document.addEventListener("mouseup", handleMouseUp);
     return () => {
       document.removeEventListener("mouseup", handleMouseUp);
-      hideToolbar();
       CSS.highlights.delete("medquiz-highlight");
     };
   }, [contentKey]);
