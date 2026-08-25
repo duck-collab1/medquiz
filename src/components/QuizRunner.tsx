@@ -114,6 +114,13 @@ export function QuizRunner({
   // trang - điều hướng theo nhóm (không phải theo từng câu) từ đây trở đi.
   const groups = useMemo(() => groupByCaseStem(ready), [ready]);
 
+  // Cuộn lên đầu trang mỗi khi sang câu/case khác - nếu không, trang đứng
+  // yên ở vị trí cũ (thường gần cuối, chỗ vừa bấm nút) và phải tự cuộn lên
+  // để đọc câu/case mới.
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentGroupIndex]);
+
   function resetSession() {
     if (!externalQuestions) clearSession(subject as SubjectId, group, chapter, onlyCase);
     setAnswers({});
