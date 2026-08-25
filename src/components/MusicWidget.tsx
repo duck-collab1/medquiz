@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { useFloatingWidget } from "../contexts/FloatingWidgetContext";
+import { loadYouTubeApi, YT_STATE_ENDED, type YTPlayer } from "../utils/youtube";
 
 // Chấp nhận link dạng youtube.com/watch?v=, youtu.be/, youtube.com/embed/,
 // hoặc dán thẳng 11 ký tự ID của video.
@@ -10,40 +11,6 @@ function extractVideoId(input: string): string | null {
   if (match) return match[1];
   if (/^[\w-]{11}$/.test(trimmed)) return trimmed;
   return null;
-}
-
-interface YTPlayer {
-  setVolume(volume: number): void;
-  mute(): void;
-  unMute(): void;
-  destroy(): void;
-  loadVideoById(videoId: string): void;
-}
-
-interface YTPlayerEvent {
-  data: number;
-  target: YTPlayer;
-}
-
-const YT_STATE_ENDED = 0;
-
-declare global {
-  interface Window {
-    YT?: {
-      Player: new (
-        element: string | HTMLElement,
-        options: {
-          videoId: string;
-          playerVars?: Record<string, number | string>;
-          events?: {
-            onReady?: (event: YTPlayerEvent) => void;
-            onStateChange?: (event: YTPlayerEvent) => void;
-          };
-        },
-      ) => YTPlayer;
-    };
-    onYouTubeIframeAPIReady?: () => void;
-  }
 }
 
 const FAVORITES_KEY = "medquiz:musicFavorites";
@@ -60,26 +27,6 @@ function loadFavorites(): Favorite[] {
   } catch {
     return [];
   }
-}
-
-// Tải script IFrame Player API chính thức của YouTube 1 lần duy nhất (dùng
-// API thật thay vì tự dò DOM bên trong iframe - vốn bị chặn bởi
-// Same-Origin Policy của trình duyệt, không thể can thiệp được).
-let apiLoadPromise: Promise<void> | null = null;
-function loadYouTubeApi(): Promise<void> {
-  if (window.YT?.Player) return Promise.resolve();
-  if (apiLoadPromise) return apiLoadPromise;
-  apiLoadPromise = new Promise((resolve) => {
-    const prev = window.onYouTubeIframeAPIReady;
-    window.onYouTubeIframeAPIReady = () => {
-      prev?.();
-      resolve();
-    };
-    const script = document.createElement("script");
-    script.src = "https://www.youtube.com/iframe_api";
-    document.head.appendChild(script);
-  });
-  return apiLoadPromise;
 }
 
 export function MusicWidget() {

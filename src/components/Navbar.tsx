@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { RotateCcw } from "lucide-react";
+import { Film, RotateCcw } from "lucide-react";
 import { useAuth } from "../contexts/AuthContext";
 import { getWrongAnswerCount } from "../services/progressService";
 
@@ -24,6 +24,10 @@ export function Navbar() {
         <RotateCcw size={15} strokeWidth={2} aria-hidden />
         Làm lại câu sai
         {wrongCount > 0 && <span className="navbar-tab-badge">{wrongCount}</span>}
+      </Link>
+      <Link to="/video-bai-giang" className="navbar-tab">
+        <Film size={15} strokeWidth={2} aria-hidden />
+        Video bài giảng
       </Link>
       <div className="navbar-user">
         <span className="navbar-greeting">
