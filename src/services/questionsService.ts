@@ -20,6 +20,7 @@ export async function fetchQuestions(
  */
 export const KNOWN_GROUPS: Partial<Record<SubjectId, string[]>> = {
   "test-moi": ["Nội", "Ngoại", "Sản", "Nhi"],
+  "test-anh-hai": ["Nội", "Nhi"],
 };
 
 export function splitByReviewStatus(questions: Question[]) {
