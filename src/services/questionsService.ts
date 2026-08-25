@@ -68,14 +68,15 @@ export function hasHierarchy(questions: Question[]): boolean {
 
 export function getGroups(questions: Question[]): string[] {
   const set = new Set(questions.map((q) => q.group || FALLBACK_GROUP));
-  return [...set].sort((a, b) => a.localeCompare(b, "vi"));
+  return [...set].sort((a, b) => a.localeCompare(b, "vi", { numeric: true }));
 }
 
+/** So sánh kiểu tự nhiên (numeric) để "Bài kiểm tra số 2" đứng trước "số 10" thay vì sau (so sánh chuỗi thường sẽ xếp theo ký tự "1" trước nên "10","11"... đứng trước "2"). */
 export function getChaptersInGroup(questions: Question[], group: string): string[] {
   const set = new Set(
     questions
       .filter((q) => (q.group || FALLBACK_GROUP) === group && q.chapter)
       .map((q) => q.chapter),
   );
-  return [...set].sort((a, b) => a.localeCompare(b, "vi"));
+  return [...set].sort((a, b) => a.localeCompare(b, "vi", { numeric: true }));
 }
