@@ -31,7 +31,7 @@ function loadFavorites(): Favorite[] {
 }
 
 export function MusicWidget() {
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
   const { dockVisible } = useFloatingWidget();
   const [panelOpen, setPanelOpen] = useState(false);
   const [urlInput, setUrlInput] = useState("");
@@ -49,6 +49,14 @@ export function MusicWidget() {
   // có sẵn rồi (xem playNextFavorite) - effect bên dưới không cần huỷ/tạo lại
   // player, và cleanup cũng không được huỷ player lúc này (xem bên dưới).
   const skipRecreateRef = useRef(false);
+
+  // MusicWidget render ở App.tsx, ngoài vùng ProtectedRoute nên không đợi
+  // loading của AuthContext - favorites ở trên đọc localStorage NGAY lúc mount,
+  // có thể trước cả lúc syncFromCloud() kịp kéo musicFavorites từ Firestore về
+  // (máy lạ, localStorage rỗng). Đọc lại 1 lần nữa khi loading chuyển false.
+  useEffect(() => {
+    if (!loading) setFavorites(loadFavorites());
+  }, [loading]);
 
   // YouTube không còn API nào để lấy "video đề xuất tiếp theo" (đã gỡ từ
   // 2023), và logic gợi ý chạy trong iframe riêng của YouTube nên không đọc/

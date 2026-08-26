@@ -23,7 +23,16 @@ export function WrongAnswersPage() {
       .then((bySubject) => {
         if (cancelled) return;
         const idSet = new Set(ids);
-        setQuestions(bySubject.flat().filter((q) => idSet.has(q.id)));
+        const all = bySubject.flat();
+        // Sai 1 câu trong case lâm sàng nhiều câu thì bắt làm lại cả case,
+        // không chỉ riêng câu đã sai - nên gom thêm mọi câu cùng case_stem
+        // (cùng môn, để tránh case_stem trùng giữa 2 môn khác nhau).
+        const wrongCaseStems = new Set(
+          all.filter((q) => idSet.has(q.id) && q.caseStem).map((q) => `${q.subject}:${q.caseStem}`),
+        );
+        setQuestions(
+          all.filter((q) => idSet.has(q.id) || (q.caseStem && wrongCaseStems.has(`${q.subject}:${q.caseStem}`))),
+        );
       })
       .catch((err) => {
         console.error(err);

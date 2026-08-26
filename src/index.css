@@ -26,6 +26,12 @@
   --sans: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
 
   font: 16px/160% var(--sans);
+  /* Tắt tự động phóng to cỡ chữ trên mobile (WebKit/Blink "font boosting") -
+     nếu không, các khối text cùng 1 class nhưng độ dài nội dung khác nhau
+     (vd. tiêu đề video ngắn "Buổi 1" so với dài "B1. ho hap- nkhhct") sẽ bị
+     hiển thị to nhỏ khác nhau dù CSS giống hệt nhau. */
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
   color-scheme: light dark;
   color: var(--text);
   background: var(--bg);
