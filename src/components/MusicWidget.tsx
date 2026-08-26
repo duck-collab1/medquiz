@@ -40,6 +40,7 @@ export function MusicWidget() {
   const [volume, setVolume] = useState(100);
   const [muted, setMuted] = useState(false);
   const [favorites, setFavorites] = useState<Favorite[]>(loadFavorites);
+  const [favoritesOpen, setFavoritesOpen] = useState(false);
   const playerRef = useRef<YTPlayer | null>(null);
   const playerContainerRef = useRef<HTMLDivElement>(null);
   const favoritesRef = useRef(favorites);
@@ -181,22 +182,9 @@ export function MusicWidget() {
           {inputError && <p className="form-error music-error">{inputError}</p>}
 
           {favorites.length > 0 && (
-            <div className="music-favorites">
-              {favorites.map((f) => (
-                <span key={f.id} className="music-favorite-chip">
-                  <button onClick={() => setVideoId(f.id)} title={f.title}>
-                    ▶ {f.title}
-                  </button>
-                  <button
-                    className="music-favorite-remove"
-                    onClick={() => removeFavorite(f.id)}
-                    aria-label="Xóa khỏi danh sách yêu thích"
-                  >
-                    ✕
-                  </button>
-                </span>
-              ))}
-            </div>
+            <button className="music-favorites-toggle" onClick={() => setFavoritesOpen(true)}>
+              ★ Bài yêu thích ({favorites.length})
+            </button>
           )}
 
           {videoId && (
@@ -233,6 +221,41 @@ export function MusicWidget() {
               </div>
             </>
           )}
+        </div>
+      )}
+
+      {favoritesOpen && (
+        <div className="music-favorites-backdrop" onClick={() => setFavoritesOpen(false)}>
+          <div className="music-favorites-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="chat-panel-header">
+              <span>★ Bài yêu thích</span>
+              <button onClick={() => setFavoritesOpen(false)} aria-label="Đóng">
+                ✕
+              </button>
+            </div>
+            <div className="music-favorites-list">
+              {favorites.map((f) => (
+                <span key={f.id} className="music-favorite-chip">
+                  <button
+                    onClick={() => {
+                      setVideoId(f.id);
+                      setFavoritesOpen(false);
+                    }}
+                    title={f.title}
+                  >
+                    ▶ {f.title}
+                  </button>
+                  <button
+                    className="music-favorite-remove"
+                    onClick={() => removeFavorite(f.id)}
+                    aria-label="Xóa khỏi danh sách yêu thích"
+                  >
+                    ✕
+                  </button>
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       )}
 

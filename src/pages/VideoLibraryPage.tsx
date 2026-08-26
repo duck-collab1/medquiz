@@ -48,24 +48,16 @@ function findLastWatched(videos: LectureVideo[]): string | null {
   return best?.id ?? null;
 }
 
-function VideoCard({
-  video,
-  open,
-  onToggle,
-}: {
-  video: LectureVideo;
-  open: boolean;
-  onToggle: () => void;
-}) {
+/** Popup phát video - tự phát tiếp đúng chỗ đã dừng lần trước (lưu theo giây,
+ * cập nhật định kỳ + khi đóng), dùng YouTube IFrame Player API thật (seekTo/
+ * getCurrentTime) thay vì iframe thô vì iframe thô không đọc/điều khiển được
+ * tiến trình phát. */
+function VideoModal({ video, onClose }: { video: LectureVideo; onClose: () => void }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const playerRef = useRef<YTPlayer | null>(null);
 
-  // Mở video là tự phát tiếp đúng chỗ đã dừng lần trước (lưu theo giây, cập
-  // nhật định kỳ + khi đóng) - dùng YouTube IFrame Player API thật (seekTo/
-  // getCurrentTime) thay vì iframe thô vì iframe thô không đọc/điều khiển
-  // được tiến trình phát.
   useEffect(() => {
-    if (!open || !containerRef.current) return;
+    if (!containerRef.current) return;
     let cancelled = false;
     const container = containerRef.current;
     container.innerHTML = "";
@@ -99,25 +91,19 @@ function VideoCard({
       playerRef.current = null;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [open, video.id, video.youtubeId]);
-
-  const hasProgress = Boolean(readProgress()[video.id]);
+  }, [video.id, video.youtubeId]);
 
   return (
-    <div className="video-card">
-      {open ? (
-        <div ref={containerRef} className="video-card-frame" />
-      ) : (
-        <button className="video-card-thumb" onClick={onToggle} aria-label={`Phát ${video.title}`}>
-          <img src={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`} alt="" />
-          <span className="video-card-play">
-            <Play size={22} fill="currentColor" />
-          </span>
-          {hasProgress && <span className="video-card-resume-badge">Đang xem dở</span>}
-        </button>
-      )}
-      <p className="video-card-title">{video.title}</p>
-      {video.description && <p className="video-card-desc">{video.description}</p>}
+    <div className="video-modal-backdrop" onClick={onClose}>
+      <div className="video-modal" onClick={(e) => e.stopPropagation()}>
+        <div className="chat-panel-header">
+          <span>{video.title}</span>
+          <button onClick={onClose} aria-label="Đóng">
+            ✕
+          </button>
+        </div>
+        <div ref={containerRef} className="video-modal-frame" />
+      </div>
     </div>
   );
 }
@@ -131,15 +117,10 @@ interface VideoTab {
 
 export function VideoLibraryPage() {
   const lastWatchedId = useMemo(() => findLastWatched(LECTURE_VIDEOS), []);
-  const [openId, setOpenId] = useState<string | null>(lastWatchedId);
-
-  function toggle(id: string) {
-    setOpenId((cur) => (cur === id ? null : id));
-  }
-
   const lastWatchedVideo = LECTURE_VIDEOS.find((v) => v.id === lastWatchedId);
-  // Bỏ video đang xem dở ra khỏi danh sách theo tab bên dưới - tránh hiện (và
-  // mở player) trùng 2 lần cùng lúc (1 lần ở "Tiếp tục xem", 1 lần ở tab môn).
+  const [activeVideo, setActiveVideo] = useState<LectureVideo | null>(lastWatchedVideo ?? null);
+
+  // Bỏ video đang xem dở ra khỏi danh sách theo tab bên dưới - tránh hiện trùng 2 lần.
   const rest = LECTURE_VIDEOS.filter((v) => v.id !== lastWatchedId);
   const tabs: VideoTab[] = subjects
     .map((s) => ({ key: s.id, label: s.name, icon: s.icon, videos: rest.filter((v) => v.subject === s.id) }))
@@ -166,12 +147,12 @@ export function VideoLibraryPage() {
       {lastWatchedVideo && (
         <section className="video-section">
           <h2>▶ Tiếp tục xem</h2>
-          <div className="video-grid">
-            <VideoCard
-              video={lastWatchedVideo}
-              open={openId === lastWatchedVideo.id}
-              onToggle={() => toggle(lastWatchedVideo.id)}
-            />
+          <div className="video-list">
+            <button className="video-list-item" onClick={() => setActiveVideo(lastWatchedVideo)}>
+              <Play size={14} fill="currentColor" />
+              {lastWatchedVideo.title}
+              <span className="video-list-resume">Đang xem dở</span>
+            </button>
           </div>
         </section>
       )}
@@ -189,13 +170,19 @@ export function VideoLibraryPage() {
               </button>
             ))}
           </div>
-          <div className="video-grid video-grid-tab">
+          <div className="video-list">
             {current?.videos.map((v) => (
-              <VideoCard key={v.id} video={v} open={openId === v.id} onToggle={() => toggle(v.id)} />
+              <button key={v.id} className="video-list-item" onClick={() => setActiveVideo(v)}>
+                <Play size={14} fill="currentColor" />
+                {v.title}
+                {readProgress()[v.id] && <span className="video-list-resume">Đang xem dở</span>}
+              </button>
             ))}
           </div>
         </>
       )}
+
+      {activeVideo && <VideoModal video={activeVideo} onClose={() => setActiveVideo(null)} />}
     </div>
   );
 }

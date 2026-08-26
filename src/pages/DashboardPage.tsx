@@ -33,26 +33,31 @@ export function DashboardPage() {
       <NotificationPrompt />
       <ReviewReminder />
 
+      <div className="dashboard-quicklinks">
+        <Link to="/lam-lai-cau-sai" className="dashboard-quicklink">
+          <span className="dashboard-quicklink-icon">
+            <RotateCcw size={22} strokeWidth={1.75} />
+          </span>
+          <span className="dashboard-quicklink-text">
+            <h3>Làm lại câu sai</h3>
+            <p>{wrongCount > 0 ? `${wrongCount} câu cần ôn lại` : "Không còn câu sai nào"}</p>
+          </span>
+        </Link>
+        <Link to="/video-bai-giang" className="dashboard-quicklink">
+          <span className="dashboard-quicklink-icon">
+            <Film size={22} strokeWidth={1.75} />
+          </span>
+          <span className="dashboard-quicklink-text">
+            <h3>Video bài giảng</h3>
+            <p>Xem lại các buổi giảng</p>
+          </span>
+        </Link>
+      </div>
+
       <div className="subject-grid">
         {subjects.map((subject) => (
           <SubjectCard key={subject.id} subject={subject} />
         ))}
-        <Link to="/lam-lai-cau-sai" className="subject-card">
-          <span className="subject-card-icon">
-            <RotateCcw size={26} strokeWidth={1.75} />
-          </span>
-          <span className="subject-card-name">Làm lại câu sai</span>
-          <span className="subject-card-desc">
-            {wrongCount > 0 ? `${wrongCount} câu cần ôn lại` : "Không còn câu sai nào"}
-          </span>
-        </Link>
-        <Link to="/video-bai-giang" className="subject-card">
-          <span className="subject-card-icon">
-            <Film size={26} strokeWidth={1.75} />
-          </span>
-          <span className="subject-card-name">Video bài giảng</span>
-          <span className="subject-card-desc">Xem lại các buổi giảng</span>
-        </Link>
       </div>
     </div>
   );
