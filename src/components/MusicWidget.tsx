@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { useFloatingWidget } from "../contexts/FloatingWidgetContext";
 import { loadYouTubeApi, YT_STATE_ENDED, type YTPlayer } from "../utils/youtube";
+import { pushMusicFavorites } from "../services/cloudSyncService";
 
 // Chấp nhận link dạng youtube.com/watch?v=, youtu.be/, youtube.com/embed/,
 // hoặc dán thẳng 11 ký tự ID của video.
@@ -121,6 +122,7 @@ export function MusicWidget() {
   function persistFavorites(next: Favorite[]) {
     setFavorites(next);
     localStorage.setItem(FAVORITES_KEY, JSON.stringify(next));
+    if (user) pushMusicFavorites(user.uid, next);
   }
 
   function saveFavorite() {

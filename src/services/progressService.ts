@@ -15,6 +15,11 @@ const STATS_KEY = "medquiz:stats";
 const SESSION_PREFIX = "medquiz:session:";
 const WRONG_KEY = "medquiz:wrong";
 const STREAK_KEY = "medquiz:streak";
+// Khớp với FAVORITES_KEY trong MusicWidget.tsx và PROGRESS_KEY trong
+// VideoLibraryPage.tsx - 2 nơi đó tự đẩy lên cloud trực tiếp (đã có sẵn uid
+// từ useAuth), ở đây chỉ lo phần kéo về khi đăng nhập.
+const MUSIC_FAVORITES_KEY = "medquiz:musicFavorites";
+const VIDEO_PROGRESS_KEY = "medquiz:videoProgress";
 
 function currentUid(): string | undefined {
   return auth?.currentUser?.uid;
@@ -343,6 +348,8 @@ export async function syncFromCloud(uid: string): Promise<void> {
     if (Object.keys(cloud.wrongAnswers).length > 0) {
       localStorage.setItem(WRONG_KEY, JSON.stringify(cloud.wrongAnswers));
     }
+    if (cloud.musicFavorites) localStorage.setItem(MUSIC_FAVORITES_KEY, JSON.stringify(cloud.musicFavorites));
+    if (cloud.videoProgress) localStorage.setItem(VIDEO_PROGRESS_KEY, JSON.stringify(cloud.videoProgress));
     for (const [suffix, session] of Object.entries(cloud.sessions)) {
       localStorage.setItem(`${SESSION_PREFIX}${suffix}`, JSON.stringify(session));
     }

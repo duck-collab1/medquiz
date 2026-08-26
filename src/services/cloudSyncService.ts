@@ -42,9 +42,19 @@ export function pushStreak(uid: string, streak: unknown): void {
   setDoc(doc(db!, "users", uid), { streak }, { merge: true }).catch(() => {});
 }
 
+export function pushMusicFavorites(uid: string, favorites: unknown): void {
+  setDoc(doc(db!, "users", uid), { musicFavorites: favorites }, { merge: true }).catch(() => {});
+}
+
+export function pushVideoProgress(uid: string, progress: unknown): void {
+  setDoc(doc(db!, "users", uid), { videoProgress: progress }, { merge: true }).catch(() => {});
+}
+
 export interface CloudProgress {
   stats: unknown;
   streak: unknown;
+  musicFavorites: unknown;
+  videoProgress: unknown;
   sessions: Record<string, unknown>;
   reviews: Record<string, unknown>;
   wrongAnswers: Record<string, unknown>;
@@ -71,6 +81,8 @@ export async function pullAllProgress(uid: string): Promise<CloudProgress> {
   return {
     stats: userSnap.exists() ? userSnap.data().stats : undefined,
     streak: userSnap.exists() ? userSnap.data().streak : undefined,
+    musicFavorites: userSnap.exists() ? userSnap.data().musicFavorites : undefined,
+    videoProgress: userSnap.exists() ? userSnap.data().videoProgress : undefined,
     sessions,
     reviews,
     wrongAnswers,

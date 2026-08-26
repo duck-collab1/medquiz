@@ -5,6 +5,8 @@ import { subjects } from "../config/subjects";
 import { SubjectIcon } from "../components/SubjectIcon";
 import type { IconName } from "../config/icons";
 import { loadYouTubeApi, type YTPlayer } from "../utils/youtube";
+import { auth } from "../firebase";
+import { pushVideoProgress } from "../services/cloudSyncService";
 
 const PROGRESS_KEY = "medquiz:videoProgress";
 const SAVE_INTERVAL_MS = 5000;
@@ -31,6 +33,8 @@ function saveProgress(videoId: string, seconds: number): void {
   } catch {
     // bỏ qua nếu localStorage không dùng được
   }
+  const uid = auth?.currentUser?.uid;
+  if (uid) pushVideoProgress(uid, map);
 }
 
 /** Video đang xem dở gần nhất (nếu còn tồn tại trong danh sách hiện tại). */
