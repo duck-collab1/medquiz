@@ -17,7 +17,7 @@ vẫn đau thì là tổn thương khớp háng
 
 ĐÁNH GIÁ KẾT QUẢ
 
-Gặp trong hội chứng màng não, dấu hiệu này thường xuất hiện cả hai chân (ví dụ : viêm màng não mủ/ do virut, xuất huyết khoang dưới nhện …) . Ngoài ra còn <sup>2</sup> dấu hiệu đặc trưng khác trong hội chứng màng não là dấu hiệu Brudzinski và cứng gáy
+**Gặp trong hội chứng màng não**, dấu hiệu này thường xuất hiện **cả hai chân** (vd: viêm màng não mủ/do virut, xuất huyết khoang dưới nhện…). Ngoài ra còn 2 dấu hiệu đặc trưng khác trong hội chứng màng não là **dấu hiệu Brudzinski** và **cứng gáy**
 
 Đối với người bình thường sẽ có góc Lasègue là 90 độ. Dấu hiệu Lasègue dương tính khi thỏa mãn đồng thời hai điều kiện sau: <sup>+</sup> Thì 1: Bệnh nhân thường sẽ cảm thấy đau khi chân chưa vuông
 

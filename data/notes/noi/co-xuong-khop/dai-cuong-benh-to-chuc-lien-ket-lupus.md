@@ -5,8 +5,8 @@
   - Tổn thương đa hệ thống
   - Đặc trưng: kháng thể kháng nhân (anti-ANA)
   - Dịch tễ:
-    - Tuổi: 16-50T (trung bình 30)
-    - Nữ/ nam =9 (slide cô thủy Nữ/nam =9-10/1)
+    - Tuổi: **16-50T (trung bình 30)**
+    - **Nữ/nam = 9-10/1**
   - Nguyên nhân: di truyền + nội tiết + môi trg sống
 - II. BỆNH SINH
   - Nguyên nhân chưa rõ ràng.
@@ -94,9 +94,9 @@ Tiên lượng phụ thuộc vào thể lâm sàng
 
 4. Đánh giá "MỨC ĐỘ HOẠT ĐỘNG BỆNH" Thang điểm SLEDAI: tính khi có dấu hiệu tại thời điểm hiện tại khám bệnh hoặc trong vòng <sup>10</sup> ngày trước đó.
 
-- 0-3: KO hoạt động
-- 4-12: hoạt động
-- >12: hoạt động nặng.
+- **0-3**: KO hoạt động
+- **4-12**: hoạt động
+- **>12**: hoạt động nặng
 
 ## VI. ĐIỀU TRỊ
 

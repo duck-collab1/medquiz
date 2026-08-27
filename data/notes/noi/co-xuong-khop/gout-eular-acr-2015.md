@@ -17,8 +17,8 @@
 | 2. Xét nghiệm dịch khớp | Không phát hiện tinh thể urat | -2 |
 | 3. Chẩn đoán hình ảnh<br>- Siêu âm: dấu hiệu đường đôi<br>- DECT (dual energy computed tomography: chụp cắt lớp vi tính năng lượng kép) scanner: bắt màu urat đặc biệt | Có 1 trong 2 bằng chứng | 4 |
 | 4. Xquang: Hình ảnh bào mòn xương ở bàn tay hoặc bàn chân | Hiện diện | 4 |
-| **Chẩn đoán (+) GÚT** | **TỔNG ĐIỂM** | **≥ 8** |
+| **Chẩn đoán (+) GÚT** | **TỔNG ĐIỂM** | **≥ 8 điểm** |
 
-> 7: Đang mắc gout (>=8 đ)
+> **Tổng điểm ≥ 8 = chẩn đoán xác định gout**
 
 *\*\*\* Thời điểm lấy AU máu: 1 tháng sau khi xuất hiện cơn gout —> lúc AU máu ổn định (trong cơm AU có thể k tăng)*

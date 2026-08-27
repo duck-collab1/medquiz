@@ -12,8 +12,8 @@
 ### 1. ↑ acid uric máu
 
 - Định nghĩa: ↑ AU máu khi nồng độ AU vượt quá giới hạn tối đa của độ hòa tan của AU trong Hth
-  - Nam > 7.0 mg/l (>420 µmol/L)
-  - Nữ > 6.0 mg/l (>360 µmol/L) *** VN dùng đơn vị µmol/L
+  - **Nam > 7.0 mg/l (>420 µmol/L)**
+  - **Nữ > 6.0 mg/l (>360 µmol/L)** *** VN dùng đơn vị µmol/L
 - Nồng độ AU máu thường liên quan chặt chẽ đến nồng độ ure, crea máu và khối lượng cơ thể, chiều cao, tuổi, huyết áp và uống rượu
 - Nồng độ AU huyết tương ở nữ thấp hơn ở nam do ảnh hưởng của hormon giới tính, estrogen gây ↓ tái hấp thu urat ở ống thận và ↑ bài tiết n` urat qua nước tiểu
 
@@ -207,7 +207,7 @@ Mục tiêu đi tìm:
 
 Mức độ nặng của "CƠN GOUT CẤP" — th giảng lâm sàng phụ thuộc vào số lượng và kích thước khớp bị viêm
 
-- **Nặng** khi có 1 trong 3 tiêu chuẩn: VAS >=7 điểm; >=2 khớp lớn; >=3 khớp (ít nhất 1 khớp lớn) *(có 5 khớp lớn: vai+khuỷu, háng+gối+cổ chân)*
+- **Nặng** khi có 1 trong 3 tiêu chuẩn: **VAS >=7 điểm**; **>=2 khớp lớn**; **>=3 khớp** (ít nhất 1 khớp lớn) *(có 5 khớp lớn: vai+khuỷu, háng+gối+cổ chân)*
 - **Nhẹ - TB:** còn lại => dùng phân độ để điều trị giảm đau
 
 Mức độ nặng của "GOUT mạn" theo ACR 2012:

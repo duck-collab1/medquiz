@@ -3,7 +3,7 @@
 Viêm da cơ - viêm đa cơ địa - PGS Thủy
 
 1. Đại cương (cho biết)
-- *Cô Thủy: ít gặp. Nữ/nam = 2,5/1. Tuổi 40-50
+- *Cô Thủy: ít gặp.* **Nữ/nam = 2,5/1. Tuổi 40-50
 - Đặc trưng bởi viêm cơ, do tự miễn.
 - Viêm da cơ có kèm tổn thg da
 - Viêm đa cơ chỉ tổn thg cơ.

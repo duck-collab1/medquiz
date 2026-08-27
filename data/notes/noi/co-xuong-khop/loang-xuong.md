@@ -28,9 +28,9 @@ xg.
 
 ○ <sup>↓</sup> hấp thu Canxi ở ruột + ↓ tổng hợp Vtm D ( da và thận) => **Cường tuyến cận giáp thứ phát** => ↑ Hủy cốt bào rút Canxi từ xương ra máu. C. Các YTNC & Loãng xương thứ phát (Đã phân nhóm và cập nhật chỉ số) *Hướng dẫn thực hành lâm sàng ACE 2025.* **Nhóm nguy cơ Yếu tố chi tiết & Ngưỡng lâm sàng 1. Thuốc** • **Corticoid:** Liều **5 mg/ngày** (quy đổi theo Prednisolone) kéo dài **3 tháng**. • **Thuốc khác:** Heparin (dùng dài ngày), thuốc ức chế bơm proton (PPIs), thuốc chống động kinh, thuốc ức chế Aromatase (điều trị ung thư vú).
 
-**2. Lối sống & Dinh**
+**2. Lối sống & Dinh dưỡng**
 
-**dưỡng** • **Rượu:** Ngưỡng nguy cơ cao là 3 đơn vị/ngày (theo FRAX) hoặc **> 2 đơn vị/ngày (nam), > 1 đơn vị/ngày (nữ)** (theo ACE). • **Thuốc lá:** Đang hút thuốc. • **Dinh dưỡng:** Ăn thiếu Canxi (< 800 - 1.000 mg/ngày) hoặc thiếu Vitamin D. • **Vận động:** Lối sống tĩnh tại (lực cơ kém không kích thích được Tạo cốt bào); Bất động kéo dài > 6
+**Rượu:** Ngưỡng nguy cơ cao là 3 đơn vị/ngày (theo FRAX) hoặc **> 2 đơn vị/ngày (nam), > 1 đơn vị/ngày (nữ)** (theo ACE). • **Thuốc lá:** Đang hút thuốc. • **Dinh dưỡng:** Ăn thiếu Canxi (< 800 - 1.000 mg/ngày) hoặc thiếu Vitamin D. • **Vận động:** Lối sống tĩnh tại (lực cơ kém không kích thích được Tạo cốt bào); Bất động kéo dài > 6
 
 tháng; Trạng thái phi trọng lượng.
 
@@ -106,9 +106,9 @@ Lõm mặttrên 2 Lõm 2 mặt 3 Đốt sống hình chêm 4 Đốt sống xẹp
 
 -> nếu máu lắng và phosphatase kiềm tiếp tục ↑ cầntìm n.nhân • Đo mật độ xg (Bone Mineral Density) đo bằng tia X năng lượng kép DEXA --> đây là tiêu chuẩn vàng • Tscore = so với người Trẻ tuổi, khoẻ mạnh, cùng chủng tộc, nữ giới => áp dụng cho nữ sau mãn kinh và nam >50y
 
-Bình thường T-score > -1 Thiểu xg (Giảm MĐX)
+**Bình thường: T-score > -1**. Thiểu xg (Giảm MĐX)
 
--2.5 ≤ T-score ≤ -1 Loãng xg T-score < -2.5
+**-2.5 ≤ T-score ≤ -1: Loãng xương**. **T-score < -2.5: Loãng xương**
 
 Loãng xg nặng T-score < -2.5 & TS/hiện tạicó gãy xg do loãng xg
 
@@ -120,7 +120,7 @@ MĐX thấp so vs lứa tuổi Z-core ≤ -2 SD MĐX bình thường so vs lứa
 
 • **ACE 2025**, CĐXĐ khi có **một trong hai** tiêu chuẩn sau:
 
-• **Mật độ xương (BMD):** T-score ≤ -2.5 đo bằng pp DXA tại CSTL và/or khớp háng.
+• **Mật độ xương (BMD): T-score ≤ -2.5** đo bằng pp DXA tại CSTL và/or khớp háng.
 
 • **Gãy xương bệnh lý (Fragility fracture):** Có tiền sử or đang có gãy xương do CT tối thiểu (vd: ngã từ độ cao đứng bằng hoặc thấp hơn) tại các vị trí: đốt sống, háng, xương đùi, xương chậu, xương cánh tay hoặc cổ tay. ( Bất kể T-score là bao nhiêu) *< Lưu ý:* Gãy xương sọ, xương mặt, xương bàn tay/chân và xương ngón tay/chân KHÔNG được coi là gãy xương do loãng xương >
 

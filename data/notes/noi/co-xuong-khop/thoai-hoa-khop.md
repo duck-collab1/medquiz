@@ -1,8 +1,8 @@
 # Thoái hóa khớp
 
 - I. Đại cương
-- Thoái triển khớp ở người cao tuổi (50% >60t)
-- Nữ/nam: 2,5/1
+- Thoái triển khớp ở người cao tuổi (**50% >60t**)
+- **Nữ/nam: 2,5/1**
 - RL về cấu trúc và chức năng của một hoặc n` khớp (và cột sống)
 - Là tổn thương của toàn bộ khớp
   - tổn thương sụn là chủ yếu và sớm nhất (Loét sụn khớp) diễn biến chậm
@@ -190,7 +190,7 @@ chỉ biểu hiện <sup>ở</sup> <sup>1</sup> khớp lớn, CĐ đôi khi khó
 
 *\*\*\*Tóm lại:*
 
-• *VKDT: các khớp cổ tay, bàn ngón, ngón gần; nhiều khớp* • *THK: các khớp ngón xa, ngón gần, gốc ngón cái; Ko quá 2 khớp sưng* • Cần xem thêm các n.nhân gây đau CSTL, CS cổ trc khi CĐ là thoái hóa • Viêm cộtsống dính khớp: tùy theo trch biểu hiện của BN, cụ thể là thoái hóa khớp
+• ***VKDT**: các khớp cổ tay, bàn ngón, ngón gần; nhiều khớp* • ***THK**: các khớp ngón xa, ngón gần, gốc ngón cái; Ko quá 2 khớp sưng* • Cần xem thêm các n.nhân gây đau CSTL, CS cổ trc khi CĐ là thoái hóa • Viêm cộtsống dính khớp: tùy theo trch biểu hiện của BN, cụ thể là thoái hóa khớp
 
 hán. Khớp gối hoặc thoái hóa CS mà CĐPB: • Xquang: tình trạng dính khớp nhanh của BN
 
