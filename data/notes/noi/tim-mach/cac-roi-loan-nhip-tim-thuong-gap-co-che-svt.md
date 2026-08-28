@@ -1,62 +1,54 @@
 # Rối loạn nhịp - Cơ chế SVT
 
-Cơ chế SVT
-
 ## 1. Tổng quan
 
-- Nhịp nhanh trên thất (SVTs): Là một nhóm các rối loạn nhịp nhanh ( tachyarrhythmias ) xuất phát từ những bất thường trong hoạt động tạo nhịp ( pacemaker activity ) và/hoặc dẫn truyền liên quan đến tế bào cơ tim ( myocytes ) của tâm nhĩ và/hoặc nút nhĩ thất (AV node) .
-- Vị trí khởi phát:
-- Nút xoang ( Sinus node ).
-- Nút nhĩ thất ( AV node ).
-- Cơ tâm nhĩ ( Atrial myocardium ).
-- Bó His (phần trên chỗ chia đôi).
-- Các thuật ngữ quan trọng:
-- Nhịp nhanh kịch phát ( Paroxysmal tachycardia ): Rối loạn nhịp có khởi phát và kết thúc đột ngột, có thể kéo dài từ vài giây đến vài ngày (ví dụ: AVNRT).
-- Cơn nhịp nhanh kịch phát trên thất (Paroxysmal SVT - PSVT): Bất kỳ SVT nào có phức bộ QRS hẹp và khởi phát đột ngột.
-- Dẫn truyền lệch hướng ( Aberrant conduction ):
-- Là sự dẫn truyền bất thường của xung động cơ tim do block nhánh, chậm dẫn truyền/qua đường phụ
-- Đặc điểm: Tạo ra phức bộ QRS rộng , do sự khử cực tâm thất diễn ra chậm hơn (từ tế bào này sang tế bào khác) thay vì qua hệ thống Purkinje dẫn truyền
-- nhanh.
-- Lưu ý lâm sàng: SVT dẫn truyền lệch hướng có hình dạng rất giống Nhịp nhanh thất (VT)
+- **Nhịp nhanh trên thất (SVTs)**: nhóm rối loạn nhịp nhanh (*tachyarrhythmias*) xuất phát từ bất thường tạo nhịp (*pacemaker activity*) và/hoặc dẫn truyền liên quan đến tế bào cơ tim (*myocytes*) của tâm nhĩ và/hoặc nút nhĩ thất (AV node)
+- **Vị trí khởi phát**: nút xoang (Sinus node), nút nhĩ thất (AV node), cơ tâm nhĩ (Atrial myocardium), bó His (phần trên chỗ chia đôi)
 
-## 2. Phân loại
+**Các thuật ngữ quan trọng:**
+- **Nhịp nhanh kịch phát** (Paroxysmal tachycardia): khởi phát và kết thúc đột ngột, kéo dài từ vài giây đến vài ngày (VD: AVNRT)
+- **Cơn nhịp nhanh kịch phát trên thất** (Paroxysmal SVT - PSVT): bất kỳ SVT nào có QRS hẹp, khởi phát đột ngột
+- **Dẫn truyền lệch hướng** (Aberrant conduction): dẫn truyền bất thường do block nhánh, chậm dẫn truyền/qua đường phụ → tạo **QRS rộng** do khử cực thất diễn ra chậm (từ tế bào sang tế bào) thay vì qua hệ Purkinje nhanh. *Lưu ý: SVT dẫn truyền lệch hướng có hình dạng rất giống nhịp nhanh thất (VT) — dễ nhầm lẫn trên lâm sàng*
 
-- Theo cơ chế: Do vòng vào lại/Tạo nhịp bất thường
+## 2. Phân loại theo cơ chế
 
+![Cơ chế vòng vào lại (Reentry: AVNRT, AVRT) so với cơ chế bất thường tạo nhịp/ổ ngoại vị](/images/noi/tim-mach/svt-co-che-vong-vao-lai-vs-tu-dong.png)
 
-## · Hội chứng tiền kích thích:
+| Do vòng vào lại (Reentry) | Do bất thường tạo nhịp/ổ ngoại vị |
+| --- | --- |
+| Khối xung động lặp lại tại 1 vòng quay trở lại qua mô cơ tim đã hồi phục tính kích thích, dẫn đến nhịp ngoại vị hoặc cơn nhịp nhanh kéo dài | Kết quả của hoạt động tạo nhịp bất thường tại chỗ hoặc khởi phát muộn |
+| **Các loại chính: AVNRT/AVRT/Cuồng nhĩ (Atrial flutter)** | **Các loại chính**: nhịp nhanh nhĩ ổ (Focal atrial tachycardia - FAT), nhịp nhanh nhĩ đa ổ (Multifocal atrial tachycardia - MAT), nhịp nhanh bộ nối (Junctional tachycardia), nhịp nhanh xoang không thích hợp (Inappropriate sinus tachycardia), rung nhĩ (Afib) |
 
-- Định nghĩa: Sự kích hoạt sớm tâm thất bởi một đường phụ.
-- Đường phụ ( Accessory pathway ): Kết nối điện học bất thường ngoài nút AV, cho phép xung động lan truyền giữa nhĩ và thất.
-- Thường là bẩm sinh (ví dụ: Cầu Kent trong hội chứng Wolff-Parkinson-White - WPW), hiếm khi mắc phải.
-- Cơ chế: Xung động trên thất đi qua đường phụ (bỏ qua nút AV) và dẫn truyền bất thường xuống thất --> Tạo ra mẫu tiền kích thích trên ECG ( Preexcitation pattern ).
-- Hội chứng WPW: Là ví dụ phổ biến nhất, bao gồm tiền kích thích thất + các rối loạn nhịp nhanh liên quan (AVRT, cuồng nhĩ, rung nhĩ, FAT).
+### Hội chứng tiền kích thích
 
+![Sóng Delta và hình ảnh tiền kích thích thất trong hội chứng WPW](/images/noi/tim-mach/svt-song-delta-tien-kich-thich.png)
 
-## 3. NGUYÊN TẮC QUẢN LÝ CHUNG
+- **Định nghĩa**: sự kích hoạt sớm tâm thất bởi một đường phụ
+- **Đường phụ** (Accessory pathway): kết nối điện học bất thường ngoài nút AV, cho phép xung động lan truyền giữa nhĩ và thất — thường **bẩm sinh** (VD: cầu Kent trong hội chứng WPW), hiếm khi mắc phải
+- **Cơ chế**: xung động trên thất đi qua đường phụ (bỏ qua nút AV) và dẫn truyền bất thường xuống thất → tạo mẫu tiền kích thích trên ECG (**sóng Delta**)
+- **Hội chứng WPW**: ví dụ phổ biến nhất — tiền kích thích thất + các rối loạn nhịp nhanh liên quan (AVRT, cuồng nhĩ, rung nhĩ, nhanh nhĩ ổ)
 
-## Việc quản lý cần cá thể hóa.
+## 3. Nguyên tắc quản lý chung
 
-1. Bệnh nhân Huyết động KHÔNG ổn định ( Hemodynamically unstable ):
-- Xử trí: Sốc điện chuyển nhịp khẩn cấp ( Emergency electrical cardioversion ).
-- Ngoại lệ: Không áp dụng cho MAT và Nhịp nhanh bộ nối ( Junctional tachycardia ).
-2. Bệnh nhân Huyết động ổn định ( Hemodynamically stable ):
-- Xử trí cơn cấp: Nghiệm pháp cường phế vị ( Vagal maneuvers ) và/hoặc Thuốc chống loạn nhịp (thường là đường tĩnh mạch), tùy thuộc vào nhịp nền.
-3. Quản lý dài hạn:
-- Dùng thuốc chống loạn nhịp hoặc Triệt đốt qua catheter ( Catheter ablation - phương pháp điều trị triệt để).
-4. Quy tắc an toàn quan trọng:
-- Nếu nghi ngờ về nguồn gốc trên thất của một cơn nhịp nhanh phức bộ rộng ( Wide complex tachycardia ) --> Hãy xử trí như Nhịp nhanh thất (Ventricular Tachycardia - VT) .
+**Việc quản lý cần cá thể hóa.**
 
-## SO SÁNH CÁC LOẠI NHỊP NHANH TRÊN THẤT
+1. **Huyết động KHÔNG ổn định** → sốc điện chuyển nhịp khẩn cấp *(ngoại lệ: KHÔNG áp dụng cho nhanh nhĩ đa ổ MAT và nhịp nhanh bộ nối)*
+2. **Huyết động ổn định** → xử trí cơn cấp: nghiệm pháp cường phế vị và/hoặc thuốc chống loạn nhịp (thường đường TM), tùy nhịp nền
+3. **Quản lý dài hạn**: thuốc chống loạn nhịp hoặc **triệt đốt qua catheter** (điều trị triệt để)
+4. **Quy tắc an toàn quan trọng**: nếu nghi ngờ nguồn gốc trên thất của một cơn nhịp nhanh QRS rộng → **hãy xử trí như nhịp nhanh thất (VT)**
 
+![Lưu đồ chẩn đoán phân biệt các loại nhịp nhanh trên thất theo hình thái QRS](/images/noi/tim-mach/svt-luu-do-chan-doan-phan-biet.png)
 
-| AVNRT (Nhịp nhanh kịch phát lại nút nhĩ thất)   | - Do 2 đường dẫn truyền điện học thay thế bên trong nút AV, tạo thành vòng vào lại. - Chiếm 2/3 trường hợp SVT.                                  | - HR: 150 - 220/phút. - Nhịp: Đều. - Sóng P: Hiếm khi nhìn thấy. (Xem thêm chi tiết: ECG findings in AVNRT)                                                                                                                                                                                                           | - Nghiệm pháp cường phế vị. - Adenosine.                                                                                                                                                                                                                                                                 | - Triệt đốt qua Catheter. - Thuốc chẹn nút AV. (Xem thêm: Treatment of AVNRT)                             |
-|-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
-| Orthodromic AVRT (AVRT dẫn truyền xuôi)         | - Vòng vào lại dẫn truyền xuôi dòng qua nút AV và ngược dòng qua đường phụ.                                                                      | - HR: 120 - 250/phút. - Nhịp: Đều. - QRS: Hẹp. - Sóng P: Đi sau phức bộ QRS.                                                                                                                                                                                                                                          | - Nghiệm pháp cường phế vị. - Adenosine.                                                                                                                                                                                                                                                                 | - Triệt đốt qua Catheter. - Dùng thuốc cho AVRT.                                                          |
-| Antidromic AVRT (AVRT dẫn truyền ngược)         | - Vòng vào lại dẫn truyền xuôi dòng qua đường phụ và ngược dòng qua nút AV.                                                                      | - HR: 120 - 250/phút. - Nhịp: Đều. - QRS: Rộng. - PR: Ngắn lại.                                                                                                                                                                                                                                                       | - Chẩn đoán đã xác định: Thuốc chẹn nút AV là an toàn. - Chẩn đoán chưa chắc chắn: TRÁNH thuốc chẹn nút AV. (Xem thêm: Treatment of AVRT)                                                                                                                                                                | (Không đề cập cụ thể trong bảng nguồn, thường tương tự Orthodromic)                                       |
-| Focal AT (Nhịp nhanh nhĩ ổ)                     | - Khởi phát từ một ổ khu trú tại nhĩ nằm ngoài nút xoang (SA node).                                                                              | (Xem thêm: ECG findings in AVRT) - HR: 100 - 250/phút. - Nhịp: Đều. - Sóng P: Hình thái hằng định; có thể bị che lấp bởi QRS. - Đường đẳng điện giữa các sóng P. - QRS: Thường hẹp; có thể rộng nếu dẫn truyền lệch (Xem thêm: ECG findings in FAT)                                                                   | - Nghiệm pháp cường phế vị. - Chẩn đoán chưa chắc chắn: Adenosine. - Chẩn đoán đã xác định: Thuốc chẹn kênh Canxi (CCB) hoặc                                                                                                                                                                             | - Triệt đốt qua Catheter. - Dùng thuốc. - Cấy máy tạo nhịp.                                               |
-| Multifocal AT (Nhịp nhanh nhĩ đa - MAT)         | - Do nhiều ổ tạo nhịp tại nhĩ. - Thường liên quan đến bệnh phổi mạn tính và lớn nhĩ phải.                                                        | hướng. - HR: 100 - 200/phút.. - Nhịp: Không đều vô tổ chức ( Irregularly irregular ).                                                                                                                                                                                                                                 | chẹn Beta. - Nhịp nhanh phức bộ rộng: TRÁNH thuốc chẹn nút AV. - Điều trị nguyên nhân nền. - Metoprolol hoặc Verapamil.                                                                                                                                                                                  | (Xem thêm: Management of FAT) (Xem thêm: Treatment of MAT)                                                |
-| Afib with RVR (Rung nhĩ đáp ứng thất nhanh)     | - Do hoạt động điện không đồng bộ tại nhĩ (sóng lăn tăn - fibrillatory waves ). - Nhiều nguyên nhân gây Rung nhĩ (Afib).                         | - Sóng P: >=3 hình thái khác biệt. - PR: Thay đổi. - QRS: Thường hẹp; có thể rộng nếu dẫn truyền lệch hướng. (Xem thêm: ECG findings in MAT) - HR: 100 - 110/phút.. - Nhịp: Không đều vô tổ chức ( Irregularly irregular ). - Sóng P: Không phân biệt được. - QRS: Thường hẹp; có thể rộng nếu dẫn truyền lệch hướng. | - Nhịp nhanh phức bộ rộng: TRÁNH thuốc chẹn nút AV. - Quản lý cấp giống Cuồng nhĩ (Aflut). - Các lựa chọn: Kiểm soát tần số ( rate control ) và kiểm soát nhịp ( rhythm control ). - Afib kèm WPW: TRÁNH thuốc chẹn nút AV; điều trị bằng sốc điện chuyển nhịp . (Xem thêm: Management of Afib with RVR) | - Kiểm soát tần số hoặc kiểm soát nhịp dài hạn. - Điều trị bệnh lý nền. - Cân nhắc triệt đốt qua Catheter |
-| Atrial flutter (Cuồng nhĩ)                      | - Do vòng vào lại bên trong mô nhĩ. - Nguyên nhân giống Rung nhĩ (Afib).                                                                         | - HR: 75 - 150/phút. (phụ thuộc tỷ lệ dẫn truyền). - Nhịp: Điển hình là đều; có thể không đều đều ( regularly irregular ) hoặc không đều vô tổ chức. - Sóng P: Dạng răng cưa ( Sawtooth ). - QRS: Thường hẹp; có thể rộng nếu dẫn truyền lệch hướng.                                                                  | (Tương tự Afib) - Nhịp nhanh phức bộ hẹp, đều (Orthodromic AVRT): Nghiệm pháp cường phế vị, Adenosine.                                                                                                                                                                                                   | cho Cuồng nhĩ. (Xem thêm: Treatment of Afib with RVR) (Tương tự Afib)                                     |
-| Hội chứng WPW (Wolff-Parkinson- White)          | - Bẩm sinh: Có các cơn nhịp nhanh ngắt quãng liên quan đến đường phụ ( Cầu Kent ) và tiền kích thích thất.                                       | - Nhịp xoang với mẫu tiền kích thích: Sóng Delta, QRS rộng. - Các rối loạn nhịp liên quan: Xem đặc điểm ECG của AVRT, Afib kèm WPW. (Xem thêm: ECG findings in WPW)                                                                                                                                                   | - Bất kỳ Nhịp nhanh phức bộ rộng (đều hoặc không đều): TRÁNH thuốc chẹn nút AV; điều trị bằng sốc điện chuyển nhịp .                                                                                                                                                                                     | - Triệt đốt qua Catheter. - Thuốc chống loạn nhịp. (Xem thêm: Long-term management of WPW)                |
-| Junctional tachycardia (Nhịp nhanh bộ nối)      | - Do tính tự động bất thường của tế bào cơ tim tại nút AV và bó His. - Các loại: Nhịp nhanh bộ nối kịch phát (PJT), Nhịp bộ nối gia tốc (AAVJR). | - HR: PJT > 100/phút; AAVJR 60 - 100/phút. - Nhịp: Đều. - Sóng P: Đảo ngược ở chuyển đạo II. - PR: Ngắn. - QRS: Hẹp. (Xem thêm: ECG findings in junctional tachycardia)                                                                                                                                               | - Thuốc chẹn Beta và Chẹn kênh Canxi (CCBs). - Điều trị nguyên nhân nền (ví dụ: ngộ độc Digoxin).                                                                                                                                                                                                        | - Triệt đốt qua Catheter cho bệnh nhân chọn lọc. (Xem thêm: Treatment of junctional tachycardia)          |
+## 4. So sánh các loại nhịp nhanh trên thất
+
+| Loại | Cơ chế | ECG | Cắt cơn cấp | Điều trị dài hạn |
+| --- | --- | --- | --- | --- |
+| **AVNRT** (Nhịp nhanh kịch phát vào lại nút nhĩ thất) | 2 đường dẫn truyền điện học thay thế trong nút AV tạo vòng vào lại. **Chiếm 2/3 trường hợp SVT** | HR 150-220/ph; đều; **sóng P hiếm khi nhìn thấy** | Nghiệm pháp cường phế vị; **Adenosine** | Triệt đốt qua catheter; thuốc chẹn nút AV |
+| **AVRT thuận chiều** (Orthodromic) | Vòng vào lại dẫn truyền xuôi qua nút AV, ngược qua đường phụ | HR 120-250/ph; đều; **QRS hẹp**; sóng P đi sau QRS | Nghiệm pháp cường phế vị; Adenosine | Triệt đốt qua catheter; thuốc |
+| **AVRT ngược chiều** (Antidromic) | Vòng vào lại dẫn truyền xuôi qua đường phụ, ngược qua nút AV | HR 120-250/ph; đều; **QRS rộng**; PR ngắn lại | Chẩn đoán chắc chắn: chẹn nút AV an toàn; **chưa chắc chắn: TRÁNH chẹn nút AV** | Tương tự Orthodromic |
+| **Nhịp nhanh nhĩ ổ** (Focal AT) | Khởi phát từ 1 ổ khu trú tại nhĩ, ngoài nút xoang | HR 100-250/ph; đều; sóng P hình thái hằng định | Nghiệm pháp cường phế vị; chưa chắc chắn: Adenosine; đã xác định: CCB/chẹn beta | Triệt đốt; thuốc; cấy máy tạo nhịp |
+| **Nhịp nhanh nhĩ đa ổ** (MAT) | Nhiều ổ tạo nhịp tại nhĩ; **liên quan bệnh phổi mạn tính, lớn nhĩ phải** | HR 100-200/ph; **không đều vô tổ chức**; **≥3 hình thái sóng P khác biệt** | QRS rộng: TRÁNH chẹn nút AV; điều trị nguyên nhân nền; Metoprolol/Verapamil | Điều trị bệnh nền |
+| **Rung nhĩ đáp ứng thất nhanh** | Hoạt động điện không đồng bộ tại nhĩ (sóng lăn tăn) | Không đều vô tổ chức; **không phân biệt được sóng P** | QRS rộng: TRÁNH chẹn nút AV; **kèm WPW: TRÁNH chẹn nút AV, sốc điện chuyển nhịp** | Kiểm soát tần số/nhịp dài hạn; cân nhắc triệt đốt |
+| **Cuồng nhĩ** (Atrial flutter) | Vòng vào lại trong mô nhĩ | HR 75-150/ph (theo tỷ lệ dẫn truyền); sóng P **dạng răng cưa (sawtooth)** | Tương tự rung nhĩ | Tương tự rung nhĩ |
+| **Hội chứng WPW** | Bẩm sinh — cơn nhịp nhanh ngắt quãng liên quan đường phụ (cầu Kent) + tiền kích thích thất | Nhịp xoang với **sóng Delta**, QRS rộng | Nhịp nhanh QRS rộng (đều/không đều): **TRÁNH chẹn nút AV**, sốc điện chuyển nhịp | Triệt đốt qua catheter; thuốc chống loạn nhịp |
+| **Nhịp nhanh bộ nối** (Junctional tachycardia) | Tính tự động bất thường tại nút AV/bó His | HR: PJT >100/ph, AAJR 60-100/ph; đều; **sóng P đảo ngược ở D2**; PR ngắn; QRS hẹp | Chẹn beta, CCB; điều trị nguyên nhân nền (VD: ngộ độc Digoxin) | Triệt đốt qua catheter (chọn lọc) |

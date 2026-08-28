@@ -1,94 +1,71 @@
 # Rối loạn nhịp nhanh
 
-1f. Rối loạn nhịp nhanh
+## 1. Tổng quan xử trí
 
-```
-1. Tổng quan · Tổng quan xử lý rối loạn nhịp nhanh <THUỘC> · Có rối loạn huyết động: Shock điện chuyển nhịp CẤP CỨU (trừ nhịp xoang) · KHÔNG có RL huyết động: · PP không dùng thuốc: Nghiệm pháp Valsava, ấn nhãn cầu --> Cơn nhịp nhanh kịch phát trên thất · Chống RL nhịp: Chẹn beta, Digoxin, Cordaron, Lidocain với RL nhịp thất · Tạo nhịp vượt tần số · Sốc điện chuyển nhịp CÓ CHUẨN BỊ Sốc điện là phương pháp sử dụng dòng điện để dập tắt các rối loạn nhịp và khôi phục nhịp xoang Sốc điện chuyển nhịp Sốc phá rung · Phóng điện đồng bộ với phức hợp QRS · Máy tự dò tìm phức bộ QRS và shock đúng thời điểm phức bộ QRS của điện tâm đồ · Mục đích: Tránh shock vào sóng T (thời kì dễ bị tổn thươn g: 80ms trước tới 30ms sau đỉnh sóng T) --> Gây rung thất thứ phát · Shock vào bất kỳ thời điểm nào trong chu kỳ do không cần thiết xác định đúng phức bộ QRS
-```
+- **Có rối loạn huyết động** → **sốc điện chuyển nhịp CẤP CỨU** (trừ nhịp xoang)
+- **Không có rối loạn huyết động**:
+  - PP không dùng thuốc: **nghiệm pháp Valsalva, ấn nhãn cầu** → hiệu quả với cơn nhịp nhanh kịch phát trên thất
+  - Thuốc chống loạn nhịp: chẹn beta, Digoxin, Cordaron; Lidocain với rối loạn nhịp thất
+  - Tạo nhịp vượt tần số
+  - Sốc điện chuyển nhịp **có chuẩn bị**
 
-- Phân loại cơn nhịp nhanh:
+**Sốc điện** là phương pháp dùng dòng điện để dập tắt rối loạn nhịp và khôi phục nhịp xoang:
 
-```
-QRS giãn rộng QRS thanh mảnh · Nhịp nhanh thất · Nhịp nhanh trên thất dẫn truyền lệch hướng · Nhanh nhĩ/cu ồng nhĩ/ru ng nhĩ ở BN WPW · Nhịp nhanh xoang · Cơn nhanh nhĩ cuồng nhĩ · Cơn rung nhĩ · Nhịp nhanh kịch phát trên thất AVNR T/AVR T
-```
+| Sốc điện chuyển nhịp (Cardioversion) | Sốc phá rung (Defibrillation) |
+| --- | --- |
+| Phóng điện **đồng bộ** với phức bộ QRS — máy tự dò tìm QRS và shock đúng thời điểm | Shock vào **bất kỳ thời điểm nào** trong chu kỳ, không cần xác định đúng QRS |
+| Mục đích: tránh shock vào sóng T (**thời kỳ dễ tổn thương**: 80ms trước đến 30ms sau đỉnh sóng T) → tránh gây **rung thất thứ phát** | Dùng khi tim đã mất tổ chức điện học (rung thất) |
 
-| Cơn nhịp nhanh đều                                                    | Cơn nhịp nhanh không đều                                                                |
-|-----------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
-| • Cơn nhanh nhĩ • Cơn cuồng nhĩ • Cơn AVNRT/AVRT • Cơn tim nhanh thất | • Cơn nhanh nhĩ/cuồng nhĩ với block nút NT biến đổi • Cơn nhanh nhĩ đa ổ • Cơn rung nhĩ |
+### Phân loại cơn nhịp nhanh
 
-·
+| Theo độ rộng QRS | Theo tính đều |
+| --- | --- |
+| **QRS thanh mảnh (hẹp)**: nhịp nhanh xoang, cơn nhanh nhĩ/cuồng nhĩ, cơn rung nhĩ, nhịp nhanh kịch phát trên thất (AVNRT/AVRT) | **Đều**: cơn nhanh nhĩ, cuồng nhĩ, AVNRT/AVRT, cơn nhanh thất |
+| **QRS giãn rộng**: nhịp nhanh thất, nhịp nhanh trên thất dẫn truyền lệch hướng, nhanh nhĩ/cuồng nhĩ/rung nhĩ ở BN WPW | **Không đều**: nhanh nhĩ/cuồng nhĩ với block nút NT biến đổi, nhanh nhĩ đa ổ, rung nhĩ, cơn nhanh thất đa hình thái |
 
-·
+![Sơ đồ tiếp cận chẩn đoán phân biệt các loại nhịp nhanh trên ECG 12 chuyển đạo](/images/noi/tim-mach/rln-nhanh-phan-biet-tren-ecg.png)
 
-Cơn nhanh thất đa hình thái
+**Lâm sàng chung:**
+- Tiền sử bệnh: bệnh tim cấu trúc (bệnh cơ tim, bệnh tim thiếu máu cục bộ, van tim), bệnh nội khoa, các thuốc đang dùng
+- Tiền sử cơn tim nhanh, tính chất lặp đi lặp lại: hồi hộp trống ngực có tính chu kỳ, khởi đầu/kết thúc rõ, **tần số cơn 150-200 ck/phút**
+- Cơn có rối loạn huyết động: ngất, thỉu, khó thở, tụt huyết áp
+- Chẩn đoán: ECG 12 chuyển đạo, Holter điện tâm đồ, ECG qua thiết bị cấy ghép, thăm dò điện sinh lý (xâm lấn)
 
+**Nguyên tắc xử trí:**
+- **Cắt cơn**: dựa vào huyết động và hình thái QRS
+- **Lâu dài**: thăm dò điện sinh lý + triệt đốt, thuốc ngăn ngừa tái phát, thuốc kiểm soát triệu chứng (với nhanh nhĩ, cuồng nhĩ, rung nhĩ mạn tính)
 
-is a120 miliseconds in duration.
+![Lưu đồ xử trí cấp cứu nhịp nhanh QRS thanh mảnh và QRS giãn rộng theo huyết động](/images/noi/tim-mach/rln-nhanh-luu-do-xu-tri.png)
 
-Figure 1. Diegnostic approach to tachydysrhythmias. A narow QRS complex is <120 miliseconds in duration, whereas a wide QRS complex
+## 2. Rối loạn nhịp theo vị trí khởi phát
 
-## · Lâm sàng chung:
+- **Tầng trên thất** (từ chỗ chia đôi bó His trở lên): QRS **< 120ms**
+- **Tầng thất** (sau chỗ chia đôi bó His): QRS **> 120ms**
 
-- TS bệnh: Bệnh tim cấu trúc (bệnh cơ tim, bệnh tim thiếu máu cục bộ, van tim), Bệnh nội khoa. Các thuốc đang sử dụng
+### a. Nhịp nhanh trên thất
 
-·
+Bao gồm: nhịp nhanh xoang, ngoại tâm thu nhĩ, rung nhĩ, cuồng nhĩ, nhịp nhanh kịch phát trên thất (AVNRT/AVRT) — cơ chế và đặc điểm ECG chi tiết xem bài [Cơ chế SVT](cac-roi-loan-nhip-tim-thuong-gap-co-che-svt.md).
 
-TS cơn tim nhanh,
+![Tổng hợp cơ chế, lâm sàng, ECG và điều trị: nhịp nhanh xoang, ngoại tâm thu nhĩ, rung nhĩ, cuồng nhĩ, nhịp nhanh kịch phát trên thất](/images/noi/tim-mach/rln-nhanh-tren-that-chi-tiet.png)
 
-t/c lặp đi lặp lại
+**Xử trí chung nhịp nhanh trên thất:**
+- Sốc điện chuyển nhịp nếu thuốc không cắt được cơn
+- Tạo nhịp vượt tần số & đốt điện sinh lý (RF)
+- **Dự phòng tái phát bằng thuốc chống loạn nhịp:**
+  - Nhóm IA: Rythmoldan 200mg/ngày, Procainamid 500mg/ngày
+  - Nhóm IB: Mexitil, Mexiletil 400mg/ngày
+  - Nhóm IC: **Flecain 200mg/ngày**, Rythmol 600mg/ngày
+  - Nhóm II: Sotalol 160mg/ngày
+  - Nhóm III: **Cordaron (Amiodarone) 400mg/ngày**
 
-- Các cơn hồi hộp trống ngực: Có tính chu kì lặp lại, có biểu hiện khởi đầu/kết thúc. TS cơn 150 - 200ck/p
+### b. Nhịp nhanh thất
 
-·
+Bao gồm: ngoại tâm thu thất, cơn tim nhanh thất (kịch phát), xoắn đỉnh, rung thất.
 
-Cơn RLHĐ: Ngất,
+![Tổng hợp cơ chế, lâm sàng, ECG và điều trị: ngoại tâm thu thất, cơn tim nhanh thất, xoắn đỉnh, rung thất; kèm bảng liều thuốc chống loạn nhịp và nghiệm pháp cường phế vị](/images/noi/tim-mach/rln-nhanh-that-chi-tiet.png)
 
-thỉu, khó thở, tụt
-
-h.a
-
-- Chẩn đoán: ĐTĐ 12 chuyển đạo, Holter điện tâm đồ, điện tâm đồ thông qua cấy ghép, thăm dò điện sinh lý (xâm lấn)
-
-## · Nguyên tắc xử trí:
-
-·
-
-Xử trí cắt cơn:
-
-Dựa
-
-vào huyết động và
-
-hình thái QRS
-
-- Xử trí lâu dài: Thăm dò điện sinh lý và triệt đốt, sd thuốc ngăn ngừa tái phát, sd thuốc kiểm soát triệu chứng (đối với nhanh nhĩ, cuồng nhĩ, rung nhĩ mạn tính)
-
-
-## 2. RỐI LOẠN NHỊP
-
-THEO VỊ TRÍ KHỞI
-
-PHÁT
-
-Tầng trên thất: Chỗ chia
-
-đôi của bó His, QRS <
-
-120ms
-
-- Tầng thất: sau chỗ chia: QRS > 120ms
-
-a.
-
-Nhịp nhanh trên thất
-
-(chỗ chia đôi bó his trở
-
-lên)
-
-
-
-
-| 8/27/26, 11:09 PM   |                                                                                                                                                                                                                                                                                                                                                                             | OneNote   |
-|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
-|                     | • Sốc điện chuyển nhịp nếu thuốc k cắt đc cơn • Tạo nhịp vượt tần số & đốt RF • Dự phòng • Chống loạn nhịp nhóm IA: Rythmoldan 200mg/d; Procainamid 500 mg/d • Chống loạn nhịp nhóm IB: Mexitil, Mexiletil 400 mg/d • Chống loạn nhịp nhóm IC: Flecain 200 mg/d, Rythmol 600 mg/d • Chống loạn nhịp nhóm II: Sotalol 160 mg/d • Chống loạn nhịp nhóm III: Cordaron 400 mg/d |           |
+**Điểm mấu chốt cần nhớ:**
+- **Cơn tim nhanh thất (VT)**: ≥3 ngoại tâm thu thất liên tiếp, tần số **120-300 ck/phút**; nếu huyết động không ổn định → **sốc điện ngay**; nếu ổn định → thuốc chống loạn nhịp (Amiodarone, Lidocain)
+- **Xoắn đỉnh (Torsades de pointes)**: liên quan **QT dài**; điều trị đầu tay là **Magie sulfat 1-2g tiêm TM**; tránh các thuốc kéo dài QT thêm
+- **Rung thất (VF)**: mất tổ chức điện học hoàn toàn, ECG dạng ngoằn ngoèo vô tổ chức, **KHÔNG bắt được mạch** → **sốc điện phá rung ngay, không đồng bộ** (đây là tình huống nguy cấp nhất, cần khử rung năng lượng cao ngay lập tức, không trì hoãn)
+- **Nghiệm pháp cường phế vị (xoa xoang cảnh, ấn nhãn cầu)**: chống chỉ định ở BN có tiền sử tai biến mạch não/hẹp động mạch cảnh; **Adenosine 6-12mg tiêm TM nhanh** là lựa chọn hàng đầu khi nghiệm pháp cường phế vị thất bại với cơn nhịp nhanh QRS hẹp, đều
