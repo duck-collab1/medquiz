@@ -196,7 +196,7 @@ Vt xé ni mch ngay sát van ĐMC
 
 
 - Chụp cắt lớp vi tính đa dãy (MSCT):
-- Là tiêu chuẩn vàng.
+- Là **tiêu chuẩn vàng**.
 - Cung cấp thông tin toàn diện:
 1. Chẩn đoán xác định.
 2. Phân loại (Stanford A/B).

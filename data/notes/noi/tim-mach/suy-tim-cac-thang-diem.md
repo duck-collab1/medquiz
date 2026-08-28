@@ -4,11 +4,11 @@
 
 Phân độ khó thở theo NYHA --> ÁP DỤNG CHO BỆNH NHÂN SUY TIM KHÓ THỞ ĐỂ PHÂN MỨC ĐỘ NẶNG CỦA SUY TIM
 
-| NYHA I   | Không khó chịu, hđ bt so với lứa tuổi, gắng sức không khó thở   |                                     |
+| **NYHA I**   | Không khó chịu, hđ bt so với lứa tuổi, gắng sức không khó thở   |                                     |
 |----------|-----------------------------------------------------------------|-------------------------------------|
-| NYHA II  | Khó thở khi gắng sức                                            | Vd leo cầu thang                    |
-| NYHA III | Không khó chịu khi nghỉ ngơi, nhưng khó chịu khi hđ bt          | Vd sinh hoạt hằng ngày, mặc quần áo |
-| NYHA IV  | Khó thở khi nghỉ ngơi và hđ nhẹ                                 |                                     |
+| **NYHA II**  | Khó thở khi gắng sức                                            | Vd leo cầu thang                    |
+| **NYHA III** | Không khó chịu khi nghỉ ngơi, nhưng khó chịu khi hđ bt          | Vd sinh hoạt hằng ngày, mặc quần áo |
+| **NYHA IV**  | Khó thở khi nghỉ ngơi và hđ nhẹ                                 |                                     |
 
 ## Chú ý phân biệt với 2 thang điểm sau:
 

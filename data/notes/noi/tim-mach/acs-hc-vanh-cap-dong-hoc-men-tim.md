@@ -53,7 +53,7 @@ Tại sao Myoglobin tăng trước, Troponin tăng sau?
 - Hồ chứa tự do (Cytosolic Pool - 5%): Một lượng nhỏ Troponin trôi nổi tự do trong bào tương. => Gây ra sự tăng nhanh ban đầu (3-4h).
 - Hồ chứa cấu trúc (Structural Pool - 95%): Gắn chặt vào phức hợp sợi cơ co duỗi. Khi tế bào chết, bộ máy co cơ phải bị enzyme phân hủy từ từ thì Troponin này mới bung ra. => Gây ra nồng độ duy trì cao trong máu kéo dài 7-14 ngày .
 
-Chính "Hồ chứa cấu trúc" khổng lồ này giải thích tại sao Troponin là "Tiêu chuẩn vàng" để chẩn đoán nhồi máu đến muộn, nhưng lại dở trong chẩn đoán tái nhồi máu (vì nó cứ cao mãi không chịu xuống).
+Chính "Hồ chứa cấu trúc" khổng lồ này giải thích tại sao Troponin là "**Tiêu chuẩn vàng**" để chẩn đoán nhồi máu đến muộn, nhưng lại dở trong chẩn đoán tái nhồi máu (vì nó cứ cao mãi không chịu xuống).
 
 ## II. Bảng so sánh các chỉ số quan trọng
 

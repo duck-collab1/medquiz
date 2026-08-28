@@ -115,7 +115,7 @@ tim
 - Tổn thương cạnh chân van => CLVT tim
 3. Chẩn đoán VK gây bệnh
 - Cấy máu:
-- Tiêu chuẩn vàng để chẩn đoán và xđ độ nhạy của vk gây bệnh với KS.
+- **Tiêu chuẩn vàng** để chẩn đoán và xđ độ nhạy của vk gây bệnh với KS.
 - Cấy máu ít nhất 3 lần, mỗi lần 2 vị trí, cách nhau ít nhất 30'
 - Cấy ít nhất 3 mẫu riêng biệt trong 24h. Mỗi lần cấy nên lấy 2 ống kị khí và hiếu khí, 10ml . K cần chờ sốt cao mới lấy máu
 - Không lấy từ catheter TMTT mà lấy máu ngoại biên
@@ -129,7 +129,7 @@ VK điển hình (Strep.viridans, S.bovis,S.aureus, Enterococcus, HACEK): ít nh
 - 25-30%
 - Do use KS trước đó -> ngừng rồi cấy lại
 - VK khó nuôi cấy: van nhân tạo, đường TM lưu, MTN, suy thận, SGMD (Brucella, Coxiella, Mycoplasma,..)
-- GPB: sùi or tắc mạch -> tiêu chuẩn vàng (PCR vi khuẩn)
+- GPB: sùi or tắc mạch -> **tiêu chuẩn vàng** (PCR vi khuẩn)
 
 ## III. Chẩn đoán
 
@@ -142,7 +142,7 @@ VK điển hình (Strep.viridans, S.bovis,S.aureus, Enterococcus, HACEK): ít nh
 | • Một khối trong tim lủng lẳng trên van hoặc tổ chức dưới van hoặc tại tổ chức nhân tạo (van, sonde tạo nhịp) mà không thể giải thích được bằng biến đổi giải phẫu thông thường của tim, HOẶC:  Áp xe  Long một phần mới trên van nhân tạo  Hở van tim mới   |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-- CĐ: 2 chính = 1 chính + 3 phụ = 5 phụ
+- **CĐXĐ: 2 chính = 1 chính + 3 phụ = 5 phụ**
 - Nghi ngờ: 1 chính + 1 phụ = 3 phụ
 
 | CĐXĐ                                                                                                                                      | Có khả năng VNTMNK                                                                                         | Loại trừ VNTMNK                                                                                                                                                            |

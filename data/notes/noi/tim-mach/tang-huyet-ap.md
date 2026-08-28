@@ -5,11 +5,11 @@
 ## I. Định nghĩa
 
 - Theo WHO và ISH:
-- HATT ≥ 140 và/hoặc HATTr ≥ 90.
+- **HATT ≥ 140 và/hoặc HATTr ≥ 90**.
 - Hoặc đang được điều trị bằng 1 thuốc hạ HA.
 - Theo AHA 2025:
-- Tăng huyết áp (THA) được định nghĩa là huyết áp tâm thu (systolic blood pressure - SBP)  ≥ 130 mmHg hoặc huyết áp tâm trương (diastolic blood pressure - DBP) ≥ 80 mmHg, dựa trên trung bình của ≥ 2 lần đo trong ≥ 2 lần khám khác nhau.
-- Những người có huyết áp ≥ 180/110 mmHg kèm bệnh lý tim mạch có thể được chẩn đoán tăng huyết áp ngay tại một lần khám duy nhất.
+- Tăng huyết áp (THA) được định nghĩa là **SBP ≥ 130 mmHg hoặc DBP ≥ 80 mmHg**, dựa trên trung bình của ≥ 2 lần đo trong ≥ 2 lần khám khác nhau.
+- Những người có huyết áp **≥ 180/110 mmHg** kèm bệnh lý tim mạch có thể được chẩn đoán tăng huyết áp ngay tại một lần khám duy nhất.
 
 ## 1. GĐ THA (theo hội tim mạch VN)
 
@@ -216,6 +216,10 @@ bāng vān bán.
 
 | Giai đoạn 3 (Bệnh có triệu chứng)   | Bệnh tim mạch có triệu chứng, BTM độ 4-5, hoặc ĐTĐ có TTCQĐ   | Nguy cơ Rất cao   | Nguy cơ Rất cao   | Nguy cơ Rất cao   |
 |-------------------------------------|---------------------------------------------------------------|-------------------|-------------------|-------------------|
+
+**Quy đổi mức nguy cơ sang tỷ lệ biến cố tim mạch trong 10 năm:**
+
+![Tỷ lệ biến cố tim mạch trong 10 năm theo mức nguy cơ](/images/noi/tim-mach/tha-ty-le-bien-co-10-nam.png)
 
 
 
@@ -471,7 +475,7 @@ Bảng 2: Liều lượng và lưu ý lâm sàng của các nhóm thuốc thay t
 |                                                                    |               | - Tăng mỗi 0.5 mcg/kg/min mỗi 5 phút để đạt HA mục tiêu. - Liều tối đa: 10 mcg/kg/min. - Thời gian điều trị: Càng ngắn càng tốt .                                                                                | - Người cao tuổi cần liều thấp hơn. Thận trọng ở phụ nữ có thai/người cao tuổi. - Quen thuốc (Tachyphylaxis) phổ biến nếu dùng kéo dài. Không có tác dụng co bóp/nhịp tim âm tính. - CCĐ tương đối: Bệnh lý mạch máu não cấp (do tăng tỷ lệ tử vong, trừ khi không có thuốc khác). - Ngộ độc: Có thể gây ngộ độc Cyanide (tăng nguy cơ ở bệnh nhân suy gan, suy thận mạn) và ngộ độc Thiocyanate (tăng nguy cơ ở bệnh nhân suy thận, sCr > 3) khi truyền ≥ 3 mcg/kg/min và/hoặc kéo dài ≥ 3 ngày. - Triệu chứng ngộ độc: Toan chuyển hóa, thay đổi tri giác, rối loạn nhịp tim. Xử trí: Ngừng thuốc, dùng sodium thiosulfate hoặc cyanocobalamin. <Thêm: Cyanide ức chế cytochrome c oxidase trong chuỗi hô hấp tế bào, gây thiếu oxy mô nghiêm trọng dẫn đến toan   |
 |--------------------------------------------------------------------|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                                                                    | Nitroglycerin | - Khởi đầu: 5 mcg/min. - Tăng mỗi 5 mcg/min mỗi 3-5 phút. - Tối đa: 200 mcg/min.                                                                                                                                 | - Chỉ định đặc thù: Chỉ dùng cho bệnh nhân có Hội chứng vành cấp (ACS) và/hoặc Phù phổi cấp. - CCĐ: Không dùng ở bệnh nhân có suy giảm thể tích tuần hoàn (volume-depleted). - Quen thuốc phổ biến khi dùng kéo dài.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| Thuốc giãn mạch - Trực tiếp                                        | Hydralazine   | - Khởi đầu: 10 mg truyền tĩnh mạch (IV) chậm (liều khởi đầu tối đa 20 mg). - Lặp lại mỗi 4-6 giờ nếu cần. - Chỉnh tốc độ đến tổng liều tích lũy tối đa: 200 mg/24 giờ.                                           | - Dược động học: HA bắt đầu giảm trong 10-30 phút, kéo dài 2-4 giờ. - Nhược điểm: Là lựa chọn đầu tay không mong muốn (undesirable first-line agent) trong điều trị cấp tính do đáp ứng khó dự đoán và thời gian tác dụng kéo dài.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Thuốc giãn mạch - Trực tiếp                                        | Hydralazine   | - Khởi đầu: 10 mg truyền tĩnh mạch (IV) chậm (liều khởi đầu tối đa 20 mg). - Lặp lại mỗi 4-6 giờ nếu cần. - Chỉnh tốc độ đến tổng liều tích lũy tối đa: 200 mg/24 giờ.                                           | - Dược động học: HA bắt đầu giảm trong 10-30 phút, kéo dài 2-4 giờ. - Nhược điểm: Là **lựa chọn đầu tay** không mong muốn (undesirable first-line agent) trong điều trị cấp tính do đáp ứng khó dự đoán và thời gian tác dụng kéo dài.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | Chẹn Adrenergic - Đối kháng chọn lọc Beta-1                        | Esmolol       | - Liều tải (Loading dose): 500-1,000 mcg/kg/min truyền trong 1 phút. - Duy trì: Truyền IV 50 mcg/kg/min. - Nếu cần: lặp lại liều bolus và tăng liều truyền IV mỗi bước 50 mcg/kg/min. - Liều duy trì tối đa: 300 | - CCĐ: Đang dùng thuốc chẹn beta khác, nhịp tim chậm, suy tim mất bù. - Cần theo dõi nhịp tim chậm. - Lưu ý: Ở liều cao, thuốc có thể chẹn cả thụ thể beta-2, gây ảnh hưởng chức năng hô hấp ở bệnh nhân có bệnh đường thở phản ứng (reactive airway disease) và bệnh phổi tắc nghẽn.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | Chẹn Adrenergic - Đối kháng kết hợp Alpha-1 và Beta không chọn lọc | Labetalol     | - Khởi đầu: 0.3 - 1.0 mg/kg (tối đa 20 mg) tiêm IV chậm mỗi 2 phút HOẶC truyền IV 0.4 - 1.0 mg/kg/h. - Chỉnh tốc độ đến tổng liều tích lũy tối đa: 300 mg/24 giờ.                                                | - CCĐ: Bệnh đường thở phản ứng hoặc tắc nghẽn, block tim độ 2-3, nhịp tim chậm. - Ưu điểm: Đặc biệt hữu ích trong các hội chứng cường giao cảm (hyperadrenergic syndromes). - Lưu ý: Có thể làm nặng thêm tình trạng suy tim (HF).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | Chẹn Adrenergic - Đối kháng Alpha không chọn lọc                   | Phentolamine  | - Liều: Bolus tĩnh mạch (IV bolus) 5 mg. - Bổ sung: Các liều bolus bổ sung mỗi 10 phút nếu cần để đạt HA mục tiêu. - Tổng liều tích lũy tối đa: 50 mg/24 giờ.                                                    | - Chỉ định đặc thù: Dùng trong cấp cứu tăng huyết áp do dư thừa catecholamine . Bao gồm: U tủy thượng thận (pheochromocytoma), tương tác giữa thuốc ức chế MAO (MAOI) và các thuốc/thực phẩm khác, ngộ độc cocaine, quá liều amphetamine, hoặc hội chứng cai clonidine. <Thêm: Phentolamine đối kháng cạnh tranh tại thụ thể Alpha, giải quyết trực tiếp tình trạng co mạch do bão                                                                                                                                                                                                                                                                                                                                                                                   |
@@ -490,12 +494,9 @@ Bảng 2: Liều lượng và lưu ý lâm sàng của các nhóm thuốc thay t
 | Tăng huyết áp chu phẫu (Perioperative hypertension) (Định nghĩa: HA ≥ 160/90 mm Hg hoặc HATT tăng ≥ 20% so với giá trị trước mổ | Clevidipine, Esmolol, Nicardipine, Nitroglycerin | - Tăng huyết áp trong mổ thường gặp nhất trong quá trình khởi mê (anesthesia induction) và khi có các thao tác trên đường thở (airway manipulation).                                                                                                                                                                                                                                                                                                               |
 | Trạng thái cường giao cảm cấp / Dư thừa catecholamine (Acute sympathetic discharge / catecholamine excess                       | Clevidipine, Nicardipine, Phentolamine           | - Yêu cầu hạ HA nhanh. <Thêm: Phentolamine là thuốc chẹn Alpha trực tiếp, giải quyết trúng đích cơ chế bão hòa catecholamine gây co mạch.>                                                                                                                                                                                                                                                                                                                         |
 
-| (FRAMINGHAM/ATP) Phân loși nguy co                              | Mc tiu diu trj LDL-C càn dat                                        | càn thay di lói sóng 2,58 mmol/L. hay                      |
-|-----------------------------------------------------------------|---------------------------------------------------------------------|------------------------------------------------------------|
-| Cao: nguy co > 20% co tuong durong mác bnh mąch hoc yěu tó nguy | < 2,58 mmol/L hay Lý tuòng < 1.82 mmol/L < 100 mg/dL; (<70 mg/dL)   | 2,58 mmol/L hay 100 0L Nu thåp hon thi 100 mg/dL:          |
-| vành Trung binh cao; ≥ 2 20%) (nguy co tùr 10. yu tó nguy co    | hay < 130 mg/dL Lý tuòng là < 3.36 mmol/L <2,58 mmol/L (<100 mg/dL) | 3,36 mmol/L hay 130 mg/dL Néu tháp hon thi 3,36 mmol/L hay |
-| Trung binh: có ≥ 2 (nguy co < 10%) yu tó nguy c                 | hay < 130 mg/dL < 3,36 mmol/L                                       | 3,36 mmol/L hay 130 mg/dL 4,13 mmol/L hay 4,91 mmol/L. hay |
-| Tháp; chi có 0-1 yěu tó nguy co                                 | hay < 160 mg/dL < 4,13 mmol/L                                       | 4,13 mmol/L hay 160 mg/dL Tù 160-189 mg/dL                 |
+**Mục tiêu LDL-C theo phân tầng nguy cơ (Framingham/ATP):**
+
+![Mục tiêu LDL-C theo phân tầng nguy cơ tim mạch](/images/noi/tim-mach/tha-ldl-c-theo-nguy-co.png)
 
 
 
@@ -602,16 +603,10 @@ Sau khi có con số %, đối chiếu với lứa tuổi để xếp loại ngu
 
 Bảng 2: Phân loại Nguy cơ theo SCORE2/SCORE2-OP (Vùng High Risk)
 
-## Nhóm tuổi Nguy cơ Thấp - Trung bình Nguy cơ Cao Nguy cơ Rất Cao
-
-< 50 tuổi
-
-< 2.5%
-
-2.5% - < 7.5% ≥ 7.5%
-
-| 50 - 69 tuổi   | < 5.0%   | 5.0% - < 10% ≥ 10%   |
-|----------------|----------|----------------------|
-| ≥ 70 tuổi      | < 7.5%   | 7.5% - < 15% ≥ 15%   |
+| Nhóm tuổi | Nguy cơ Thấp - Trung bình | Nguy cơ Cao | Nguy cơ Rất Cao |
+| --- | --- | --- | --- |
+| < 50 tuổi | < 2.5% | 2.5% - < 7.5% | ≥ 7.5% |
+| 50 - 69 tuổi | < 5.0% | 5.0% - < 10% | ≥ 10% |
+| ≥ 70 tuổi | < 7.5% | 7.5% - < 15% | ≥ 15% |
 
 (Lưu ý: Ngưỡng phần trăm rủi ro được chấp nhận sẽ tăng dần theo độ tuổi, vì tuổi cao bản thân nó đã làm tăng rủi ro).
