@@ -6,8 +6,8 @@ Hẹp hai lá (HHL)
 - Sinh lý bệnh
 - Bình thường:
 - S lỗ lá van (MVA) 4-6cm2
-- Hẹp S lỗ van <2 cm2 -> gây cản trở dòng máu
-- <1,5 cm2 --> hẹp khít
+- Hẹp **S lỗ van <2 cm2** -> gây cản trở dòng máu
+- **<1,5 cm2** --> hẹp khít
 - Tăng áp lực nhĩ T -> tăng ALĐMP -> khó thở, triệu chứng ứ máu phổi.
 - Lâm sàng giống khó thở suy tim trái nhưng gây chủ yếu suy tim phải.
 - Đa số các trường hợp chức năng thất T bình thường.
@@ -35,7 +35,7 @@ hưởng.
 
 - Đa số BN không có tr.ch trong một time dài, n` năm… khi phát hiện là đã có n~ bc như tắc mạch, phù phổi cấp
 - Khó thở: khá nổi bật của HHL, hình thái:
-- Khó thở khi gắng sức là tr.ch khá đặc hiệu và thường xh sớm nhất ( h ội chứng gắng sức) -> kn gắng sức ↓ dần với mức độ khó thở ↑ dần. Khó thở +/- kèm theo ho hoặc khi gắng sức.
+- Khó thở khi gắng sức là tr.ch khá đặc hiệu và thường xh sớm nhất ( hội chứng gắng sức) -> kn gắng sức ↓ dần với mức độ khó thở ↑ dần. Khó thở +/- kèm theo ho hoặc khi gắng sức.
 - Khó thở kịch phát về đêm và khó thở khi nằm (↑ ALĐMP) · Cơn hen tim và phù phổi cấp thường gặp trong hẹp van hai lá, là một biểu hiện của bệnh: tr.ch suy tim trái mà bản chất lại là suy tim phải.
 - Các yt làm khởi phát hoặc nặng tr.ch là: rung nhĩ mới xh ở tần số thấp đáp ứng nhanh, gắng sức, xúc động mạnh, NK, có thai…
 - Ho ra máu: do ↑ áp lực nhĩ trái làm ↑ áp lực và dẫn đến làm vỡ một TM nhỏ của phế quản. có n` mức độ, có lúc lẫn đờm, có lúc n`. Đôi khi cũng cần chú ý, ho máu do n.nhân của nhồi máu phổi cũng rất hay gặp trong HHL hoặc ho ra đờm lẫn bọt hồng kèm cơn khó thở cấp là do trch của PPC
@@ -62,7 +62,7 @@ hưởng.
 - GĐ đầu: hình ảnh hai cung song song với cung nhĩ trái vẫn ở bên trong cũng nhĩ P
 - GĐ tiếp theo: hai cung này cắt nhau
 - GĐ cuối: nhĩ trái to n` với hình ảnh hai cung song song, nhĩ trái ở ngoài cung nhĩ P
-- HHL rất khít: +/- thấy thất trái rất s á ng trong thời kỳ tâm trương vì máu về thất trái rất ít
+- HHL rất khít: +/- thấy thất trái rất sáng trong thời kỳ tâm trương vì máu về thất trái rất ít
 - Đường Kerley B xh trên phim chụp thẳng khi có ↑ ALĐMP. Thất trái giãn ( ↓ khoảng sáng sau xg ức trên phim nghiêng trái ).
 - H.a gián tiếp khác: nhánh PQ gốc trái bị đẩy lên trên hoặc nhĩ trái đè thực quản ở 1/3 dưới, thực quản bị đẩy ra sau trên phim chụp nghiêng có uống thuốc cản quang
 - +/- thấy vôi hóa van hai lá hoặc tổ chức dưới van trên phim chụp hoặc chiếu dưới màn ↑ sáng.
@@ -72,16 +72,14 @@ hưởng.
 Siêu âm
 
 - Mục đích
-- CĐXĐ bệnh hẹp van hai lá (*Thầy Hải: S lỗ van <1,5cm2; Chênh áp >10)
-- M ức độ hẹp (4 thông số đánh giá mức độ hẹp: S lỗ van, chênh áp qua van, áp lực ĐMP)
-- H ình thái van và các tổ chức dưới van hai lá
-- T ổn thương van phối hợp nhằm đưa ra đtr.
+- CĐXĐ bệnh hẹp van hai lá (*Thầy Hải: **S lỗ van <1,5cm2; Chênh áp >10**)
+- Mức độ hẹp (4 thông số đánh giá mức độ hẹp: S lỗ van, chênh áp qua van, áp lực ĐMP)
+- Hình thái van và các tổ chức dưới van hai lá
+- Tổn thương van phối hợp nhằm đưa ra đtr.
 - Theo dõi định kỳ
 - Các phương pháp siêu âm:
 
-SA tim kiểu TM
-
-SA tim 2D *** *đánh giá đc S van SA dopple tim *** *đánh giá đc S van
+**Các phương pháp siêu âm:**
 
 ## Tr.ch thực thể
 
@@ -94,9 +92,9 @@ SA tim 2D *** *đánh giá đc S van SA dopple tim *** *đánh giá đc S van
 
 - Sờ +/- thấy rung miu tâm trương ở mỏm tim. Một số th có TALĐMP n` +/- nghe thấy tiếng T2 mạnh và tách đôi tại cạnh ức trái
 
-## ** vale đmp đóng ở áp lực cao hơn --> T2 đanh
+*Van ĐMP đóng ở áp lực cao hơn → T2 đanh*
 
-## · Gõ diện đục của tim thường không to
+- Gõ diện đục của tim thường không to
 
 ·
 
@@ -111,30 +109,24 @@ SA tim 2D *** *đánh giá đc S van SA dopple tim *** *đánh giá đc S van
 - Khi có rung tâm trương cần phân biệt với u nhầy nhĩ hoặc ba buồng nhĩ
 - Rung tâm trg còn gặp trong 1 số bệnh lý khác: ↑ lưu lượng qua van HL, gặp trong thông liên nhĩ, thông liên thất, cường giáp, hở HL. Tiếng rung Austin Flint của hở chủ ( ↓ khi ↓ hậu gánh), hoặc của hẹp BL ( nghe rõ nhất ở bờ trái xg ức và ↑ lên khi hít vào)
 
-SA dopple màu SA tim gắng sức SA tim qua thực quản
+## VI. Biến chứng
 
-(TEE)
-
-***
-
-## VI. Bc
-
-1.
-
-2.
-
-| lá van dày, g i ảm di động, biên độ mở van hai lá kém, hai lá van di động song song, dốc tâm trương EF ↓ (EF < 15 mm/s là HHL khít)   | • van HL hạn chế di động, lá van hình vòm (hockey - stick sign), độ dày và vôi hóa của lá van, mức độ dính của dây chằng, có rút tổ chức dưới van cũng như đánh giá mép van. • Đo trực tiếp diện tích lỗ van hai lá, đánh giá chức năng thất trái và các tổn thương kèm theo.   | Đánh giá mức độ hẹp dựa trên các thông số: • Vận tốc đỉnh dòng chảy qua van hai lá > 1 m/s gợi ý có HHL, không đặc hiệu • Chênh áp qua van HL (tối đa và trung bình cho phép đánh giá mức độ hẹp) . MVG > 12mmHg -> HHL khít • Ước tính áp lực ĐMP (*** Thông tim mới tính được chính xác ALĐMP ) • Đánh giá tổn thương HoHL, HoC và mức độ   | • đánh giá và ước lượng mức độ HoHL đi kèm hoặc các van kèm theo thông qua độ lớn và diện tích dòng phụt ngược   | chỉ định để đánh giá đáp ứng của các thông số huyết động k hi LS và SA k tường xứng   | với đầu dò trong thực quản cho phép thấy hình rõ nét hơn (*mức độ hẹp vale, hình thái vale+tổ chức dưới vale + huyết khối buồng tim) Chỉ định SA qua thực quản: • Xem có huyết khối nhĩ T ko => Đánh giá chính xác hơn - xem HK - mức độ HoHL kèm theo => trước nong van • Siêu âm qua thành ngực còn nghi ngờ *If BN KO có chỉ định nong van mà PT luôn thì k cần SÂ qua TQ nữa mà tiến hành thông tim đánh giá mức độ hẹp vành => PT luôn   |
-|---------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Phương pháp | Đánh giá được |
+| --- | --- |
+| **SA TM (kiểu TM)** | Lá van dày, giảm di động, biên độ mở van hai lá kém, hai lá van di động song song, dốc tâm trương EF giảm (**EF < 15 mm/s là HHL khít**) |
+| **SA 2D** | Van HL hạn chế di động, lá van hình vòm (**hockey-stick sign**), độ dày và vôi hóa của lá van, mức độ dính của dây chằng, co rút tổ chức dưới van, đánh giá mép van. Đo trực tiếp diện tích lỗ van hai lá, đánh giá chức năng thất trái và các tổn thương kèm theo |
+| **SA Doppler tim** | Đánh giá mức độ hẹp dựa trên các thông số: vận tốc đỉnh dòng chảy qua van hai lá >1 m/s gợi ý có HHL (không đặc hiệu); chênh áp qua van HL (tối đa và trung bình). **MVG > 12mmHg → HHL khít**; ước tính áp lực ĐMP (thông tim mới tính chính xác được ALĐMP); đánh giá tổn thương HoHL, HoC và mức độ |
+| **SA Doppler màu** | Đánh giá và ước lượng mức độ HoHL đi kèm hoặc các van kèm theo, thông qua độ lớn và diện tích dòng phụt ngược |
+| **SA tim gắng sức** | Chỉ định để đánh giá đáp ứng của các thông số huyết động khi LS và SA không tương xứng |
+| **SA tim qua thực quản (TEE)** | Đầu dò trong thực quản cho hình rõ nét hơn (mức độ hẹp van, hình thái van + tổ chức dưới van + huyết khối buồng tim). Chỉ định: xem có huyết khối nhĩ T không (trước nong van); siêu âm qua thành ngực còn nghi ngờ |
 
 - Đánh giá diện tích các lỗ van trên SA Dopple, có hai cách đo:
 - Đo trực tiếp lỗ van trên SA 2D
 
-## ·
-
 - Đo time bán giảm áp lực (PHT) - SA dopple dòng chảy qua
 - Là time để vận tốc giảm còn 70% vận tốc đỉnh
 - Van càng hẹp nhiều thì PHT càng dài
-- Diện tích lỗ van hai lá = 220/PHT
+- **Diện tích lỗ van hai lá = 220/PHT**
 
 ## 4. Thông tim thăm dò huyết động
 
@@ -143,11 +135,11 @@ SA dopple màu SA tim gắng sức SA tim qua thực quản
 - Chỉ định khi không tương xứng giữa SA và LS
 - Dựa vào thông tin thăm dò huyết động +/- tính đc diện tích lỗ van khá hiệu dụng qua công thức Gorlin:
 
-<!-- formula-not-decoded -->
+MVA = CO / (44.3 × HR × DT × √MVG)
 
 Trong đó: MVA diện tích lỗ van hai lá; CO cung lượng tim ; DT time tâm trương; HR nhịp tim; MVG chênh áp trung bình qua van hai lá; 3.77 là hằng số thực nghiệm
 
-*Đại=> thông tim vẫn tính được diện tích lỗ van 2 lá
+**Đại: thông tim vẫn tính được diện tích lỗ van 2 lá
 
 ## IV. CĐXĐ
 
@@ -169,7 +161,7 @@ Suy tim
 
 PPC
 
-X ả y ra khi HHL khít và hoàn c ả nh d ễ x ả y ra là khi BN g ắ ng s ứ c quá m ứ c, khi mang thai, chuy ể n d ạ đẻ , khi b ị Ntr, truy ề n n` d ị ch
+Xảy ra khi HHL khít và hoàn cảnh dễ xảy ra là khi BN gắng sức quá mức, khi mang thai, chuy ể n d ạ đẻ , khi b ị Ntr, truy ề n n` d ị ch
 
 - Khó thở dữ dội, trào bọt hồng, phổi n` ran ẩm lan nhanh từ đáy phổi
 - XQ có hình ảnh mờ cánh bướm
@@ -212,9 +204,9 @@ Tiêu chuẩn đánh giá dựa trên các thông số huyết động được 
 2. BN nặng hơn và có trch cơ năng thì cần đtr can thiệp
 - Phụ thuộc: hình thái van và tổ chức dưới van để +/- nong đc bằng bóng hay phẫu thuật
 
-- Tr / chcơ nặng nhẹ (NYHA 2) điều trị nội khoa với các biện pháp TD chặt chẽ
-- Tr / ch cơ năng nặng lên (NYHA 3-4) thì cần chỉ định can thiệp sớm (qua da hoặc phẫu thuật) bên cạnh pp đtr nội khoa nền]
-- ***Chú ý: ↑ ALĐMP (55mmHg) hoặc rung nhĩ là chỉ định để để can thiệp hoặc mổ sớm hơn
+- Tr/ch cơ năng nhẹ (NYHA 2) điều trị nội khoa với các biện pháp TD chặt chẽ
+- Tr/ch cơ năng nặng lên (NYHA 3-4) thì cần chỉ định can thiệp sớm (qua da hoặc phẫu thuật) bên cạnh pp đtr nội khoa nền]
+- ***Chú ý: **↑ ALĐMP (55mmHg) hoặc rung nhĩ là chỉ định để để can thiệp hoặc mổ sớm hơn**
 3. Tóm tắt bằng sơ đồ:
 - PAWP áp lực động mạch phổi bít
 - PAP áp lực ĐM phổi

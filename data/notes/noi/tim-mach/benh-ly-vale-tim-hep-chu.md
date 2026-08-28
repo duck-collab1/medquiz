@@ -31,9 +31,11 @@ mờ (ko phải luôn luôn có)
 ## *Cần phân biệt cơ chế tiếng thổi
 
 
-| Bệnh cơ tim phì đại có hẹp đường ra thất trái                                                                                                         | Hẹp dưới vale ĐMC                                                                            | Hẹp tại vale ĐMC                                                                                                                          | Hẹp trên vale ĐMC              |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|
-| • Cơ tâm thất phì đại cản trở dòng máu ra khỏi tâm thất trái (vùng này bình thg là vùng gia tăng tốc độ) • Tiếng TTT không lan lên cổ + T2 không thay | dưới vale ĐMC có 1 dải xơ (ngay dưới vale) T2 • TTT lan • T2 có thể • vale => cứng • thấp mờ | lên cổ thay đổi hoặc ko? vôi hoá nhiều và hẹp khít vale di động chậm chạp nhắc => T2 mờ tim = lá van dày lên nhưng vôi hoá ít => T2 không | TTT ko lan + T2 không thay đổi |
+| | Bệnh cơ tim phì đại có hẹp đường ra thất trái | Hẹp dưới van ĐMC | Hẹp tại van ĐMC | Hẹp trên van ĐMC |
+| --- | --- | --- | --- | --- |
+| Cơ chế | Cơ tâm thất phì đại cản trở dòng máu ra khỏi tâm thất trái (vùng này bình thường là vùng gia tăng tốc độ) | Có 1 dải xơ ngay dưới van | Van cứng, vôi hóa nhiều, di động chậm chạp | Lá van dày lên nhưng vôi hóa ít |
+| Tiếng thổi | TTT không lan lên cổ | TTT có thể lan lên cổ | TTT lan lên cổ | TTT không lan |
+| T2 | T2 không thay đổi | T2 có thể mờ | T2 mờ (do van cứng, vôi hóa nhiều) | T2 không thay đổi |
 
 *Tiếng thổi tâm thu KLS 2 cạnh ức P (ko rõ lan) phải nghĩ đến:
 
@@ -77,7 +79,7 @@ chủ và ĐMC xuống) Phân biệt 2 thuật ngữ:
 
 |                                                                              | Nhẹ   | Vừa      | Khít   | Rất khít   |
 |------------------------------------------------------------------------------|-------|----------|--------|------------|
-| Chênh áp trung bình qua van (mmHg) *ko đc lấy chênh áp tối đa                | < 20  | 20-40    | >40    | >60        |
+| **Chênh áp trung bình qua van (mmHg)** *ko đc lấy chênh áp tối đa                | < 20  | 20-40    | **>40**    | **>60**        |
 | Vận tốc tối đa qua van ĐMC (m/sec)                                           | < 3   | 3-4      | > 4    | > 5        |
 | Diện tích lỗ van *ít quan trọng nhất do S vale tính gián tiếp qua 2 cái trên | >1.5  | 1.0- 1.5 | <1     |            |
 
@@ -114,7 +116,7 @@ Tăng nhẹ 25-45mmHg Tăng TB 46-65mmHg Tăng nặng  >65mmHg
 
 ## 5. Điều trị
 
-- THAY VALE (điều trị tuyệt đối và tốt nhất, ưu tiên hàng đầu trong hẹp chủ, không được thì xem xét chuyển sang các phương pháp khác)
+- **THAY VAN** (điều trị tuyệt đối và tốt nhất, ưu tiên hàng đầu trong hẹp chủ, không được thì xem xét chuyển sang các phương pháp khác)
 
 *Chỉ định mổ thay vale:
 
@@ -127,12 +129,12 @@ Tăng nhẹ 25-45mmHg Tăng TB 46-65mmHg Tăng nặng  >65mmHg
 => nếu nguy cơ thấp --> có thể phẫu thuật thay van
 
 - PHẪU THUẬT
-- Không phẫu thuật: 75% bệnh nhân hẹp chủ khít tử vong trong vòng 3 năm kể từ khi chẩn đoán.
+- **Không phẫu thuật: 75% bệnh nhân hẹp chủ khít tử vong trong vòng 3 năm** kể từ khi chẩn đoán
 - Thay van động mạch chủ
 - Sinh học => sử dụng VKA (KO DÙNG NOACs) trong 3 tháng + dự phòng viêm nội tâm mạc nhiễm khuẩn
 - Cơ học
 - CAN THIỆP
-- Thay van động mạch chủ qua da (TAVI) - áp dụng cho BN >= 75 tuổi và EuroSCORE
+- **Thay van động mạch chủ qua da (TAVI)** - áp dụng cho **BN >= 75 tuổi** và EuroSCORE cao
 - Nong van ĐMC bằng bóng:
 - Hẹp van ĐMC bẩm sinh ở người trẻ
 - Không thể mổ do tuổi cao hoặc do các bệnh nặng khác phối hợp không cho phép phẫu thuật thay van ĐMC
