@@ -1,72 +1,73 @@
 # Điện tâm đồ cơ bản và một số bệnh lý thường gặp
 
-1c. Điện tâm đồ cơ bản (Y4) và 1 số bệnh lý thường gặp
+## I. Các thành phần trên ECG
 
-## Nguyên tắc đọc điện tâm đồ và các bước đọc điện tâm đồ cơ bản xem trong <Handout cơ sở>
+![Hệ dẫn truyền tim và các thành phần sóng điện tâm đồ](/images/noi/tim-mach/dtd-he-dan-truyen-va-song.png)
 
-Các thành phần trên ECG
+| Thành phần | Ý nghĩa sinh lý | Ghi chú quan trọng |
+| --- | --- | --- |
+| Sóng P | Khử cực tâm nhĩ | |
+| Khoảng PR | Từ khi bắt đầu khử cực nhĩ đến khi bắt đầu khử cực thất | Bình thường: **120-200ms** |
+| Phức bộ QRS | Khử cực tâm thất | Bình thường: **< 100ms** |
+| Khoảng QT | Khử cực thất + co cơ học thất + tái cực thất | |
+| Sóng T | Tái cực tâm thất | **Sóng T đảo ngược** có thể chỉ điểm thiếu máu cục bộ hoặc NMCT gần đây |
+| Điểm J | Điểm nối giữa cuối QRS và bắt đầu ST | |
+| Đoạn ST | Đẳng điện — tâm thất đang khử cực hoàn toàn | |
+| Sóng U | Xuất hiện rõ khi hạ Kali máu hoặc nhịp chậm | Mẹo nhớ: **hypo"U"kalemia** |
 
-| Thành phần   | Ý nghĩa sinh lý                                                    | Ghi chú quan trọng                                                                 |
-|--------------|--------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| Sóng P       | Khử cực tâm nhĩ.                                                   |                                                                                    |
-| Khoảng PR    | Thời gian từ khi bắt đầu khử cực nhĩ đến khi bắt đầu khử cực thất. | Bình thường: 120 - 200 ms.                                                         |
-| Phức bộ QRS  | Khử cực tâm thất.                                                  | Bình thường: < 100 ms.                                                             |
-| Khoảng QT    | Bao gồm khử cực thất, sự co cơ học của thất và tái cực thất.       |                                                                                    |
-| Sóng T       | Tái cực tâm thất.                                                  | Sóng T đảo ngược có thể chỉ ra thiếu máu cục bộ hoặc nhồi máu cơ tim (MI) gần đây. |
-| Điểm J       | Điểm nối giữa phần cuối phức bộ QRS và bắt đầu đoạn ST.            |                                                                                    |
-| Đoạn ST      | Đẳng điện, tâm thất đang trong trạng thái khử cực hoàn toàn.       |                                                                                    |
-| Sóng U       | Xuất hiện rõ trong hạ kali máu hoặc nhịp chậm.                     | Mẹo: hypo"U"kalemia .                                                              |
+## II. Tiêu chuẩn "Nhịp" cơ bản
 
+| Loại nhịp | Đặc điểm |
+| --- | --- |
+| **Nhịp xoang** | Tìm thấy sóng P ở ≥1/12 chuyển đạo + P đi trước QRS với khoảng PR không đổi + **P dương ở DII, DIII, aVF, V5, V6; âm ở aVR** |
+| Nhịp bộ nối (AV) | Chủ nhịp là nút nhĩ-thất → QRS thanh mảnh (giống nhịp xoang), nhưng **P âm ở DII, DIII, aVF** (khử cực nhĩ ngược chiều) hoặc **không thấy sóng P** (P bị chôn trong QRS) |
+| Nhịp tự thất | Chủ nhịp từ tâm thất → **QRS giãn rộng (>120ms), tần số chậm (20-40 ck/ph)**, không liên quan đến sóng P |
 
-TIÊU CHUẨN ĐIỆN TÂM ĐỒ MỘT SỐ BỆNH LÝ THƯỜNG GẶP
+## III. Tiêu chuẩn phì đại/tăng gánh các buồng tim
 
-## 1. Tiêu chuẩn về "Nhịp" cơ bản
+| | Phì đại nhĩ trái | Phì đại nhĩ phải | Tăng gánh 2 nhĩ | Tăng gánh thất trái | Tăng gánh thất phải |
+| --- | --- | --- | --- | --- | --- |
+| **Nguyên lý** | Nhĩ trái khử cực muộn hơn và kéo dài → biến dạng phần cuối sóng P | Nhĩ phải khử cực sớm, biên độ khử cực tăng → biến dạng phần đầu sóng P | Kết hợp đặc điểm của cả 2 bên | Khối cơ thất trái tăng → QRS tăng biên độ + tăng thời gian khử cực + giãn nhĩ trái + trục trái + rối loạn tái cực ST-T (biểu hiện sớm của thiếu máu dưới nội tâm mạc) | Khối cơ thất phải tăng → trục phải + thay đổi tỷ lệ R/S |
+| **Tiêu chuẩn ECG** | Sóng P hai đỉnh ("P 2 lá"); độ rộng **>0,12s**; V1 dạng 2 pha, pha âm ưu thế, rộng >1mm, sâu >1mm. *Tiêu chuẩn: P rộng ≥120ms ở DII; ở V1 pha âm ≥1mm, dài ≥40ms* | P nhọn, đối xứng ("P phế"); biên độ **>2,5mm** (rõ nhất D2, D3, aVF); độ rộng bình thường (0,12-0,2s). *Tiêu chuẩn: P ≥2,5mm ở DII, P ≥1,5mm ở V1* | Thay đổi rõ nhất ở D2, D3; biên độ >2,5mm; hình 2 đỉnh (giống chữ M); V1 có thể âm hoặc 2 pha (độ rộng >0,1s) | **Tiêu chuẩn Sokolow-Lyon: RV5 (hoặc RV6) + SV1 ≥ 35mm**; R cao ở V5, V6; S sâu ở V1, V2 | Trục phải >110°; R/S <1 ở V5, V6; P >2mm ở D2; S ưu thế ở D1 hoặc block nhánh phải không hoàn toàn; T đảo ngược ở V1-V4 hoặc V2-V3. *Tiêu chuẩn: RV1 ≥7mm; RV1+SV5(hoặc SV6) ≥11mm* |
 
-*tức chứng cứ nơi phát nhịp:
+*Cần phân biệt tăng gánh tâm trương (giãn buồng tim) và tăng gánh tâm thu (phì đại thành cơ tim)*
 
-| Nhịp xoang       | + Tìm thấy sóng P ở tối thiểu 1 trong 12 chuyển đạo + P đi trước QRS một khoảng không đổi + P dương ở DII, DIII, aVF, V5, V6; âm ở aVR   |
-|------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| Nhịp bộ nối (AV) |                                                                                                                                          |
-| Nhịp tự thất     |                                                                                                                                          |
+## IV. Block dẫn truyền cơ bản
 
-2. Tiêu chuẩn Phì đại hay tăng gánh các buồng tim
+| Loại block | Tiêu chuẩn ECG |
+| --- | --- |
+| **Block AV độ I** | PR kéo dài **>200ms**, cố định, mỗi P đều dẫn được xuống thất (không có nhịp bị rớt) |
+| **Block AV độ II Mobitz I (Wenckebach)** | PR dài dần qua từng nhịp cho đến khi có 1 nhịp P không dẫn được (rớt nhịp), sau đó chu kỳ lặp lại |
+| **Block AV độ II Mobitz II** | PR **cố định** (không dài dần), đột ngột có nhịp P không dẫn được xuống thất — nguy cơ tiến triển thành block hoàn toàn cao hơn Mobitz I |
+| **Block AV độ III (hoàn toàn)** | **Phân ly nhĩ-thất hoàn toàn**: sóng P và phức bộ QRS hoạt động độc lập, tần số P > tần số QRS, PR thay đổi không theo quy luật |
+| **Block nhánh phải (RBBB)** | QRS **≥120ms**; dạng **rSR' ở V1-V2** ("tai thỏ"); sóng S rộng ở D1, aVL, V5-V6 |
+| **Block nhánh trái (LBBB)** | QRS **≥120ms**; mất sóng Q ở D1, V5-V6; dạng **R rộng, có khấc ở D1, aVL, V5-V6**; ST-T ngược chiều với QRS |
+| **Block phân nhánh trái trước** | Trục trái (**-45° đến -90°**), QRS <120ms, dạng qR ở D1/aVL, rS ở D2/D3/aVF |
+| **Block phân nhánh trái sau** | Trục phải (>**+90°**), QRS <120ms, dạng rS ở D1/aVL, qR ở D2/D3/aVF (cần loại trừ các nguyên nhân trục phải khác) |
 
-|                        | Phì đại cơ nhĩ (T)                                                                                                                                                                                                                                              | Phì đại cơ nhĩ (P)                                                                                                                                                           | Tăng gánh 2 nhĩ                                                                                                        | Tăng gánh thất trái                                                                                                                                                                                                                                                      | Tăng gánh thất phải                                                                                                                                                                                  |
-|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Nguyên lý              |                                                                                                                                                                                                                                                                 |                                                                                                                                                                              |                                                                                                                        | Nguyên tắc chung của tăng gánh thất (khối cơ thất trái tăng) + QRS tăng biên độ + QRS tăng thời gian (kéo dài thời gian khử cực thất) + Giãn nhĩ trái: tắng áp lực nhĩ trái + Trục trái + biến đổi ST-T: rối loạn tái cực (biểu hiện sớm của thiếu máu dưới nội tâm mạc) |                                                                                                                                                                                                      |
-| Tiêu chuẩn điện tâm đồ | • Sóng P hai đỉnh --> P "2 lá" • Biên độ ít thay đổi (thường < 2.5 mm) • Độ rộng lớn hơn bình thường >0.12s • V1 có dạng 2 pha, pha âm ưu thế hơn, rộng > 1mm, cao > 1mm *Thầy Linh: Sóng P rộng ≥ 120 ms ở DII Sóng P hai pha ở V1, pha âm ≥ 1 mm, dài ≥ 40 ms | • P nhọn đối xứng --> sóng P "phế" • Biên độ >2.5mm (rõ nhất D2, D3, aVF) • Độ rộng bình thường (0.12- 0.2s) • Slide thầy Linh: Tiêu chuẩn: P ≥ 2.5 mm ở DII P ≥ 1.5 mm ở V1 | Thay đổi rõ nhất ở D2, D3 • Biên độ > 2.5mm • Hình dạng 2 đỉnh (giống chữ M) • V1 có thể âm hoặc 2 pha (độ rộng >0.1s) | *Tăng biên độ là quan trọng hơn cả *slide thầy Linh: Tiêu chuẩn Sokolow-Lyon: RV5 (hoặc RV6) + SV1 ≥ 35 mm R cao ở V5, V6 S sâu ở V1, V2                                                                                                                                 | - trục phải > 110 - R/S < 1 ở V5, 6 - P > 2mm ở D2 - S ưu thế ở D1 hoặc block nhánh phải KO hoàn toàn - T đảo ngược ở V1 - V4 hoặc V2 - V3 *Slide thầy Linh: RV1 ≥ 7 mm RV1 + SV5 (hoặc SV6) ≥ 11 mm |
+## V. Nhồi máu cơ tim — định khu theo chuyển đạo ST chênh lên
 
-*phân biệt tăng gánh tâm trương và tăng gánh tâm thu <note thêm>
+![Các thành thất trái và chuyển đạo ECG tương ứng](/images/noi/tim-mach/dtd-vung-nmct-theo-chuyen-dao.png)
 
-## 3. Block dẫn truyền cơ bản <xem trong bài 1f để hoàn thiện>
+| Vị trí NMCT | ST chênh lên ở |
+| --- | --- |
+| Đoạn gần LAD (NMCT trước rộng) | V1-V6; D1, aVL hoặc kèm block nhánh trái |
+| Đoạn giữa LAD | V1-V6, D1, aVL |
+| Đoạn xa LAD | V1-V4, hoặc D1, aVL, V5-V6 |
+| Đoạn gần RCA hoặc LCX (NMCT sau dưới rộng) | D2, D3, aVF kèm 1 trong: V1, V3R, V4R hoặc V5, V6, hoặc **R>S ở V1, V2** |
+| Vách | D3, aVF, V2, V3 |
+| Trước bên | D1, aVL, V4, V5, V6 |
+| Trước vách | V1, V2, V3, +/- V4 |
+| Sau bên | D3, aVF, V5, V6 |
 
-|                        | Block AV                | Block nhánh (P)   | Block nhánh (T)                                 |
-|------------------------|-------------------------|-------------------|-------------------------------------------------|
-| Nguyên lý              | • Độ I • Độ II • Độ III |                   | • Nhánh (T) • Nhánh trái trước • Nhánh trái sau |
-| Tiêu chuẩn điện tâm đồ |                         |                   |                                                 |
+### Tiêu chuẩn Sgarbossa — chẩn đoán STEMI khi có kèm Block nhánh trái (LBBB)
 
-4. Nhồi máu cơ tim
+![Tiêu chuẩn Sgarbossa gốc chẩn đoán STEMI trên nền LBBB](/images/noi/tim-mach/dtd-tieu-chuan-sgarbossa.png)
 
+| Tiêu chuẩn | Điểm |
+| --- | --- |
+| ST chênh lên ≥1mm **cùng chiều** với QRS dương (V4-V6, aVL, D1) | 5 |
+| ST chênh xuống ≥1mm ở V1, V2 và/hoặc V3 | 3 |
+| ST chênh lên ≥5mm **ngược chiều** (bất tương xứng) với QRS ở V1-V3 | 2 |
 
-120º
-
-90º
-
-III
-
-II
-
-aVF
-
-
-| Vị trí NMCT                                    | ST chênh lên ở                                                                                       |
-|------------------------------------------------|------------------------------------------------------------------------------------------------------|
-| Đoạn gần của LAD (NMCT trc rộng)               | V1 - V6; D1, aVL hoặc kèm block nhánh T                                                              |
-| Đoạn giữa của LAD                              | V1 - V6, D1, aVL                                                                                     |
-| Đoạn xa của LAD                                | V1 - V4, hoặc D1, aVL, V5 - V6                                                                       |
-| Đoạn gần của RCA hoặc LCX (NMCT sau dưới rộng) | D2, D3, aVF và kèm theo 1 trong các miền chuyển đạo sau: V1, V3R, V4R hoặc V5, V6, hoặc R>S ở V1, V2 |
-| Vách                                           | D3, aVF, V2, V3                                                                                      |
-| Trc bên                                        | D1, aVL, V4,V5,V6                                                                                    |
-| Trc vách                                       | V1,V2,V3, +/- cả V4                                                                                  |
-| Sau bên                                        | D3, aVF, V5,V6                                                                                       |
-
+*Tổng điểm ≥3 → gợi ý STEMI trên nền LBBB (độ đặc hiệu cao nhưng độ nhạy thấp)*
