@@ -1,269 +1,189 @@
 # Hội chứng động mạch chủ cấp
 
-## 1l. Hội chứng ĐM chủ cấp
+## I. Giải phẫu và sinh lý bệnh động mạch chủ
 
-## TS. BS. Đinh Huỳnh Linh
+### 1. Giải phẫu đại thể động mạch chủ (ĐMC)
 
-## I. GIẢI PHẪU VÀ SINH LÝ BỆNH ĐỘNG MẠCH CHỦ
+Bệnh lý **phình ĐMC** được xác định khi kích thước tăng **≥ 50%** so với bình thường; **giãn** khi tăng 1-1,5 lần.
 
-## 1. Giải phẫu Đại thể Động mạch chủ
+![Kích thước bình thường các đoạn động mạch chủ theo giới](/images/noi/tim-mach/hcdmc-kich-thuoc-cac-doan.png)
 
-ĐMC được chia thành các đoạn chính với đường kính trung bình khác nhau giữa nam và nữ. Tình trạng bệnh lý (phình) được xác định khi kích thước tăng ≥ 50% so với bình thường.
+- Đoạn nối xoang ống: Nam 38mm, Nữ 33mm
+- Xoang Valsalva (<22mm/m²): Nam 40mm, Nữ 34mm
+- ĐMC lên: Nam 40mm, Nữ 36mm
+- Đoạn gần/giữa quai ĐMC: Nam 37/34mm, Nữ 34/31mm
+- ĐMC ngực đoạn xuống gần (eo ĐMC): Nam 29mm, Nữ 26mm — đoạn xa: Nam 23mm, Nữ 20mm
+- ĐMC bụng: Nam 23mm, Nữ 19mm
 
-- Đoạn nối xoang ống: Nam 38 mm, Nữ 33 mm.
-- Xoang Valsalva (< 22mm/m²): Nam 40 mm, Nữ 34 mm.
-- ĐMC lên: Nam 40 mm, Nữ 36 mm.
-- Đoạn gần của quai ĐMC: Nam 37 mm, Nữ 34 mm.
-- Đoạn giữa quai ĐMC: Nam 34 mm, Nữ 31 mm.
-- ĐMC ngực đoạn xuống gần (eo ĐMC): Nam 29 mm, Nữ 26 mm.
-- ĐMC ngực đoạn xuống xa: Nam 23 mm, Nữ 20 mm.
-- ĐMC bụng:
-- Nam 23 mm, Nữ 19 mm. *kích cỡ tăng >1,5 lần là phình, từ 1-1,5 lần là giãn
+**Các nhánh bên và ý nghĩa lâm sàng:**
+- **ĐMC lên** → nhánh ĐM vành: tách thành type A lan vào ĐMV (đặc biệt ĐMV phải) → **NMCT thành sau dưới**
+- **Quai ĐMC** → thân cánh tay đầu, ĐM cảnh chung trái, ĐM dưới đòn trái: tổn thương gây đột quỵ, thiếu máu não, hoặc **chênh lệch huyết áp hai tay**
+- **ĐMC ngực xuống** → nhánh nuôi tủy sống: tổn thương gây **liệt hai chi dưới**
+- **ĐMC bụng** → ĐM tạng (thân tạng, mạc treo tràng trên/dưới, thận): lóc tách lan xuống gây đau bụng, liệt ruột, suy thận, thiếu máu chi dưới. *ĐM thận không có vòng nối → dễ thiếu máu thận cấp khi lóc tách lan tới*
 
-Giải phẫu động mạch chủ
+**Landing zones** (phân vùng để đặt stent graft): Zone 0 = chỗ chia thân ĐM cánh tay đầu; Zone 1 = chỗ chia ĐM cảnh gốc trái; **Zone 2 = chỗ chia ĐM dưới đòn trái (vị trí hay gặp tổn thương nhất)**; Zone 3 = đến ngang mức đốt sống ngực T4; Zone 4 = phần còn lại
 
+### 2. Cấu tạo vi thể & phôi thai học
 
-## Các nhánh bên quan trọng và ý nghĩa lâm sàng:
+![Cấu tạo 3 lớp thành động mạch chủ](/images/noi/tim-mach/hcdmc-cau-tao-thanh-dmc.png)
 
-- ĐMC lên:
-- Nhánh bên: Động mạch vành (ĐMV).
-- Ý nghĩa lâm sàng: Bệnh lý ĐMC lên (ví dụ: tách thành type A) có thể bóc tách lan vào ĐMV (đặc biệt là ĐMV phải - RCA), gây giảm dòng chảy và dẫn đến triệu chứng của nhồi máu cơ tim (NMCT), thường là NMCT thành sau dưới. Can thiệp vào ĐMC lên cần lưu ý đến vị trí và tưới máu ĐMV.
-- Quai ĐMC:
-- Nhánh bên: Thân động mạch cánh tay đầu, ĐM cảnh chung trái, ĐM dưới đòn trái. Các nhánh này cấp máu cho não và chi trên.
-- Ý nghĩa lâm sàng: Bệnh lý quai ĐMC ảnh hưởng đến tưới máu não (gây đột quỵ, thiếu máu não) hoặc cấp máu chi trên (gây chênh lệch huyết áp hai tay).
-- ĐMC ngực đoạn xuống:
-- Nhánh bên: Các nhánh nuôi tủy sống.
-- Phân vùng giải phẫu (Landing Zones):
-- Zone 0: Chỗ chia thân ĐM cánh tay đầu.
-- Zone 1: Chỗ chia ĐM cảnh gốc trái.
-- Zone 2: Chỗ chia ĐM dưới đòn trái (vị trí hay gặp tổn thương nhất).
-- Zone 3: Đến nhánh ngực 4 (T4).
+| Lớp | Đặc điểm |
+| --- | --- |
+| Áo trong (Tunica intima) | Lớp nội mô mỏng, dễ tổn thương — **rách lớp này là khởi đầu của lóc tách** |
+| Áo giữa (Tunica media) | Lớp dày nhất, sợi chun + cơ trơn, quyết định tính đàn hồi — **máu chảy vào lớp này khi có vết rách nội mạc** |
+| Áo ngoài (Tunica externa) | Mô xơ |
 
+- **ĐMC ngực**: nguồn gốc mào thần kinh, đàn hồi cao (Elastin:Collagen = 2:1), áo giữa có mạch nuôi → **hay gặp tách thành ĐMC ngực**
+- **ĐMC bụng**: nguồn gốc trung bì, kém đàn hồi (Elastin:Collagen = 1:2), áo giữa không có mạch nuôi, dễ xơ vữa → **hay gặp phình ĐMC bụng hơn tách thành**
 
+### 3. Sinh lý huyết áp động mạch
 
-- Zone 4: Phần còn lại.
-- ĐMC bụng:
-- Nhánh bên: Các nhánh ĐM tạng (thân tạng, mạc treo tràng trên, thận, mạc treo tràng dưới).
-- Ý nghĩa lâm sàng: Lóc tách ĐMC lan xuống bụng có thể ảnh hưởng tưới máu tạng, gây đau bụng, liệt ruột, suy thận, thiếu máu chi dưới.
-- Đặc điểm vòng nối: ĐM thân tạng là nhánh đầu tiên. ĐM thận không có vòng nối. ĐM mạc treo tràng dưới có nhiều vòng nối.
+**P = Q × R** (P: áp lực lòng mạch; Q: lưu lượng máu; R: sức cản thành mạch)
+→ Trong cấp cứu hội chứng ĐMC cấp: mục tiêu điều trị là **giảm tần số tim và giảm lực co bóp cơ tim** để kiểm soát huyết áp.
 
-## 2. Cấu tạo vi thể và Phôi thai học
+## II. Các thể lâm sàng và bệnh sinh
 
-- Cấu tạo thành ĐMC:
-- Áo trong (Tunica intima): Lớp nội mô mỏng, dễ bị tổn thương. Rách lớp này là khởi đầu cho lóc tách.
-- Áo giữa (Tunica media): Lớp dày nhất, gồm các sợi chun và cơ trơn, quyết định tính đàn hồi. Máu chảy vào lớp này khi có vết rách nội mô.
-- Áo ngoài (Tunica externa): Lớp mô xơ.
-- Phôi thai học và liên quan bệnh lý:
-- ĐMC ngực có nguồn gốc từ mào thần kinh và tiền đốt sống, có tính đàn hồi cao hơn (tỷ lệ Elastin:Collagen là 2:1), lớp áo giữa có mạch máu nuôi. Do đó, hay gặp tách thành ĐMC ngực
-
-
-.
-
-- ĐMC bụng có nguồn gốc từ trung bì, kém đàn hồi hơn (Elastin:Collagen là 1:2), lớp áo giữa không có mạch máu nuôi, cấu trúc cơ trơn dễ bị phá hủy và dễ lắng đọng mảng xơ vữa. Do đó, hay gặp phình ĐMC bụng hơn là tách thành đơn thuần .
-
-## 3. Sinh lý huyết áp động mạch
-
-- Công thức: P=Q×R
-- P: Áp lực trong lòng mạch.
-- Q: Lưu lượng máu.
-- R: Sức cản thành mạch (phụ thuộc độ chun giãn).
-- Ý nghĩa lâm sàng: Trong cấp cứu hội chứng ĐMC cấp, mục tiêu là kiểm soát huyết áp bằng cách giảm tần số tim và giảm lực co bóp cơ tim.
-
-## II. CÁC THỂ LÂM SÀNG VÀ BỆNH SINH CỦA HỘI CHỨNG ĐMC CẤP
-
-Hội chứng ĐMC cấp là thuật ngữ chỉ các bệnh cảnh cấp cứu liên quan đến nhau, bao gồm:
-
-1. Tách thành ĐMC (Aortic Dissection): Chiếm 80-90% các ca.
-2. Tụ máu trong thành ĐMC (Intramural Hematoma - IMH): Do vỡ các mạch nuôi mạch (vasa vasorum).
-3. Loét xuyên thành (Penetrating Atherosclerotic Ulcer - PAU): Mảng xơ vữa bị loét thủng.
-4. Phình ĐMC dọa vỡ / Vỡ.
-5. Giả phình ĐMC.
+Hội chứng ĐMC cấp gồm:
+1. **Tách thành ĐMC** (Aortic Dissection) — chiếm **80-90%**
+2. **Tụ máu trong thành ĐMC** (IMH) — do vỡ mạch nuôi mạch (vasa vasorum)
+3. **Loét xuyên thành** (PAU) — mảng xơ vữa bị loét thủng
+4. Phình ĐMC dọa vỡ/vỡ
+5. Giả phình ĐMC
 6. Chấn thương ĐMC
 
-## 1. Tách thành Động mạch chủ
+### 1. Tách thành động mạch chủ
 
-- Định nghĩa: Vết rách lớp nội mạc tạo đường cho máu chảy vào lớp áo giữa, phân tách thành ĐMC thành lòng thật và lòng giả.
-- Dịch tễ: 2-3 ca/100.000 dân/năm, 65% là nam giới, tuổi 60-70.
-- Yếu tố nguy cơ:
-- Tăng áp lực thành mạch: Tăng huyết áp (yếu tố nguy cơ quan trọng nhất).
-- Bất thường lớp áo giữa: Bệnh lý di truyền, bệnh mô liên kết (Marfan, Ehlers-Danlos).
-- Tổn thương nội mô: Xơ vữa động mạch.
-- Ở người trẻ (<40 tuổi): Van ĐMC 2 lá van, tiền sử phẫu thuật ĐMC, ĐMC giãn lớn, sử dụng cocaine, có thai.
-- Cơ chế bệnh sinh:
-1. Máu từ lòng thật qua vết rách nội mạc (entry tear) chảy vào lớp áo giữa.
-2. Lòng giả được hình thành và có thể:
-- Lan rộng xuống dưới (thường tới ngã ba chủ chậu) hoặc ngược lên trên.
-- Vỡ hoặc thấm ra khoang kế cận (trung thất, màng tim, màng phổi).
-- Tạo vết rách thứ hai quay lại lòng thật (re-entry), giúp giảm áp lực lòng giả và giảm nguy cơ vỡ.
-- Phình to, đè ép vào lòng thật gây thiếu máu tạng.
-- Huyết khối trong lòng giả, có thể ổn định thành tách thành ĐMC mạn tính.
-- Cơ chế thiếu máu cơ quan:
-- Cơ chế động (Dynamic): Lòng giả lớn, đè ép làm hẹp lòng thật.
-- Cơ chế tĩnh (Static): Mảng nội mạc bị bóc tách che lấp lỗ vào của nhánh bên.
+- **Định nghĩa**: vết rách lớp nội mạc tạo đường cho máu chảy vào lớp áo giữa, phân tách thành ĐMC thành **lòng thật** và **lòng giả**
+- **Dịch tễ**: 2-3 ca/100.000 dân/năm, 65% nam giới, tuổi 60-70
 
-## 2. Các yếu tố liên quan di truyền
+**Yếu tố nguy cơ:**
+- **Tăng huyết áp** — yếu tố nguy cơ quan trọng nhất
+- Bất thường lớp áo giữa: bệnh mô liên kết (Marfan, Ehlers-Danlos)
+- Xơ vữa động mạch (tổn thương nội mô)
+- Ở người trẻ (<40 tuổi): van ĐMC 2 lá van, tiền sử phẫu thuật ĐMC, ĐMC giãn lớn, dùng cocaine, có thai
 
-- Hội chứng Marfan:
-- Đột biến gen FBN-1 (di truyền trội NST thường), gây bất thường cấu trúc microfibril trong mô liên kết.
-- Biểu hiện: sa van hai lá, van ĐMC 2 lá, phình/tách thành ĐMC lên; tay chân dài, ngực ức gà; lạc vị thủy tinh thể.
-- Van ĐMC hai lá van:
-- Bệnh tim bẩm sinh thường gặp nhất ở người lớn.
-- Dòng máu xoáy và áp lực xé bất thường lên thành ĐMC lên, lâu dần gây giãn và bóc tách.
+**Cơ chế bệnh sinh:**
+1. Máu từ lòng thật qua vết rách nội mạc (entry tear) chảy vào lớp áo giữa
+2. Lòng giả hình thành, có thể: lan xuống dưới (tới ngã ba chủ chậu) hoặc lên trên; vỡ/thấm ra khoang kế cận (trung thất, màng tim, màng phổi); tạo vết rách thứ hai quay lại lòng thật (**re-entry** — giúp giảm áp lực lòng giả, giảm nguy cơ vỡ); phình to đè ép lòng thật gây thiếu máu tạng; huyết khối hóa lòng giả → có thể ổn định thành mạn tính
 
-## 3. Phân loại Tách thành ĐMC
+**Cơ chế thiếu máu cơ quan:**
+- **Động (Dynamic)**: lòng giả lớn đè ép làm hẹp lòng thật
+- **Tĩnh (Static)**: mảng nội mạc bóc tách che lấp lỗ vào nhánh bên
 
-| Phân loại   | Mô tả                                                       | Xử trí ưu tiên                                          |
-|-------------|-------------------------------------------------------------|---------------------------------------------------------|
-| Stanford A  | Có tổn thương ĐMC lên (bất kể vị trí vết rách).             | Phẫu thuật cấp cứu.                                     |
-| Stanford B  | Chỉ tổn thương ĐMC xuống (bắt đầu từ sau ĐM dưới đòn trái). | Nội khoa, can thiệp nội mạch (TEVAR) nếu có biến chứng. |
+### 2. Yếu tố di truyền
 
-Non-A, nonLóc tách chỉ ở quai ĐMC, không lan lên ĐMC lên. Cân nhắc phẫu thuật hoặc can thiệp.
+- **Hội chứng Marfan**: đột biến gen **FBN-1** (di truyền trội NST thường) → bất thường microfibril mô liên kết. Biểu hiện: sa van hai lá, van ĐMC 2 lá, phình/tách ĐMC lên, tay chân dài, ngực ức gà, **lạc vị thủy tinh thể**
+- **Van ĐMC hai lá van**: bệnh tim bẩm sinh thường gặp nhất ở người lớn — dòng máu xoáy, áp lực xé bất thường lên thành ĐMC lên → giãn và bóc tách
 
-B
+### 3. Phân loại tách thành ĐMC
 
-Phân loại bóc tách ĐMC theo De Bakey và Stanford (bên trái) và theo Svensson (bên phải)
+![Phân loại theo Stanford và DeBakey](/images/noi/tim-mach/hcdmc-phan-loai-stanford-debakey.png)
 
+| Phân loại | Mô tả | Xử trí ưu tiên |
+| --- | --- | --- |
+| **Stanford A** | Có tổn thương ĐMC lên (bất kể vị trí vết rách) | **Phẫu thuật cấp cứu** |
+| **Stanford B** | Chỉ tổn thương ĐMC xuống (sau ĐM dưới đòn trái) | Nội khoa; can thiệp nội mạch (TEVAR) nếu có biến chứng |
+| Non-A non-B | Lóc tách chỉ ở quai ĐMC, không lan lên ĐMC lên | Cân nhắc phẫu thuật hoặc can thiệp |
 
-## · Phân loại theo thời gian:
+**Phân loại theo thời gian**: tối cấp <24h | cấp tính 1-14 ngày | bán cấp 14-90 ngày | mạn tính >90 ngày
 
-- Tối cấp: < 24 giờ.
-- Cấp tính: 1 - 14 ngày.
-- Bán cấp: 14 - 90 ngày.
-- Mạn tính: > 90 ngày.
-- Phân loại TEM (Type, Entry, Malperfusion):
-- T (Type): A, B, non-A non-B.
-- E (Entry): Vị trí vết rách nguyên ủy (E0: không xác định, E1: ĐMC lên, E2: quai ĐMC, E3: ĐMC xuống).
-- M (Malperfusion): Tình trạng thiếu máu tạng (M0: không, M1: vành, M2: não/chi trên, M3: tủy/tạng/thận/chậu).
+**Phân loại TEM** (Type, Entry, Malperfusion):
+- **T** (Type): A, B, non-A non-B
+- **E** (Entry — vị trí vết rách nguyên ủy): E0 không xác định, E1 ĐMC lên, E2 quai ĐMC, E3 ĐMC xuống
+- **M** (Malperfusion — thiếu máu tạng): M0 không, M1 vành, M2 não/chi trên, M3 tủy/tạng/thận/chậu
 
-## III. CHẨN ĐOÁN HỘI CHỨNG ĐMC CẤP
+## III. Chẩn đoán
 
-## 1. Biểu hiện lâm sàng
+### 1. Biểu hiện lâm sàng
 
-- Đau ngực (triệu chứng chính):
-- Khởi phát đột ngột, dữ dội, nặng nề.
-- Cảm giác "như bị xé rách".
-- Đau liên tục, không giảm.
-- Vị trí lan: ra trước hoặc lên cổ (ĐMC lên), lan ra sau lưng hoặc xuống bụng (ĐMC xuống).
-- Triệu chứng do biến chứng:
-- Ngất, đột quỵ, dấu hiệu thần kinh khu trú: Do giảm tưới máu não.
-- Sốc hoặc tụt huyết áp: Do vỡ, ép tim cấp, hở van ĐMC cấp.
-- Hở van ĐMC cấp: Nghe có tiếng thổi tâm trương mới xuất hiện.
-- Ép tim cấp:
-- Do vỡ vào khoang màng ngoài tim.
-- Thiếu máu chi: Mất mạch, chênh lệch huyết áp hai tay > 20 mmHg.
-- Thiếu máu tạng: Đau bụng, suy thận cấp, liệt hai chi dưới (thiếu máu tủy).
+- **Đau ngực** (triệu chứng chính): khởi phát đột ngột, dữ dội, **cảm giác "như bị xé rách"**, đau liên tục không giảm; lan ra trước/lên cổ (ĐMC lên) hoặc ra sau lưng/xuống bụng (ĐMC xuống)
+- **Triệu chứng do biến chứng**:
+  - Ngất, đột quỵ, dấu hiệu thần kinh khu trú (giảm tưới máu não)
+  - Sốc/tụt HA (vỡ, ép tim cấp, hở van ĐMC cấp)
+  - **Hở van ĐMC cấp**: tiếng thổi tâm trương mới xuất hiện
+  - **Ép tim cấp**: do vỡ vào khoang màng ngoài tim
+  - **Thiếu máu chi**: mất mạch, **chênh lệch HA hai tay > 20mmHg**
+  - **Thiếu máu tạng**: đau bụng, suy thận cấp, liệt hai chi dưới (thiếu máu tủy)
 
-## 2. Tiếp cận chẩn đoán theo thang điểm ADD-RS
+### 2. Thang điểm ADD-RS (Aortic Dissection Detection Risk Score)
 
-Thang điểm nguy cơ tách thành ĐMC ( Aortic Dissection Detection Risk Score ).
+| Yếu tố nguy cơ cao | Đau có nguy cơ cao | Lâm sàng có nguy cơ |
+| --- | --- | --- |
+| H/c Marfan, bệnh mô liên kết khác | Đau ngực/lưng/bụng đột ngột | Mất mạch, chênh lệch HA |
+| Tiền sử gia đình bệnh ĐMC | Đau dữ dội | Dấu hiệu thần kinh khu trú |
+| Bệnh van tim trước đó | Đau có cảm giác xé, rách | Tiếng thổi hở van ĐMC mới |
+| Phình ĐMC ngực | | Tụt HA hoặc sốc |
+| Tiền sử phẫu thuật ĐMC | | |
+| *(mỗi dấu hiệu: 1 điểm)* | *(mỗi dấu hiệu: 1 điểm)* | *(mỗi dấu hiệu: 1 điểm)* |
 
-| Yếu tố nguy cơ cao          | Đau có nguy cơ cao            | Lâm sàng có nguy cơ          |
-|-----------------------------|-------------------------------|------------------------------|
-| - H/c Marfan, bệnh MLK khác | - Đau ngực/lưng/bụng đột ngột | - Mất mạch, chênh lệch HA    |
-| - Tiền sử gia đình bệnh ĐMC | - Đau dữ dội                  | - Dấu hiệu thần kinh khu trú |
-| - Bệnh van tim trước đó     | - Đau có cảm giác xé, rách    | - Tiếng thổi hở van ĐMC mới  |
-| - Phình ĐMC ngực            |                               | - Tụt HA hoặc sốc            |
-| - Tiền sử phẫu thuật ĐMC    |                               |                              |
-| (Mỗi dấu hiệu: 1 điểm)      | (Mỗi dấu hiệu: 1 điểm)        | (Mỗi dấu hiệu: 1 điểm)       |
+**Lưu đồ chẩn đoán:**
+- **ADD-RS ≥ 2** (nguy cơ cao) → **chụp MSCT ngay lập tức** và/hoặc siêu âm tim tại giường
+- **ADD-RS < 2** (nguy cơ thấp) → ECG (loại trừ NMCT), XQ ngực, D-dimer, siêu âm tim → nếu D-dimer âm tính và các thăm dò không gợi ý → có thể loại trừ; nếu vẫn nghi ngờ → chụp MSCT xác định
 
-## · Lưu đồ chẩn đoán:
+### 3. Cận lâm sàng
 
-- Nguy cơ cao (ADD-RS ≥ 2): Chụp MSCT ngay lập tức và/hoặc siêu âm tim tại giường.
-- Nguy cơ thấp (ADD-RS < 2): Làm điện tâm đồ (loại trừ NMCT cấp), chụp XQ ngực, xét nghiệm máu (D-dimer), siêu âm tim.
-- Nếu D-dimer âm tính và các thăm dò khác không gợi ý, có thể loại trừ.
-- Nếu nghi ngờ, chụp MSCT để chẩn đoán xác định.
+- **ECG**: không đặc hiệu, chủ yếu để phân biệt với STEMI — có thể thấy hình ảnh STEMI (thường thành sau dưới do lóc vào ĐMV phải) hoặc tăng gánh thất trái
+- **XQ ngực**: trung thất giãn rộng, đường viền ĐMC bất thường, tràn dịch màng phổi (T). *XQ bình thường KHÔNG loại trừ được chẩn đoán*
+- **Xét nghiệm máu**: D-dimer (độ nhạy cao, đặc hiệu thấp — giá trị chính là loại trừ ở nhóm nguy cơ thấp); Troponin (tăng nếu tổn thương ĐMV); Creatinin, Lactate, CK (tăng nếu thiếu máu thận/tạng/chi)
+- **Siêu âm tim**:
+  - **Qua thành ngực (TTE)**: nhanh, tại giường; phát hiện biến chứng (tràn dịch màng tim, hở van ĐMC); khó khảo sát toàn bộ ĐMC
+  - **Qua thực quản (TEE)**: độ nhạy/đặc hiệu cao hơn, đặc biệt ĐMC lên và xuống; thấy rõ vách nội mạc, lòng thật-lòng giả; hữu ích ở BN nặng không thể di chuyển
 
-## 3. Các thăm dò cận lâm sàng
+  ![Siêu âm tim qua thực quản: vết xé nội mạc ngay sát van ĐMC](/images/noi/tim-mach/hcdmc-sa-tqua-vet-xe-noi-mac.png)
 
-- Điện tâm đồ (ECG):
-- Không đặc hiệu, chủ yếu để chẩn đoán phân biệt với STEMI.
-- Có thể thấy hình ảnh STEMI (thường là thành sau dưới do lóc vào ĐMV phải) hoặc các dấu hiệu tăng gánh thất trái.
-- X-quang ngực:
-- Có thể thấy trung thất giãn rộng, đường viền ĐMC bất thường, tràn dịch màng phổi (T).
-- Lưu ý: XQ ngực bình thường không loại trừ được chẩn đoán.
-- Xét nghiệm máu:
-- D-dimer: Độ nhạy cao nhưng độ đặc hiệu thấp. Giá trị chính là để loại trừ ở nhóm nguy cơ thấp.
-- Troponin: Tăng nếu có tổn thương ĐMV.
-- Creatinin, Lactate, CK: Tăng nếu có thiếu máu thận, tạng, chi.
-- Siêu âm tim:
-- Qua thành ngực (TTE): Nhanh, tại giường. Hữu ích để phát hiện biến chứng (tràn dịch màng tim, hở van ĐMC), đánh giá chức năng tim. Khó khảo sát toàn bộ ĐMC.
-- Qua thực quản (TEE): Độ nhạy và đặc hiệu cao hơn, đặc biệt cho ĐMC lên và xuống. Có thể thấy rõ vách nội mạc, lòng thật-lòng giả. Rất hữu ích ở bệnh nhân nặng không thể di chuyển.
+- **Chụp cắt lớp vi tính đa dãy (MSCT)**: là **tiêu chuẩn vàng**
+  1. Chẩn đoán xác định
+  2. Phân loại (Stanford A/B)
+  3. Xác định vị trí vết rách vào (entry) và ra (re-entry)
+  4. Đánh giá mức độ lan rộng, đường kính ĐMC, tình trạng lòng thật/giả
+  5. Đánh giá tưới máu các nhánh bên (vành, não, tạng, chi)
+  6. Phát hiện biến chứng (tràn dịch màng tim, màng phổi, tụ máu)
 
-·
+## IV. Điều trị
 
+### 1. Điều trị nội khoa ban đầu (áp dụng cho mọi bệnh nhân)
 
-Vt xé ni mch ngay sát van ĐMC
+Mục tiêu: ổn định huyết động, giảm đau, hạn chế lan rộng lóc tách.
 
+- **Kiểm soát huyết áp và tần số tim (quan trọng nhất)**:
+  - Thuốc hàng đầu: **chẹn beta giao cảm đường TM** (esmolol, labetalol)
+  - Mục tiêu: **tần số tim < 60 ck/phút, HA tâm thu < 120mmHg** (miễn đảm bảo tưới máu cơ quan)
+  - Lý do: giảm cả huyết áp và lực xé lên thành ĐMC (giảm dP/dt)
+  - Nếu HA chưa kiểm soát: thêm thuốc giãn mạch TM (nitroprusside, nicardipine) **SAU KHI** đã dùng chẹn beta
+- **Giảm đau**: Opiate đường TM (morphine, fentanyl)
 
-- Chụp cắt lớp vi tính đa dãy (MSCT):
-- Là **tiêu chuẩn vàng**.
-- Cung cấp thông tin toàn diện:
-1. Chẩn đoán xác định.
-2. Phân loại (Stanford A/B).
-3. Xác định vị trí vết rách vào (entry) và ra (re-entry).
-4. Đánh giá mức độ lan rộng, đường kính ĐMC, tình trạng lòng thật/giả.
-5. Đánh giá sự liên quan và tưới máu của các nhánh bên (vành, não, tạng, chi).
-6. Phát hiện biến chứng (tràn dịch màng tim, màng phổi, tụ máu).
+### 2. Xử trí theo phân loại
 
-## IV. ĐIỀU TRỊ HỘI CHỨNG ĐMC CẤP
+1. Đánh giá bằng MSCT
+2. **Stanford A** → **phẫu thuật cấp cứu** (Class I)
+3. **Stanford B** → đánh giá biến chứng:
+   - **Có biến chứng** (vỡ/dọa vỡ, thiếu máu tạng/chi, đau dai dẳng, THA khó kiểm soát, lóc tách lan rộng, ĐMC giãn nhanh) → ưu tiên **TEVAR** nếu giải phẫu phù hợp (Class I); nếu không phù hợp → phẫu thuật (Class I)
+   - **Không biến chứng** → điều trị nội khoa tối ưu; cân nhắc TEVAR (Class IIa) nếu có yếu tố nguy cơ cao (đường kính lòng giả >22mm, vết rách >10mm) và kỳ vọng sống >5 năm
 
-## 1. Điều trị Nội khoa ban đầu (Áp dụng cho mọi bệnh nhân)
+### 3. Các phương pháp can thiệp & phẫu thuật
 
-Mục tiêu là ổn định huyết động, giảm đau, và hạn chế sự lan rộng của lóc tách.
+Mục tiêu: bịt vết rách nội mạc, loại trừ thông thương lòng thật-lòng giả, thúc đẩy huyết khối hóa lòng giả và tái cấu trúc ĐMC.
 
-- Kiểm soát huyết áp và tần số tim (Quan trọng nhất):
-- Thuốc lựa chọn hàng đầu: Chẹn beta giao cảm đường tĩnh mạch (ví dụ: esmolol, labetalol).
-- Mục tiêu: Tần số tim < 60 ck/phút, Huyết áp tâm thu < 120 mmHg (miễn là đảm bảo tưới máu cơ quan).
-- Lý do: Giảm cả huyết áp và lực xé lên thành ĐMC (giảm dP/dt).
-- Thêm thuốc giãn mạch đường tĩnh mạch (ví dụ: nitroprusside,
-- Nếu huyết áp chưa kiểm soát: nicardipine) sau khi đã dùng chẹn beta .
-- Giảm đau:
-- Sử dụng Opiate đường tĩnh mạch (morphine, fentanyl).
+- **Phẫu thuật mở** (chỉ định chính: Stanford A): thay đoạn ĐMC lên bằng ống ghép nhân tạo (Dacron)
+  - **Phẫu thuật Bentall**: thay cả van ĐMC và đoạn ĐMC lên, cắm lại 2 lỗ ĐMV
+  - **"Vòi voi đông lạnh" (Frozen Elephant Trunk)**: thay toàn bộ quai ĐMC bằng ống ghép lai (graft vải + stent graft)
+- **Can thiệp nội mạch (TEVAR)** (chỉ định chính: Stanford B có biến chứng): đặt stent graft qua đường ĐM đùi để che phủ vết rách nội mạc
+- **Phẫu thuật Hybrid** (chỉ định: tổn thương phức tạp ở quai ĐMC): kết hợp mở + nội mạch — làm cầu nối chuyển vị các nhánh trên quai ĐMC (de-branching) để tạo landing zone an toàn cho stent graft
 
-## 2. Xử trí theo phân loại
+### 4. Xử trí biến chứng cấp cứu
 
-## Sơ đồ tổng kết:
+- **Vỡ ĐMC, ngừng tuần hoàn**: CPR, chuyển phòng mổ cấp cứu ngay
+- **Ép tim cấp do tràn máu màng tim**: chọc dẫn lưu dịch màng tim (**thận trọng** — có thể tăng chảy máu nếu chưa kiểm soát vết rách) + chuyển phòng mổ cấp cứu
+- **Thiếu máu cơ quan nặng**: tái tưới máu (phẫu thuật/can thiệp nội mạch) càng sớm càng tốt
 
-1. Đánh giá MSCT
-2. Nếu là Stanford A: PHẪU THUẬT CẤP CỨU (Class I).
-3. Nếu là Stanford B: Đánh giá biến chứng.
-- Stanford B có biến chứng: (Vỡ/dọa vỡ, thiếu máu tạng/chi, đau dai dẳng, THA khó kiểm soát, lóc tách lan rộng, ĐMC giãn nhanh).
-- Ưu tiên: CAN THIỆP NỘI MẠCH (TEVAR) nếu giải phẫu phù hợp (Class I).
-- Nếu không phù hợp TEVAR: Phẫu thuật (Class I).
-- Stanford B không biến chứng:
-- Điều trị nội khoa tối ưu.
-- Cân nhắc TEVAR (Class IIa) nếu có các yếu tố nguy cơ cao (ví dụ: đường kính lòng giả > 22 mm, vết rách > 10 mm) và kỳ vọng sống > 5 năm.
+## V. Tiên lượng và tổng kết
 
-## 3. Các phương pháp can thiệp và phẫu thuật
+- **Tách thành ĐMC type A không phẫu thuật: tỷ lệ tử vong lên tới 1-2%/giờ trong 48 giờ đầu**
+- Tử vong nội viện của type B liên quan đến đường kính ĐMC và sự xuất hiện biến chứng
 
-- Mục tiêu: Bịt vết rách nội mạc, loại trừ sự thông thương giữa lòng thật và lòng giả, thúc đẩy huyết khối hóa lòng giả và tái cấu trúc ĐMC.
-- Phẫu thuật mở:
-- Chỉ định chính: Stanford A.
-- Kỹ thuật: Thay đoạn ĐMC lên bằng ống ghép nhân tạo (Dacron).
-- Phẫu thuật Bentall: Thay cả van ĐMC và đoạn ĐMC lên, cắm lại hai lỗ ĐMV.
-- Phẫu thuật "Vòi voi đông lạnh" (Frozen Elephant Trunk): Thay toàn bộ quai ĐMC bằng một ống ghép lai (phần graft vải và phần stent graft).
-- Can thiệp nội mạch (TEVAR - Thoracic Endovascular Aortic Repair):
-- Chỉ định chính: Stanford B có biến chứng.
-- Kỹ thuật: Đặt một stent graft (khung stent kim loại phủ màng nhân tạo) qua đường động mạch đùi để che phủ vết rách nội mạc.
-- Phẫu thuật Hybrid:
-- Kết hợp phẫu thuật mở và can thiệp nội mạch.
-- Chỉ định: Các tổn thương phức tạp ở quai ĐMC.
-- Kỹ thuật: Phẫu thuật làm cầu nối chuyển vị các nhánh trên quai ĐMC (de-branching) để tạo "vùng đỗ" (landing zone) an toàn cho việc đặt stent graft.
-
-## 4. Xử trí các biến chứng cấp cứu
-
-- Vỡ ĐMC, ngừng tuần hoàn: Hồi sức tim phổi (CPR), chuyển phòng mổ cấp cứu ngay lập tức.
-- Ép tim cấp do tràn máu màng tim: Chọc dẫn lưu dịch màng tim (cẩn trọng, có thể làm tăng chảy máu nếu chưa kiểm soát được vết rách) và chuyển phòng mổ cấp cứu.
-- Thiếu máu cơ quan nặng: Can thiệp tái tưới máu (phẫu thuật hoặc can thiệp nội mạch) càng sớm càng tốt.
-
-## V. TIÊN LƯỢNG VÀ TỔNG KẾT
-
-- Tiên lượng:
-- Tách thành ĐMC týp A không phẫu thuật có tỷ lệ tử vong lên tới 1-2%/giờ trong 48 giờ đầu.
-- Tử vong trong viện của týp B liên quan đến đường kính ĐMC và sự xuất hiện của biến chứng.
-- Tổng kết:
-1. Hội chứng ĐMC cấp là một nhóm bệnh lý nguy hiểm với phổ lâm sàng đa dạng.
-2. Luôn phải nghĩ đến ở bệnh nhân đau ngực đột ngột, dữ dội, đặc biệt khi có yếu tố nguy cơ.
-3. Chẩn đoán sớm và chính xác dựa vào lâm sàng và các phương tiện chẩn đoán hình ảnh, trong đó MSCT là công cụ then chốt.
-4. Xử trí ban đầu tập trung vào kiểm soát huyết áp và tần số tim.
-5. Điều trị dứt điểm phụ thuộc vào phân loại: Stanford A là cấp cứu ngoại khoa , Stanford B ưu tiên điều trị nội khoa hoặc TEVAR nếu có biến chứng.
+**Tổng kết:**
+1. Hội chứng ĐMC cấp là nhóm bệnh lý nguy hiểm, phổ lâm sàng đa dạng
+2. Luôn nghĩ đến ở BN đau ngực đột ngột, dữ dội, đặc biệt khi có yếu tố nguy cơ
+3. Chẩn đoán sớm dựa vào lâm sàng + chẩn đoán hình ảnh, **MSCT là công cụ then chốt**
+4. Xử trí ban đầu tập trung kiểm soát huyết áp và tần số tim
+5. Điều trị dứt điểm theo phân loại: **Stanford A = cấp cứu ngoại khoa**, **Stanford B ưu tiên nội khoa hoặc TEVAR nếu có biến chứng**
