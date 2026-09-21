@@ -4,7 +4,9 @@ export interface LectureVideo {
   id: string;
   title: string;
   /** Mã 11 ký tự trong link YouTube, vd. link .../watch?v=XXXXXXXXXXX -> "XXXXXXXXXXX". */
-  youtubeId: string;
+  youtubeId?: string;
+  /** Link file âm thanh tự host (Firebase Storage) - dùng cho bài giảng không đăng YouTube được. Có trường này thì phát bằng trình phát audio. */
+  audioUrl?: string;
   /** Gắn theo môn để nhóm hiển thị - bỏ trống thì video rơi vào nhóm "Khác". */
   subject?: SubjectId;
   description?: string;
@@ -67,4 +69,29 @@ export const LECTURE_VIDEOS: LectureVideo[] = [
   { id: "lecture-nhi-xvMjDwc52Bs", title: "Chữa test 14", youtubeId: "xvMjDwc52Bs", subject: "nhi" },
   { id: "lecture-nhi-PNNWhLt943M", title: "Buổi 15- p1", youtubeId: "PNNWhLt943M", subject: "nhi" },
   { id: "lecture-nhi-zgcicW4m_ek", title: "Chữa test 15+ test cuối khoá", youtubeId: "zgcicW4m_ek", subject: "nhi" },
+  { id: "lecture-noi3-b01", title: "Buổi 1: Xơ Gan", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb01.m4a?alt=media&token=7ef73247-e345-4540-a414-27c654c25884", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b01-day-du", title: "Buổi 1: Xơ gan (đầy đủ hơn)", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb01-day-du.m4a?alt=media&token=ef693326-3dac-4230-b1cd-7cfacedfac5a", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b02", title: "Buổi 2 (nhóm trước)", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb02.m4a?alt=media&token=2a21d803-abcc-4d74-9712-57d839aee141", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b03", title: "Buổi 3: Ápxe gan - VTC - VGB", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb03.m4a?alt=media&token=9cdda17d-4469-4d4d-8be6-9dc7a1f0d302", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b04", title: "Buổi 4: VKDT - Thoái hóa khớp - Gout", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb04.m4a?alt=media&token=ab5f97dd-2c8c-4bec-8180-2a104608ac02", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b05", title: "Buổi 5: Loãng xương - Lupus - VCSDK", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb05.m4a?alt=media&token=14082137-82ef-4fcd-aeb8-2f1edc41068b", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b06", title: "Buổi 6: Đột quỵ não", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb06.m4a?alt=media&token=009919d0-1638-418d-83b4-85e94b35cf94", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b07", title: "Buổi 7: Đột quỵ", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb07.m4a?alt=media&token=739c64f5-b66c-4480-b44b-1ae2b5ff357f", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b08", title: "Buổi 8: XH dưới nhện - Động kinh - VMN", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb08.m4a?alt=media&token=b6897d2d-448a-4f67-aff5-621fb51d2eca", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b09", title: "Buổi 9: Tiếng tim - Bệnh van tim", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb09.m4a?alt=media&token=eb936c87-7841-47e1-a33b-b8da831c309d", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b10", title: "Buổi 10: Rối loạn nhịp tim", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb10.m4a?alt=media&token=4001dc51-0a49-4a9c-88a7-d64c0b210412", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b11", title: "Buổi 11: Bệnh mạch vành", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb11.m4a?alt=media&token=a8e54300-3620-4f9d-ace2-a926ec9dc4da", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b12", title: "Buổi 12: Các bệnh lý của thận", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb12.m4a?alt=media&token=9ccf1a2e-edf9-41db-9a36-ca8eac8ff7f6", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b13", title: "Buổi 13", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb13.m4a?alt=media&token=94474944-8504-4cc4-852e-4795b061a97d", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b14", title: "Buổi 14", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb14.m4a?alt=media&token=adeabd66-3f01-4df6-930e-0c9e4b3084e4", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b15", title: "Buổi 15", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb15.m4a?alt=media&token=33995df9-b4ab-4ed2-9282-761542120c72", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b16", title: "Buổi 16", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb16.m4a?alt=media&token=232051e0-cbe2-480b-98f7-b5e3c3793440", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b17", title: "Buổi 17", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb17.m4a?alt=media&token=79a79d6a-49c4-4d09-b6bc-6d4c36635c08", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b18", title: "Buổi 18", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb18.m4a?alt=media&token=93df6bfa-1ce4-4d97-b02b-ee216debccdb", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b19", title: "Buổi 19", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb19.m4a?alt=media&token=1e55cc37-1759-4ed0-90ac-94afaa7bea1b", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b20", title: "Buổi 20", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb20.m4a?alt=media&token=e3304dad-bba2-4de8-8866-1df8668adb25", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b21", title: "Buổi 21", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb21.m4a?alt=media&token=0454f0ec-589b-4281-9edf-28ecc6c3c1bb", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b22", title: "Buổi 22", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb22.m4a?alt=media&token=9fe66468-e9e9-442f-bb87-16a33aee45e9", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b23", title: "Buổi 23: Sốc + PVE + CCNTH", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb23.m4a?alt=media&token=62532804-3dcc-4202-8da7-29fe6feb46fe", subject: "test-anh-hai" },
+  { id: "lecture-noi3-b24", title: "Buổi 24", audioUrl: "https://firebasestorage.googleapis.com/v0/b/onthinoitru-d1a99.firebasestorage.app/o/lecture-audio%2Fnoi3-anh-hai%2Fb24.m4a?alt=media&token=dc5977c5-c5cd-435a-9522-81051ff5f787", subject: "test-anh-hai" },
 ];

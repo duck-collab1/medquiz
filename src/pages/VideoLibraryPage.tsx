@@ -57,7 +57,8 @@ function VideoModal({ video, onClose }: { video: LectureVideo; onClose: () => vo
   const playerRef = useRef<YTPlayer | null>(null);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    const youtubeId = video.youtubeId;
+    if (video.audioUrl || !youtubeId || !containerRef.current) return;
     let cancelled = false;
     const container = containerRef.current;
     container.innerHTML = "";
@@ -69,7 +70,7 @@ function VideoModal({ video, onClose }: { video: LectureVideo; onClose: () => vo
       if (cancelled || !window.YT) return;
       const startSeconds = Math.floor(readProgress()[video.id]?.seconds ?? 0);
       playerRef.current = new window.YT.Player(target, {
-        videoId: video.youtubeId,
+        videoId: youtubeId,
         playerVars: { autoplay: 1, start: startSeconds },
         events: {
           onReady: () => {
@@ -91,7 +92,7 @@ function VideoModal({ video, onClose }: { video: LectureVideo; onClose: () => vo
       playerRef.current = null;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [video.id, video.youtubeId]);
+  }, [video.id, video.youtubeId, video.audioUrl]);
 
   return (
     <div className="video-modal-backdrop" onClick={onClose}>
@@ -102,8 +103,42 @@ function VideoModal({ video, onClose }: { video: LectureVideo; onClose: () => vo
             ✕
           </button>
         </div>
-        <div ref={containerRef} className="video-modal-frame" />
+        {video.audioUrl ? (
+          <AudioBody videoId={video.id} src={video.audioUrl} />
+        ) : (
+          <div ref={containerRef} className="video-modal-frame" />
+        )}
       </div>
+    </div>
+  );
+}
+
+/** Trình phát audio cho bài giảng tự host - cũng nhớ chỗ nghe dở như bản YouTube. */
+function AudioBody({ videoId, src }: { videoId: string; src: string }) {
+  const ref = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const start = readProgress()[videoId]?.seconds ?? 0;
+    const onMeta = () => {
+      if (start > 0) el.currentTime = start;
+      void el.play().catch(() => undefined);
+    };
+    el.addEventListener("loadedmetadata", onMeta);
+    const timer = window.setInterval(() => {
+      if (!el.paused && el.currentTime > 0) saveProgress(videoId, el.currentTime);
+    }, SAVE_INTERVAL_MS);
+    return () => {
+      el.removeEventListener("loadedmetadata", onMeta);
+      clearInterval(timer);
+      if (el.currentTime > 0) saveProgress(videoId, el.currentTime);
+    };
+  }, [videoId]);
+
+  return (
+    <div className="video-modal-frame" style={{ display: "flex", alignItems: "center", padding: 16 }}>
+      <audio ref={ref} src={src} controls preload="metadata" style={{ width: "100%" }} />
     </div>
   );
 }
