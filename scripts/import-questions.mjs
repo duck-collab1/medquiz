@@ -36,6 +36,7 @@ function toQuestionDoc(row) {
     group: row.group || "",
     ...(row.case_stem ? { caseStem: row.case_stem } : {}),
     ...(row.image ? { image: row.image } : {}),
+    ...(row.explanation_image ? { explanationImage: row.explanation_image } : {}),
     question: row.question,
     options: {
       a: row.option_a || "",

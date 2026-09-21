@@ -56,6 +56,7 @@ export function QuizResult({ questions, answers, onRestart }: QuizResultProps) {
               {q.explanation && (
                 <p className="quiz-review-explanation">{q.explanation}</p>
               )}
+              {q.explanationImage && <img className="quiz-image" src={q.explanationImage} alt="" />}
               <button
                 className="quiz-ask-ai"
                 onClick={() => askAboutQuestion(buildExplainPrompt(q, answers[q.id]))}

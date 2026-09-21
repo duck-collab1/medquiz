@@ -24,6 +24,8 @@ export interface Question {
   options: Record<AnswerKey, string>;
   correctAnswer: AnswerKey | "";
   explanation: string;
+  /** Ảnh minh hoạ cho phần giải thích (chỉ hiện sau khi trả lời), nếu có. */
+  explanationImage?: string;
   needsReview: boolean;
 }
 

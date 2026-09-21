@@ -292,6 +292,9 @@ export function QuizRunner({
               {showFeedback && q.explanation && (
                 <p className="quiz-explanation">{q.explanation}</p>
               )}
+              {showFeedback && q.explanationImage && (
+                <img className="quiz-image" src={q.explanationImage} alt="" />
+              )}
 
               {showFeedback && (
                 <button

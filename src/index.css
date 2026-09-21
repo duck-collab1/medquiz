@@ -1636,6 +1636,7 @@ a {
 }
 
 .quiz-explanation {
+  white-space: pre-line;
   padding: 14px 18px;
   background: var(--bg-alt);
   border-left: 3px solid var(--gold);
@@ -1761,6 +1762,7 @@ a {
 }
 
 .quiz-review-explanation {
+  white-space: pre-line;
   font-size: 14px;
   margin-top: 10px;
   color: var(--text-muted);

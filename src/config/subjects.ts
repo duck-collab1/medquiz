@@ -40,7 +40,7 @@ export const subjects: Subject[] = [
   {
     id: "test-anh-hai",
     name: "Test anh Hải",
-    description: "Nội - Nhi, bộ đề tổng hợp",
+    description: "Nội - Nhi - Sản, bộ đề tổng hợp",
     icon: "book-open",
   },
 ];
