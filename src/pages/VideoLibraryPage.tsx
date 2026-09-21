@@ -155,12 +155,10 @@ export function VideoLibraryPage() {
   const lastWatchedVideo = LECTURE_VIDEOS.find((v) => v.id === lastWatchedId);
   const [activeVideo, setActiveVideo] = useState<LectureVideo | null>(lastWatchedVideo ?? null);
 
-  // Bỏ video đang xem dở ra khỏi danh sách theo tab bên dưới - tránh hiện trùng 2 lần.
-  const rest = LECTURE_VIDEOS.filter((v) => v.id !== lastWatchedId);
   const tabs: VideoTab[] = subjects
-    .map((s) => ({ key: s.id, label: s.name, icon: s.icon, videos: rest.filter((v) => v.subject === s.id) }))
+    .map((s) => ({ key: s.id, label: s.name, icon: s.icon, videos: LECTURE_VIDEOS.filter((v) => v.subject === s.id) }))
     .filter((t) => t.videos.length > 0);
-  const ungrouped = rest.filter((v) => !v.subject);
+  const ungrouped = LECTURE_VIDEOS.filter((v) => !v.subject);
   if (ungrouped.length > 0) tabs.push({ key: "khac", label: "Khác", videos: ungrouped });
 
   const [activeTab, setActiveTab] = useState(() => {
@@ -168,6 +166,9 @@ export function VideoLibraryPage() {
     return idx >= 0 ? tabs[idx].key : (tabs[0]?.key ?? "");
   });
   const current = tabs.find((t) => t.key === activeTab) ?? tabs[0];
+  // "Tiếp tục xem" tính riêng cho từng tab; video đó bỏ khỏi danh sách bên dưới để không hiện trùng.
+  const resumeId = current ? findLastWatched(current.videos) : null;
+  const resumeVideo = current?.videos.find((v) => v.id === resumeId);
 
   return (
     <div className="video-library-page">
@@ -177,19 +178,6 @@ export function VideoLibraryPage() {
 
       {LECTURE_VIDEOS.length === 0 && (
         <p>Chưa có video nào ở đây - gửi link YouTube để bổ sung nhé.</p>
-      )}
-
-      {lastWatchedVideo && (
-        <section className="video-section">
-          <h2>▶ Tiếp tục xem</h2>
-          <div className="video-list">
-            <button className="video-list-item" onClick={() => setActiveVideo(lastWatchedVideo)}>
-              <Play size={14} fill="currentColor" />
-              {lastWatchedVideo.title}
-              <span className="video-list-resume">Đang xem dở</span>
-            </button>
-          </div>
-        </section>
       )}
 
       {tabs.length > 0 && (
@@ -205,8 +193,20 @@ export function VideoLibraryPage() {
               </button>
             ))}
           </div>
+          {resumeVideo && (
+            <section className="video-section">
+              <h2>▶ Tiếp tục xem</h2>
+              <div className="video-list">
+                <button className="video-list-item" onClick={() => setActiveVideo(resumeVideo)}>
+                  <Play size={14} fill="currentColor" />
+                  {resumeVideo.title}
+                  <span className="video-list-resume">Đang xem dở</span>
+                </button>
+              </div>
+            </section>
+          )}
           <div className="video-list">
-            {current?.videos.map((v) => (
+            {current?.videos.filter((v) => v.id !== resumeId).map((v) => (
               <button key={v.id} className="video-list-item" onClick={() => setActiveVideo(v)}>
                 <Play size={14} fill="currentColor" />
                 {v.title}
