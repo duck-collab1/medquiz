@@ -1462,6 +1462,12 @@ a {
   gap: 6px;
 }
 
+.audio-hint {
+  margin: 0;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
 .audio-rates button {
   border: 1px solid var(--border);
   background: var(--surface);

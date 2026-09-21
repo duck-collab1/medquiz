@@ -180,6 +180,44 @@ function AudioBody({ videoId, src }: { videoId: string; src: string }) {
     }
   }, [rate]);
 
+  // Phím tắt: Space = phát/tạm dừng, ← / → = lùi/tới 15 giây.
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      const el = ref.current;
+      if (!el || e.ctrlKey || e.metaKey || e.altKey) return;
+      const t = e.target as HTMLElement | null;
+      if (
+        t &&
+        (t.isContentEditable ||
+          t.tagName === "TEXTAREA" ||
+          t.tagName === "SELECT" ||
+          (t.tagName === "INPUT" && (t as HTMLInputElement).type !== "range"))
+      )
+        return;
+      if (e.code === "Space") {
+        e.preventDefault();
+        if (e.repeat) return;
+        if (el.paused) void el.play().catch(() => undefined);
+        else el.pause();
+      } else if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+        e.preventDefault();
+        const delta = e.key === "ArrowRight" ? 15 : -15;
+        el.currentTime = Math.max(0, Math.min(el.duration || Infinity, el.currentTime + delta));
+        setCur(el.currentTime);
+      }
+    };
+    // Space trên nút đang focus kích hoạt click ở keyup - chặn để không bật/tắt 2 lần.
+    const onKeyUp = (e: KeyboardEvent) => {
+      if (e.code === "Space") e.preventDefault();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("keyup", onKeyUp);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("keyup", onKeyUp);
+    };
+  }, []);
+
   const seekTo = (t: number) => {
     const el = ref.current;
     if (!el) return;
@@ -243,6 +281,8 @@ function AudioBody({ videoId, src }: { videoId: string; src: string }) {
           </button>
         ))}
       </div>
+
+      <p className="audio-hint">Space: phát/tạm dừng · ← →: lùi/tới 15 giây</p>
 
       <audio ref={ref} src={src} preload="metadata" />
     </div>
