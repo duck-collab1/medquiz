@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Film, Play } from "lucide-react";
+import { Film, Headphones, Pause, Play, RotateCcw, RotateCw } from "lucide-react";
 import { LECTURE_VIDEOS, type LectureVideo } from "../data/videos";
 import { subjects } from "../config/subjects";
 import { SubjectIcon } from "../components/SubjectIcon";
@@ -114,31 +114,137 @@ function VideoModal({ video, onClose }: { video: LectureVideo; onClose: () => vo
 }
 
 /** Trình phát audio cho bài giảng tự host - cũng nhớ chỗ nghe dở như bản YouTube. */
+const RATE_KEY = "medquiz:audioRate";
+const RATES = [1, 1.25, 1.5, 1.75, 2];
+
+function readRate(): number {
+  try {
+    const r = Number(localStorage.getItem(RATE_KEY));
+    return RATES.includes(r) ? r : 1;
+  } catch {
+    return 1;
+  }
+}
+
+function fmtTime(s: number): string {
+  if (!Number.isFinite(s) || s < 0) return "0:00";
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  const sec = String(Math.floor(s % 60)).padStart(2, "0");
+  return h > 0 ? `${h}:${String(m).padStart(2, "0")}:${sec}` : `${m}:${sec}`;
+}
+
 function AudioBody({ videoId, src }: { videoId: string; src: string }) {
   const ref = useRef<HTMLAudioElement>(null);
+  const [playing, setPlaying] = useState(false);
+  const [cur, setCur] = useState(0);
+  const [dur, setDur] = useState(0);
+  const [rate, setRate] = useState(readRate);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
     const start = readProgress()[videoId]?.seconds ?? 0;
     const onMeta = () => {
+      setDur(el.duration);
       if (start > 0) el.currentTime = start;
+      setCur(el.currentTime);
       void el.play().catch(() => undefined);
     };
+    const onTime = () => setCur(el.currentTime);
+    const onPlay = () => setPlaying(true);
+    const onPause = () => setPlaying(false);
     el.addEventListener("loadedmetadata", onMeta);
+    el.addEventListener("timeupdate", onTime);
+    el.addEventListener("play", onPlay);
+    el.addEventListener("pause", onPause);
     const timer = window.setInterval(() => {
       if (!el.paused && el.currentTime > 0) saveProgress(videoId, el.currentTime);
     }, SAVE_INTERVAL_MS);
     return () => {
       el.removeEventListener("loadedmetadata", onMeta);
+      el.removeEventListener("timeupdate", onTime);
+      el.removeEventListener("play", onPlay);
+      el.removeEventListener("pause", onPause);
       clearInterval(timer);
       if (el.currentTime > 0) saveProgress(videoId, el.currentTime);
     };
   }, [videoId]);
 
+  useEffect(() => {
+    if (ref.current) ref.current.playbackRate = rate;
+    try {
+      localStorage.setItem(RATE_KEY, String(rate));
+    } catch {
+      // bỏ qua nếu localStorage không dùng được
+    }
+  }, [rate]);
+
+  const seekTo = (t: number) => {
+    const el = ref.current;
+    if (!el) return;
+    el.currentTime = Math.max(0, Math.min(dur || t, t));
+    setCur(el.currentTime);
+  };
+  const toggle = () => {
+    const el = ref.current;
+    if (!el) return;
+    if (el.paused) void el.play().catch(() => undefined);
+    else el.pause();
+  };
+  const pct = dur > 0 ? (cur / dur) * 100 : 0;
+
   return (
-    <div className="video-modal-frame" style={{ display: "flex", alignItems: "center", padding: 16 }}>
-      <audio ref={ref} src={src} controls preload="metadata" style={{ width: "100%" }} />
+    <div className="audio-player">
+      <div className={playing ? "audio-art playing" : "audio-art"}>
+        <Headphones size={44} strokeWidth={1.5} />
+        <span className="audio-eq" aria-hidden="true">
+          <i />
+          <i />
+          <i />
+          <i />
+        </span>
+      </div>
+
+      <input
+        className="audio-seek"
+        type="range"
+        min={0}
+        max={dur || 0}
+        step={1}
+        value={Math.min(cur, dur || 0)}
+        style={{ ["--pct" as string]: `${pct}%` }}
+        onChange={(e) => seekTo(Number(e.target.value))}
+        aria-label="Tua"
+      />
+      <div className="audio-times">
+        <span>{fmtTime(cur)}</span>
+        <span>-{fmtTime(dur - cur)}</span>
+      </div>
+
+      <div className="audio-controls">
+        <button className="audio-skip" onClick={() => seekTo(cur - 15)} aria-label="Lùi 15 giây">
+          <RotateCcw size={26} strokeWidth={1.75} />
+          <span>15</span>
+        </button>
+        <button className="audio-play" onClick={toggle} aria-label={playing ? "Tạm dừng" : "Phát"}>
+          {playing ? <Pause size={30} fill="currentColor" /> : <Play size={30} fill="currentColor" />}
+        </button>
+        <button className="audio-skip" onClick={() => seekTo(cur + 15)} aria-label="Tới 15 giây">
+          <RotateCw size={26} strokeWidth={1.75} />
+          <span>15</span>
+        </button>
+      </div>
+
+      <div className="audio-rates">
+        {RATES.map((r) => (
+          <button key={r} className={r === rate ? "active" : ""} onClick={() => setRate(r)}>
+            {r}x
+          </button>
+        ))}
+      </div>
+
+      <audio ref={ref} src={src} preload="metadata" />
     </div>
   );
 }
